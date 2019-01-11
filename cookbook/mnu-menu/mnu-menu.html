@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang = "en" >
+<head>
+<meta charset = "utf-8" >
+<meta name = "viewport" content= "width=device-width, initial-scale=1" >
+<meta name = "description" content = "TooToo menu testing page and script" >
+<meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
+<meta name = "date" content = "2019-01-10" >
+<title>MNU Menu Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src=mnu-menu.js ></script>
+
+	<nav id="navMenu" >
+
+		<header>
+
+			<div id="MNUdivHeader" ></div>
+
+		</header>
+
+
+		<hr>
+
+		<div>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</div>
+
+		<hr>
+
+		<details id=detMenuHelp open >
+
+			<summary class=divMenuTitle >Help Menu </summary>
+
+			<section id=THMsecMenuThemeSelect ></section>
+
+			<section id=TMPsecMenuTemplate ></section>
+
+			<footer>
+
+				<section id = "MNUdivFooter" ></section>
+
+			</footer>
+
+		</details>
+
+		<h1 onclick=navMenu.scrollTop=0; style=cursor:pointer;text-align:center; title='go to top of menu' > ❦ </h1>
+
+
+	</nav>
+
+
+	<nav>
+
+		<button id="butHamburger" onclick=MNU.toggleNavLeft(); title="click here to hide this menu"> slide &#9776; </button>
+
+	</nav>
+
+
+	<nav id="divPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
+
+	</nav>
+
+
+	<div id="divContainer" >
+
+		<div id="divContents" ></div>
+
+	</div>
+
+
+<script>
+
+const urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo13/cookbook/mnu-menu";
+const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
+
+init();
+
+function init() {
+
+	//divTitle.innerHTML = getTitle();
+
+	MNUdivHeader.innerHTML = MNU.getNavHeader();
+
+	divContents.innerHTML += `${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>`;
+
+	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
+
+	// for testing
+
+	window.addEventListener ( 'hashchange', onHashChange, false );
+
+	window.addEventListener ( 'click', function(){ divPopUpData.innerHTML = ""; }, false );
+
+}
+
+
+
+function onHashChange() {
+
+	divContents.innerHTML += `<p>${ location.hash }</p>`;
+
+}
+
+
+
+function getTitle() {
+
+	document.title = document.title ? document.title : location.href.split( '/' ).pop().slice( 0, - 5 ).replace( /-/g, ' ' );
+
+	const htm =
+	`
+		<h2>
+			<a href=${ urlSourceCode } target=_top title="Source code on GitHub" >
+				<img src=${ urlSourceCodeIcon } height=18 >
+			</a>
+			<a href="" title="Click to reload this page" >${ document.title }</a>
+		</h2>
+
+		<p>
+			${ document.head.querySelector( "[ name=description ]" ).content }
+		</p>
+	`;
+
+	return htm;
+
+}
+
+</script>
+</body>
+</html>
