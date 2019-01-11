@@ -26,26 +26,32 @@ mnu-menu.js
 
 ### Vision
 
-* You open the app and you immediately know what to do
+* You open the app on any device and you immediately know what to do
 
 ### Main Menu Functions and their Features
 
+Most of the code here should be fairly easy to read.
+Getting the menu sliding process to work in all configurations will be an ongoing process
+
+
 MNU.description
-* Provides boilerplate text
+* Provides boilerplate text to be used here and elsewhere
+* Default description that can be used when TooToo is embedded
 
 MNU.getNavHeader
 * Creates default menu header menu
-* Breadcrumbs provide links to parent folders or repos,
+* Breadcrumbs provide links to parent folders or repos
 * Title is also link to reload the app
-* App description
+* Displays the app description
 
 MNU.getNavFooter
 * Creates footer menu content and code
+* Variable enables easy linking to local or global files
 * Links update location hash only
 	* Requires a location hash event monitor to operate
 
 MNU.setPopupShowHide
-* Provides code for pop-up window display visibility toggle
+* Provides code to toggle pop-up window display visibility
 
 
 MNU.onTouchStart
@@ -55,6 +61,7 @@ MNU.toggleNavLeft
 	* Enables operation on computer, tablet or phone
 	* Supports both pointing device and touch support
 	* Resizes both menu and content panels
+* Getting all this to work seamlessly is an an ongoing effort
 
 ## To Do / Wish List
 
@@ -78,6 +85,10 @@ MNU.toggleNavLeft
 
 
 ## Change Log
+
+### 2019-01-11 ~ Theo
+
+
 
 
 ### 2019-01-10 ~ Theo

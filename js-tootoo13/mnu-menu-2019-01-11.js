@@ -34,7 +34,6 @@ MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 		<p>
 			Change log
 			<ul>
-				<li>2019-01-11 ~ * Add close button to status pop-up and improve pop-up toggling</li>
 				<li>2019-01-09 ~ Content update and minor code fixes</li>
 				<li>Add vars: MNU.descriptionTooToo, MNU.footerUrl, MNU.footerTarget, MNU.footerIssues</li>
 				<li>2018-12-29 ~ Add helpItem class</li>
@@ -70,7 +69,7 @@ MNU.descriptionTooToo =
 	`;
 
 
-MNU.currentStatusCore =
+	MNU.currentStatusCore =
 	`
 		<h3>MNU.currentStatusCore</h3>
 
@@ -103,8 +102,6 @@ MNU.urlSourceCodeUrl = "https://github.com/pushme-pullyou/pushme-pullyou.github.
 MNU.footerUrl = "#";
 MNU.footerTarget = ""; //"target=_blank";
 MNU.footerIssues = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/issues";
-
-MNU.statusId = null;
 
 MNU.xDown = null;
 MNU.yDown = null;
@@ -195,13 +192,9 @@ MNU.getNavFooter = function() {
 MNU.setPopupShowHide = function( id, text ) {
 	//console.log( 'id', id );
 
-	MNU.statusId = id;
-
 	id.classList.toggle( "active" );
 
-	const closer = `<div style=text-align:right; ><button onclick=MNU.setPopupShowHide(MNU.statusId,""); >X</button></div>`;
-
-	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? closer + text : '';
+	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? text : '';
 
 };
 
