@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.1", "date": "2019-01-06" };
+const OHC = { "release": "R13.2", "date": "2019-01-09" };
 
 OHC.xhr = new XMLHttpRequest(); // declare now to load event listeners in other modules
 OHC.regexImages = /\.(jpe?g|png|gif|webp|ico|svg|bmp)$/i;
@@ -218,7 +218,8 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	let txt = "";
 
-	if ( items.message ) { alert( items.message ); return; }
+	//if ( items.message !== "Not Found" ) { alert( items.message ); return; }
+	if ( items.message ) { console.log( 'error', items.message ); return; } //breadcrumbs??
 
 	const ignoreFolders = [ "data" ]; //, "plugins"?
 

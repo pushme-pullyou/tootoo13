@@ -88,7 +88,7 @@ MNU.toggleNavLeft
 
 ### 2019-01-11 ~ Theo
 
-
+* Add MNUdetFooter id and set to open in test HTML
 
 
 ### 2019-01-10 ~ Theo

@@ -18,10 +18,14 @@ value='You are now in a GitHub web page view - Click this button to view this re
 
 ## Concept
 
-* Basic HTML content management script with
+_Very simple JavaScript files to help you explore and build new tools on GitHub. Code names are a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl._
+
+TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with:
+
 	* Sliding menu for mobile operation
 	* CSS theme selection
-	* Markdown to HTML
+	* Markdown to HTML via Showdown
+	* Folder and file names access via the GitHub API
 	* URL, File dialog, drag and drop file reading capability
 	* Access to frequently used pages
 

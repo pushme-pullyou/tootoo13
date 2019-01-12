@@ -34,6 +34,7 @@ MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-12 ~ Add MNUdetFooter id and set to open in test HTML</li>
 				<li>2019-01-11 ~ * Add close button to status pop-up and improve pop-up toggling</li>
 				<li>2019-01-09 ~ Content update and minor code fixes</li>
 				<li>Add vars: MNU.descriptionTooToo, MNU.footerUrl, MNU.footerTarget, MNU.footerIssues</li>
@@ -162,13 +163,13 @@ MNU.getNavFooter = function() {
 
 	const htm  =
 	`
-		<details>
+		<details id=MNUdetFooter >
 
 			<summary>Footer / Help
 				<a id=mnuFoot class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuFoot,MNU.currentStatusMenu);" >&nbsp; ? &nbsp;</a>
 			</summary>
 
-			<div style=margin-top:1rem; title='What is this stuff?' ><a href=${ MNU.footerUrl }pages/about-spider-code-style.md ${ MNU.footerTarget } >Coding style</a></div>
+			<div style=margin-top:1rem; title='What is this stuff?' ><a href=${ MNU.footerUrl }pages/coding-style.md ${ MNU.footerTarget } >Coding style</a></div>
 			<div title='many thanks!' ><a href=${ MNU.footerUrl }pages/credits.md ${ MNU.footerTarget } >Credits</a></div>
 			<div><a href=${ MNU.footerUrl }pages/code-of-conduct.md ${ MNU.footerTarget } >Code of conduct</a></div>
 			<div><a href=${ MNU.footerUrl }pages/contributing.md ${ MNU.footerTarget } >Contributing via GitHub</a></div>
