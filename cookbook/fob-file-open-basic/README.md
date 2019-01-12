@@ -1,23 +1,25 @@
 
-<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/#xxxxx/README.md "View file as a web page." ) </span>
+<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/#cookbook/fob-file-open-basic/README.md "View file as a web page." ) </span>
 
-<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/pushme-pullyou.github.io/blob/master/xxxxx/README.md"
+<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/pushme-pullyou.github.io/blob/master/cookbook/fob-file-open-basic/README.md"
 value="You are now in a GitHub web page view - Click this button to view this read me file as source code" ></div>
 
 <br>
 
-# [ZZZZZ Read Me]( #xxxxx/README.md )
+# [TooToo File Open Basic Test Read Me]( #cookbook/fob-file-open-basic/README.md )
 
 <!--
-<iframe src=https://pushme-pullyou.github.io/xxxxx/xxxxx.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
-_<small>ZZZZZ</small>_
+<iframe src=https://pushme-pullyou.github.io/cookbook/fob-file-open-basic/cookbook/fob-file-open-basic.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
+_<small>TooToo File Open Basic Test</small>_
 
-## Full Screen: [ZZZZZ]( https://pushme-pullyou.github.io/xxxxx/xxxxx.html )
+## Full Screen: [TooToo File Open Basic Test]( https://pushme-pullyou.github.io/cookbook/fob-file-open-basic/cookbook/fob-file-open-basic.html )
 -->
 
 
 ## Concept
 
+* Lists files and folders in a repo in a menu<
+* Open files with FileReader() or XMLHttpRequest()
 
 ## To Do / Wish List
 
@@ -40,7 +42,7 @@ _<small>ZZZZZ</small>_
 
 ## Change Log
 
-### XXX
+### 2019-01-12 ~ Theo
 
 * First commit
 
