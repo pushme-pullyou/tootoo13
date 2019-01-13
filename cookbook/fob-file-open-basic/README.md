@@ -18,8 +18,14 @@ _<small>TooToo File Open Basic Test</small>_
 
 ## Concept
 
-* Lists files and folders in a repo in a menu<
-* Open files with FileReader() or XMLHttpRequest()
+* Open files given:
+	* URL
+	* FileReader() object
+	* XMLHttpRequest() object
+* Parses the file if necessary
+* Displays and renders results in a target ```<div>```
+
+This is a generic function. orks have been used to open XML, AD and other file types
 
 ### Features of the Functions
 
@@ -94,6 +100,8 @@ FOB.callbackOtherToTextarea
 
 ### Enhancing the script
 
+* If you have used the FileReader and XMLHttpRequest() objects before then most of the code should feel quite familiar
+	* If not, then you should acquire a bit more knowledge because this is not purely beginner level stuff
 * Try adding another file type. Example: read a .CSV ile and display as a table
 
 ## Links of Interest
