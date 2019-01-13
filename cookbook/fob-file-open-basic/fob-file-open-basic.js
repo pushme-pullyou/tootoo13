@@ -10,7 +10,28 @@ FOB.currentStatus =
 
 		<p>File Open Basic (FOB)</p>
 
-		<p>Lists files and folders in a repo in a menu</p>
+		<p>
+		Concept
+			<ul>
+				<li>Open files with FileReader() or XMLHttpRequest()</li>
+				<li>Provides default current status text template</li>
+				<li>Includes basic code to toggle display of current status</li>
+				<li>Provides sample content to help with examining CSS effects</li>
+				<!-- <li></li> -->
+			</ul>
+		</p>
+
+		<p>
+			<a href="" target="_blank"></a>
+			</p>
+
+		<p>
+			Change log
+			<ul>
+				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
+				<!-- <li></li> -->
+			</ul>
+		</p>
 	`;
 
 
