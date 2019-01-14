@@ -22,6 +22,11 @@
 
 //Copyright 2019 pushMe-pullYou authors. MIT License
 
+MNU.description =
+	`
+		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
+	`;
+
 MNU.currentStatusCore =
 	`
 		<h3>
@@ -31,6 +36,8 @@ MNU.currentStatusCore =
 			${ document.head.querySelector( '[ name=date ]' ).content }
 		</h3>
 
+		<p>${ MNU.description }</p>
+		
 		<p>
 			Change log
 			<ul>
@@ -41,13 +48,11 @@ MNU.currentStatusCore =
 			</ul>
 		</p>
 
+		This web page is built with:
 		${ MNU.descriptionTooToo }
 	`;
 
-MNU.description =
-	`
-		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
-	`;
+
 
 
 const uriDefaultFile = 'README.md';

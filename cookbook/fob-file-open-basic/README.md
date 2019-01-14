@@ -9,25 +9,32 @@ value="You are now in a GitHub web page view - Click this button to view this re
 # [TooToo File Open Basic Test Read Me]( #cookbook/fob-file-open-basic/README.md )
 
 <!--
-<iframe src=https://pushme-pullyou.github.io/cookbook/fob-file-open-basic/cookbook/fob-file-open-basic.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
+<iframe src=https://pushme-pullyou.github.io/cookbook/fob-file-open-basic/fob-file-open-basic.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 _<small>TooToo File Open Basic Test</small>_
-
-## Full Screen: [TooToo File Open Basic Test]( https://pushme-pullyou.github.io/cookbook/fob-file-open-basic/cookbook/fob-file-open-basic.html )
 -->
+
+## Full Screen: [TooToo File Open Basic Test]( https://pushme-pullyou.github.io/tootoo13/cookbook/fob-file-open-basic/fob-file-open-basic.html )
 
 
 ## Concept
 
-* Open files given:
+### Mission
+* Creates the HTML for the user interface
+* Open local files given:
 	* URL
 	* FileReader() object
 	* XMLHttpRequest() object
 * Parses the file if necessary
 * Displays and renders results in a target ```<div>```
 
-This is a generic function. orks have been used to open XML, AD and other file types
+This is a generic function. forks have been used to open XML, RAD and other file types
 
-### Features of the Functions
+### Vision
+
+* Opening files from anywhere and of any type is easy-peasy
+
+
+### fob-file-open-basic.js - Features of the Functions
 
 FOB.currentStatus
 
@@ -140,7 +147,12 @@ The following are links of interest regarding the JavaScript libraries and objec
 
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
-## Change Log
+
+## fob-file-open-basic.js Change Log
+
+### 2019-01-14 ~ Theo
+
+* Add text here and there
 
 ### 2019-01-12 ~ Theo
 

@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.3", "date": "2019-01-13" };
+const OHC = { "release": "R13.4", "date": "2019-01-14" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -53,6 +53,7 @@ OHC.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-14 ~ Add text here and there / fix broken links</li>
 				<li>2019-01-13 ~ Add link to source code and more status content</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
 				<!-- <li></li> -->

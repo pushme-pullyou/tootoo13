@@ -1,34 +1,33 @@
 
-<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/#tootoo13/cookbook-testing/mnu-menu/README.md "View file as a web page." ) </span>
+<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/tootoo13/#cookbook/mnu-menu/README.md "View file as a web page." ) </span>
 
-<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/pushme-pullyou.github.io/blob/master/tootoo13/cookbook-testing/mnu-menu/README.md"
+<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/tootoo13/blob/master/cookbook/mnu-menu/README.md"
 value="You are now in a GitHub web page view - Click this button to view this read me file as source code" ></div>
 
 <br>
 
-# [MNU Menu Test Read Me]( #tootoo13/cookbook-testing/mnu-menu/README.md )
+# [MNU Menu Test Read Me]( #cookbook/mnu-menu/README.md )
 
 
-<iframe src=https://pushme-pullyou.github.io/tootoo13/cookbook-testing/mnu-menu/tootoo13/cookbook-testing/mnu-menu.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
+<iframe src=https://pushme-pullyou.github.io/tootoo13/cookbook/mnu-menu/mnu-menu.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 _<small>MNU Menu Test</small>_
 
-## Full Screen: [MNU Menu Test]( https://pushme-pullyou.github.io/tootoo13/cookbook-testing/mnu-menu/tootoo13/cookbook-testing/mnu-menu.html )
+## Full Screen: [MNU Menu Test]( https://pushme-pullyou.github.io/tootoo13/cookbook/mnu-menu/mnu-menu.html )
 
 
 ## Concept
-
-mnu-menu.js
 
 ### Mission
 * To setup standard menu components with a minimum of fuss
 * To provide a user interface that feels normal and natural
 * To provide a UI that works well on any device
+* To provide templates that may be applied to other apps
 
 ### Vision
 
 * You open the app on any device and you immediately know what to do
 
-### Main Menu Functions and their Features
+### mnu-menu.js - Main Menu Functions and their Features
 
 Most of the code here should be fairly easy to read.
 Getting the menu sliding process to work in all configurations will be an ongoing process
@@ -37,6 +36,8 @@ Getting the menu sliding process to work in all configurations will be an ongoin
 MNU.description
 * Provides boilerplate text to be used here and elsewhere
 * Default description that can be used when TooToo is embedded
+* Use descriptionTooToo.md in this folder to edit the description in Markdown, then open with TooToo and copy HTML to the source
+
 
 MNU.getNavHeader
 * Creates default menu header menu
@@ -62,6 +63,12 @@ MNU.toggleNavLeft
 	* Supports both pointing device and touch support
 	* Resizes both menu and content panels
 * Getting all this to work seamlessly is an an ongoing effort
+
+
+Style.css
+* Items are more compressed then you usually see them. So it goes
+* Items are sorted by tag, class and ID then in alphabetical order
+
 
 ## To Do / Wish List
 

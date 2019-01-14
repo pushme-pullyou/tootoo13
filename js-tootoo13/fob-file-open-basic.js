@@ -2,7 +2,7 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.2", "date": "2019-01-13" };
+const FOB = { "release": "R13.3", "date": "2019-01-14" };
 
 FOB.currentStatus =
 	`
@@ -13,10 +13,11 @@ FOB.currentStatus =
 		<p>
 		Concept
 			<ul>
-				<li>Open files with FileReader() or XMLHttpRequest()</li>
+				<li>Creates the HTML for the user interface</li>
+				<li>Open local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
 				<li>Provides default current status text template</li>
 				<li>Includes basic code to toggle display of current status</li>
-				<li>Provides sample content to help with examining CSS effects</li>
+				<li></li>
 				<!-- <li></li> -->
 			</ul>
 		</p>
@@ -28,6 +29,7 @@ FOB.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-14 ~ Add text here and there</li>
 				<li>2019-01-13 ~ Add link to status</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
 				<!-- <li></li> -->

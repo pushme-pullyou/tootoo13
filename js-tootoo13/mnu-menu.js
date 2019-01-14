@@ -3,7 +3,7 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.4", "date": "2019-01-10" };
+const MNU = { "release": "R13.5", "date": "2019-01-14" };
 
 MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 
@@ -34,10 +34,11 @@ MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-14 ~ Update text content</li>
 				<li>2019-01-12 ~ Add MNUdetFooter id and set to open in test HTML</li>
-				<li>2019-01-11 ~ * Add close button to status pop-up and improve pop-up toggling</li>
+				<li>2019-01-11 ~ Add close button to status pop-up and improve pop-up toggling</li>
 				<li>2019-01-09 ~ Content update and minor code fixes</li>
-				<li>Add vars: MNU.descriptionTooToo, MNU.footerUrl, MNU.footerTarget, MNU.footerIssues</li>
+				<li>2019-01-09 ~ Add vars: MNU.descriptionTooToo, MNU.footerUrl, MNU.footerTarget, MNU.footerIssues</li>
 				<li>2018-12-29 ~ Add helpItem class</li>
 				<li>2018-12-28 ~ Current Status link changed to question mark</li>
 				<li>2018-12-28 ~ Content displayed in the Pop-Up</li>
@@ -49,21 +50,25 @@ MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 	`;
 
 
-////////// boilerplate for downstrean users
+////////// boilerplate for downstream users
 
 MNU.descriptionTooToo =
 	`
-		<h3><a href="https://pushme-pullyou.github.io#tootoo13/README.md" target="_blank">TooToo13</a></h3>
+		<h3>
+			<a href="https://pushme-pullyou.github.io#tootoo13/README.md" target="_blank">
+				TooToo13 Read Me
+			</a>
+		</h3>
 
 		<p>
 			<ul>
-				<li>Scripts to help you browse and view the contents of many files on GitHub with remarkable ease</li>
-				<li>View HTML, Markdown format- and many other file types - as rendered web pages or as source code</li>
-				<li>Traverse, select and display folder and file names with single clicks in a tree menu</li>
-				<li>Open local files with OS file dialog or by drag and drop</li>
+				<li>TooToo is a collection of JavaScript scripts to help you browse and view the contents of many files on <a href="https://github.com">GitHub</a> with remarkable ease</li>
+				<li>View HTML, <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, images and many other file types as rendered web pages or as source code</li>
+				<li>Traverse a tree menu, select and display folder and file names in  with single clicks</li>
+				<li>Open local files with OS file dialog or by drag and drop and open remote files with a URL</li>
 				<li>Access files quickly and then edit and commit changes to source using the GitHub interface</li>
 				<li>Web app with sliding menu that works on computer, tablet or phone</li>
-				<li>Written in plain-vanilla JavaScript/ Uses the GitHub Developer API / Hosted with GitHub pages / Simple CSS them selection</li>
+				<li>Written in plain-vanilla JavaScript / Uses the <a href="https://developer.github.com/v3/">GitHub Developer API</a> / Hosting with <a href="https://pages.github.com/">GitHub Pages</a> / Simple CSS theme selection</li>
 			</ul>
 		</p>
 
