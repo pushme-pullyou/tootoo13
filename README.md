@@ -22,12 +22,12 @@ _Very simple JavaScript files to help you explore and build new tools on GitHub.
 
 TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with:
 
-	* Sliding menu for mobile operation
-	* CSS theme selection
-	* Markdown to HTML via Showdown
-	* Folder and file names access via the GitHub API
-	* URL, File dialog, drag and drop file reading capability
-	* Access to frequently used pages
+* Sliding menu for mobile operation
+* CSS theme selection
+* Markdown to HTML via Showdown
+* Folder and file names access via the GitHub API
+* URL, File dialog, drag and drop file reading capability
+* Access to frequently used pages
 
 
 ## To Do / Wish list
