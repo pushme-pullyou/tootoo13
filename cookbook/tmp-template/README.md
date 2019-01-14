@@ -6,7 +6,7 @@ value="You are now in a GitHub web page view - Click this button to view this re
 
 <br>
 
-# [TooToo Template Read Me]( tootoo13/#cookbook/tmp-template/README.md )
+# [TooToo Template (TMP) Read Me]( tootoo13/#cookbook/tmp-template/README.md )
 
 <!--
 <iframe src=https://pushme-pullyou.github.io/xxxxx/xxxxx.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
@@ -23,6 +23,22 @@ _<small>TooToo Template</small>_
 * Includes basic code to toggle display of current status
 * Provides sample content to help with examining CSS effects
 
+### Functions
+
+TMP.currentStatus
+* Informative content to be displayed in a pop-up help context
+* Description of the goal or concept of the function
+* List of features
+* Link to source code
+* Change log
+
+TMP.getMenuTemplate
+* Menu user interface template HTML content
+* Embedded on a ```<details>``` element
+* Includes a number of frequently used HTML elements to help with gauging and test CSS appearance
+
+
+
 ## To Do / Wish List
 
 
@@ -31,18 +47,31 @@ _<small>TooToo Template</small>_
 
 ## Things you can do using this script
 
+
+### Using the Script
+
 * Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
 * Click the Octocat icon to view or edit the source code on GitHub
 * Click on title to reload
 * Press Control-U/Command-Option-U to view the source code
 * Press Control-Shift-J/Command-Option-J to see if the JavaScript console reports any errors
 
+### Enhancing the script
+
+* Try adding a new menu module
+* Translate into another language
+
 
 ## Links of Interest
 
 
-
 ## Change Log
+
+### 2019-01-13 ~ Theo
+
+* 2019-01-13 ~ Add link to source code
+* 2019-01-12 ~ Add cookbook HTML test script and read me file
+
 
 ### 2019-01-12 ~ Theo
 

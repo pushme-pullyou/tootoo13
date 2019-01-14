@@ -4,27 +4,59 @@
 
 */
 
-const OHC = { "release": "R13.2", "date": "2019-01-09" };
+const OHC = { "release": "R13.3", "date": "2019-01-13" };
+
+
+OHC.uriDefaultFile = "README.md";
+OHC.user = 'pushme-pullyou';
+OHC.repo = 'tootoo13';
+OHC.pathRepo = '';
+OHC.branch = '/master/';
+OHC.urlGitHubPage = "../../";
+
+OHC.urlSourceCode = `https://github.com/${ OHC.user}/${ OHC.repo }/`;
+OHC.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
+OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 >`;
 
 OHC.xhr = new XMLHttpRequest(); // declare now to load event listeners in other modules
 OHC.regexImages = /\.(jpe?g|png|gif|webp|ico|svg|bmp)$/i;
 OHC.regexHtml = /\.(htm?l)$/i;
+
 OHC.contentsCss = `box-sizing: border-box; border: 1px solid #888; height: ${ window.innerHeight - 4 }px; margin: 0; padding:0; width:100%;`;
-OHC.accessToken = '';
 
-OHC.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-
-OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 >`;
 
 OHC.currentStatus =
 	`
 		<h3>OHC ${ OHC.release} status ${ OHC.date }</h3>
 
-		<p>OHC On Hash Change</p>
-
+		<p>TooToo On Hash Change (OHC)</p>
 		<p>
 			This script obtains lists files and folders in a repo uses the GitHub API.
 			Once the names have been read, the script display the items in the menu
+		</p>
+
+		<p>
+			Concept
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<!-- <li></li> -->
+			</ul>
+		</p>
+		<p>
+			<a href="https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/ohc-on-hash-change/" target="_blank" >
+				TooToo On Hash Change (OHC) Read Me
+			</a>
+		</p>
+		<p>
+			Change log
+			<ul>
+				<li>2019-01-13 ~ Add link to source code and more status content</li>
+				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
+				<!-- <li></li> -->
+			</ul>
 		</p>
 	`;
 
@@ -49,26 +81,16 @@ OHC.currentStatusAccessToken =
 		</p>
 	`;
 
+
+
 OHC.getMenuRepoFilesFolders = function() {
 
-	window.addEventListener ( 'hashchange', OHC.onHashChange, false );
-
 	OHC.divContents = divContents;
-
-	//const urlGitHubPage = location.href.includes( '/' + user + '.github.io' ) ? '' : 'https://rawgit.com/' + user + repo + branch;
-
-	//OHC.urlGitHubPage = location.href.includes( OHC.repo ) ? '../../' : 'https://' + OHC.repo + "/";
-
-	//OHC.urlGitHubPage = location.href.includes( OHC.repo ) ? '../../../' : 'https://rawgit.com/' + user + repo + branch;
-	//OHC.urlGitHubPage  = 'https://rawgit.com/' + OHC.user + OHC.repo + OHC.branch;
-	//OHC.urlGitHubPage  = 'https://'+ OHC.user + "/" + OHC.repo + "/";
-	//console.log( 'OHC.urlGitHubPage', OHC.urlGitHubPage );
-
 	OHC.urlGitHubSource = "https://github.com/" + OHC.user + "/" + OHC.repo;
 	OHC.urlGitHubApiContents = 'https://api.github.com/repos/' + OHC.user + "/" + OHC.repo + '/contents/' + OHC.pathRepo;
-
 	OHC.accessToken = localStorage.getItem( 'githubAccessToken' ) || '';
-	//inpApiKey.value = apiKey ? apiKey : '' ;
+
+	window.addEventListener ( 'hashchange', OHC.onHashChange, false );
 
 	const htm =
 	`
@@ -119,7 +141,7 @@ OHC.setGitHubAccessToken = function( accessToken ) {
 
 OHC.onHashChange = function() {
 
-	const url = !location.hash ? uriDefaultFile : location.hash.slice( 1 );
+	const url = !location.hash ? OHC.uriDefaultFile : location.hash.slice( 1 );
 
 	const ulc = url.toLowerCase();
 
@@ -199,6 +221,8 @@ OHC.setMenuGitHubPathFileNames = function( path = '' ) {
 
 	const str = OHC.accessToken ? "?access_token=" + OHC.accessToken : "";
 
+	OHC.urlGitHubApiContents = `https://api.github.com/repos/${ OHC.user }/${ OHC.repo }/contents/${OHC.pathRepo }`;
+
 	const url = OHC.urlGitHubApiContents + path + str;
 
 	OHC.requestFile( url, OHC.callbackGitHubPathFileNames ); // to do: make request only once and triage thereafter
@@ -213,23 +237,35 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	const response = xhr.target.response;
 	const items = JSON.parse( response );
-	OHC.menuItems = items;
-	const len = OHC.pathRepo.length;
-
-	let txt = "";
+	//OHC.menuItems = items;
 
 	//if ( items.message !== "Not Found" ) { alert( items.message ); return; }
 	if ( items.message ) { console.log( 'error', items.message ); return; } //breadcrumbs??
 
-	const ignoreFolders = [ "data" ]; //, "plugins"?
+	const htmFolders = OHC.getFoldersFromContents( items );
+
+	const htmFiles = OHC.getFilesFromContents( items );
+
+	OHCdivMenuItems.innerHTML = htmFolders + htmFiles;
+
+};
+
+
+
+OHC.getFoldersFromContents = function( items ) {
+
+	let htm = "";
+
+	const len = OHC.pathRepo.length;
+
+	const ignoreFolders = [ "data" ];
 
 	for ( let item of items ) {
 
-		if ( item.type === "dir" ) {
+		if ( item.type === "dir" && !ignoreFolders.includes( item.name ) ) {
 
-			if ( ignoreFolders.includes( item.name ) ) { continue; }
-
-			txt +=
+			// why does this not work? item.path.split( "/" ).pop()
+			htm +=
 			`
 				<div style=margin-bottom:8px; >
 					<a href=JavaScript:OHC.setMenuGitHubPathFileNames("${ item.path.slice( len ) }"); >
@@ -242,19 +278,29 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	}
 
+	return htm;
+
+}
+
+
+
+OHC.getFilesFromContents = function( items ) {
+
+	let htm = "";
+
+	const len = OHC.pathRepo.length;
+
 	const ignoreFiles = [ ".gitattributes", ".gitignore", "404.html" ];
 
 	for ( let item of items ) {
 
-		if ( item.type === "file" ) {
-
-			if ( ignoreFiles.includes( item.name ) ) { continue; }
+		if ( item.type === "file" && !ignoreFiles.includes( item.name ) ) {
 
 			const itemPath = encodeURI( item.path.slice( len ) );
 
 			const str = item.path.endsWith( "html" ) ? `<a href="${ OHC.urlGitHubPage }${ OHC.pathRepo }${ itemPath }" >&#x2750;</a>` : "";
 
-			txt += // try grid or flexbox??
+			htm += // try grid or flexbox??
 			`
 				<table><tr>
 					<td>
@@ -271,7 +317,7 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 				</tr></table>
 			`;
 
-			// simplify
+			// how to simplify
 			if ( ( !location.hash || location.hash.toLowerCase().endsWith( 'readme.md' ) )
 
 				&& ( item.name.toLowerCase() === 'readme.md' ) ) {
@@ -284,19 +330,16 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	}
 
-	OHCdivMenuItems.innerHTML = txt;
+	return htm;
 
 };
 
 
 
 OHC.setBreadcrumbs = function( path ) {
-
 	//console.log( 'path', path );
 
-	//path = path === "../.." ? "" : path;
-
-	let txt =
+	const htmHome =
 	`
 		<b>
 			<a href=JavaScript:OHC.setMenuGitHubPathFileNames(); title="home folder" >
@@ -307,16 +350,17 @@ OHC.setBreadcrumbs = function( path ) {
 
 	const folders = path ? path.split( '/' ) : [] ;
 
-	let str = ``;
+	let htmFolders = "";
+	let str = "";
 
 	for ( let folder of folders ) {
 
 		str += `${ folder }/`;
 
-		txt += `<b><a href=JavaScript:OHC.setMenuGitHubPathFileNames("${ str.slice( 0, -1 ) }"); >${ folder }</a> &raquo; </b>`;
+		htmFolders += `<b><a href=JavaScript:OHC.setMenuGitHubPathFileNames("${ str.slice( 0, -1 ) }"); >${ folder }</a> &raquo; </b>`;
 
 	}
 
-	OHCdivBreadcrumbs.innerHTML = txt;
+	OHCdivBreadcrumbs.innerHTML = htmHome + htmFolders;
 
 };

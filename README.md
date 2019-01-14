@@ -44,6 +44,12 @@ TooToo is a collection of basic plain-vanilla JavaScript scripts for content man
 
 ## Change Log
 
+### 2019-01-13 ~ Theo
+
+* edits in most most modules
+* Read me files have more content
+* Prototype users starting to appear
+
 ### 2019-01-11 ~ Theo
 
 Fork Tootoo13 to its own new repo

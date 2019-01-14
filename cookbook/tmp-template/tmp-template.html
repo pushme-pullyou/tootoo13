@@ -3,9 +3,9 @@
 <head>
 <meta charset = "utf-8" >
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
-<meta name = "description" content = "Basic template /HTML and JavaScript for creating new TooToo modules" >
+<meta name = "description" content = "Basic HTML and JavaScript template files for creating new TooToo menu modules" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-12" >
+<meta name = "date" content = "2019-01-13" >
 <title></title>
 <style>
 
@@ -15,10 +15,6 @@
 
 	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
 	button:hover { background: #ccc; color: #fff }
-
-	/*
-	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px; position: absolute; top: 0; }
-	*/
 
 	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px;
 		position: fixed; top: 0; }
@@ -32,10 +28,6 @@
 	<nav id="navMenu" >
 
 		<div id="divTitle" ></div>
-
-		<p>
-			<button id=but onclick=setIt(); accessKey= 'z' title='access key: z '>button button</button>
-		</p>
 
 		<hr>
 
@@ -52,11 +44,9 @@
 
 <script>
 
+
+
 const urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/tmp-template";
-const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
-
-
-
 
 
 
@@ -92,15 +82,10 @@ MNU.setPopupShowHide = function( id, text ) {
 };
 
 
-function setIt() {
-
-	divContents.innerHTML += `<p>${ ( performance.now() ) } - Howdy! </p>`;
-
-}
-
-
 
 function getTitle() {
+
+	const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
 
 	document.title = document.title ? document.title : location.href.split( '/' ).pop().slice( 0, - 5 ).replace( /-/g, ' ' );
 

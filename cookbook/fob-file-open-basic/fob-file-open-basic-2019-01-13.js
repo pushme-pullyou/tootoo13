@@ -2,7 +2,7 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.2", "date": "2019-01-13" };
+const FOB = { "release": "R13.1", "date": "2019-01-04" };
 
 FOB.currentStatus =
 	`
@@ -10,29 +10,7 @@ FOB.currentStatus =
 
 		<p>File Open Basic (FOB)</p>
 
-		<p>
-		Concept
-			<ul>
-				<li>Open files with FileReader() or XMLHttpRequest()</li>
-				<li>Provides default current status text template</li>
-				<li>Includes basic code to toggle display of current status</li>
-				<li>Provides sample content to help with examining CSS effects</li>
-				<!-- <li></li> -->
-			</ul>
-		</p>
-		<p>
-			<a href="https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/fob-file-open-basic/" target="_blank" >
-				TooToo File Open Basic (FOB) Read Me
-			</a>
-		</p>
-		<p>
-			Change log
-			<ul>
-				<li>2019-01-13 ~ Add link to status</li>
-				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
-				<!-- <li></li> -->
-			</ul>
-		</p>
+		<p>Lists files and folders in a repo in a menu</p>
 	`;
 
 

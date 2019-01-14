@@ -3,7 +3,7 @@
 <head>
 <meta charset = "utf-8" >
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
-<meta name = "description" content = "Basic TooToo HTML template" >
+<meta name = "description" content = " On Hash Change test file and JavaScript" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
 <meta name = "date" content = "2019-01-06" >
 <title>ohc-on-hash-change</title>
@@ -45,15 +45,15 @@
 		</details>
 
 		<p>
-			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../README.md</button>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >README.md</button>
 		</p>
 
 		<p>
-			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../../favicon.ico</button>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../favicon.ico</button>
 		</p>
 
 		<p>
-			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../../index.html</button>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../index.html</button>
 		</p>
 
 		<p>
@@ -62,7 +62,7 @@
 
 		<div id=divPopUpData ></div>
 
-		
+
 	</nav>
 
 	<div id="divContents" ></div>
@@ -72,22 +72,20 @@
 
 <script>
 
+/*
+// for parsing // for testing
+OHC.uriDefaultFile = "README.md";
 
-// for parsing
-const uriDefaultFile = "../../../README.md";
-
-OHC.user = 'pushme-pullyou';
-OHC.repo = 'pushme-pullyou.github.io';
+OHC.user = 'jaanga';
+OHC.repo = 'jaanga.github.io';
 OHC.pathRepo = '';
 OHC.branch = '/master/';
 
-OHC.urlSourceCode = "https://github.com/zzzzz/xxxxx.html";
-OHC.urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
-OHC.iconInfo = `<img src="${ OHC.urlSourceCodeIcon }" height=18 >`;
-
+OHC.urlGitHubPage = "https://jaanga.github.io/";
+OHC.urlSourceCode = "https://github.com/jaanga/jaanga.github.io";
+*/
 
 const MNU = {}; // for testing
-
 MNU.setPopupShowHide = function( id, text ) {
 
 	id.classList.toggle( "active" );
@@ -115,13 +113,11 @@ function init() {
 }
 
 
+function onHashChange() {
 
-function setIt() {
-
-	divContents.innerHTML += `<p>${ ( performance.now() ) } - Howdy! </p>`;
+	divContents.innerHTML += `<p>${ location.hash }</p>`;
 
 }
-
 
 
 function getTitle() {
