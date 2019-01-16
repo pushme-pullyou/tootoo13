@@ -25,10 +25,10 @@ _The collection title is a play on the [Dr Dolittle]( https://en.wikipedia.org/w
 Current set of modules
 
 * **[File Open Basic (FOB)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/fob-file-open-basic/README.md )** provides HTML and JavaScript to select, open and display local files using the file dialog box, drag and drop or URL
-* **Menu (MNU)** generates standard HTML TooToo header and footer menu panel code and content and code that works on computers, tablets and phones
-* **On Hash Change (OHC)** creates custom tree menus using location hash and GitHub API to select, load and display files hosted on given GitHub branches or GitHub pages
-* **TooToo Theme Select (THM)** creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
-* **TooToo Template (TMP)** provides HTML and JavaScript 'boilerplate' to create a typical TooToo menus
+* **[Menu (MNU)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/mnu-menu/README.md )** generates standard HTML TooToo header and footer menu panel code and content and code that works on computers, tablets and phones
+* **[On Hash Change (OHC)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/ohc-on-hash-change/README.md )** creates custom tree menus using location hash and GitHub API to select, load and display files hosted on given GitHub branches or GitHub pages
+* **[TooToo Theme Select (THM)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/thm-theme-select/README.md )** creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
+* **[TooToo Template (TMP)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/tmp-template/README.md )** provides HTML and JavaScript 'boilerplate' to create a typical TooToo menus
 
 
 
