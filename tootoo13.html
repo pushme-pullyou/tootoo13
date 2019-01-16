@@ -17,6 +17,7 @@
 <script src="js-tootoo13/fob-file-open-basic.js" ></script>
 <script src="js-tootoo13/thm-theme-select.js" ></script>
 <script src="js-tootoo13/ohc-on-hash-change.js" ></script>
+<script src="js-tootoo13/sfm-selected-files-markdown.js" ></script>
 <script src="js-tootoo13/tmp-template.js" ></script>
 <script>
 
@@ -105,6 +106,8 @@ OHC.urlGitHubPage = "";
 
 				<summary class=divMenuTitle >File Menu</summary>
 
+				<section id=SFMsecPrototypes ></section>
+
 				<section id="OHCsecMenuRepoFilesFolders" ></section>
 
 				<section id=FOBsecFileOpenBasic ></section>
@@ -172,6 +175,8 @@ function init() {
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
 
+	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
+
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
 	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
@@ -181,6 +186,7 @@ function init() {
 	THM.init();
 
 	OHC.onHashChange();
+
 
 }
 

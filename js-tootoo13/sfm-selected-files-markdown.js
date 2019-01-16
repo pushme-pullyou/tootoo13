@@ -93,7 +93,7 @@ SFM.getMarkdownFileContents = function( url, target ) {
 			target.innerHTML = html;
 			window.scrollTo( 0, 0 );
 
-			console.log( '', html );
+
 
 		}
 
