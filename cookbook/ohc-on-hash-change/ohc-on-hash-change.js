@@ -190,7 +190,6 @@ OHC.requestFile = function( url, callback ) {
 	xhr.onload = callback;
 	xhr.send( null );
 
-
 };
 
 

@@ -1,6 +1,6 @@
-<span style=display:none; >[You are now in a GitHub source code view - click this link to view the home page]( https://ladybug-tools.github.io/ladybug-web/index.html#coding-style.md "View file as a web page." ) </span>
+<span style=display:none; >[You are now in a GitHub source code view - click this link to view the home page]( https://pushme-pullyou.github.io/tootoo13/index.html#pages/coding-style.md "View file as a web page." ) </span>
 
-<div><input type=button  class="btn btn-secondary btn-sm" onclick=window.location.href='https://github.com/ladybug-tools/ladybug-web/blob/gh-pages/coding-style.md';
+<div><input type=button  class="btn btn-secondary btn-sm" onclick=window.location.href='https://github.com/pushme-pullyou/tootoo13/blob/master/pages/coding-style.md';
 value='You are now in the home page view - Click this button to view the read me file and the source code' ></div>
 
 <br>
