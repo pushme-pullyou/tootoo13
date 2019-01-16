@@ -3,18 +3,20 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.5", "date": "2019-01-14" };
+const MNU = { "release": "R13.6", "date": "2019-01-15" };
 
-MNU.description = document.head.querySelector( "[ name=description ]" ).content;
+MNU.description =
+	`
+		TooToo Menu (MNU) generates standard HTML TooToo menu code and content and code that works on computers, tablets and phones
+	`;
 
-////////// currentStatus items are fir th question marks in the main HTML document
-
+////////// currentStatus items are for the question marks in the main HTML document
 
 	MNU.currentStatusMenu =
 	`
-		<h3>TooToo Menu ${ MNU.release} ~ ${ MNU.date }</h3>
+		<h3>TooToo Menu (MNU) ${ MNU.release} ~ ${ MNU.date }</h3>
 
-		<p>Generates HTML menu content from variables in the index.html file.</p>
+		<p>${ MNU.description }</p>
 
 		<p>
 			Concept
@@ -34,6 +36,7 @@ MNU.description = document.head.querySelector( "[ name=description ]" ).content;
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-15 ~ Add MNU.description text content and code</li>
 				<li>2019-01-14 ~ Update text content</li>
 				<li>2019-01-12 ~ Add MNUdetFooter id and set to open in test HTML</li>
 				<li>2019-01-11 ~ Add close button to status pop-up and improve pop-up toggling</li>

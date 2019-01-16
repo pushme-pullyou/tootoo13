@@ -3,9 +3,9 @@
 <head>
 <meta charset = "utf-8" >
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
-<meta name = "description" content = "Basic template /HTML and JavaScript for creating new TooToo modules" >
+<meta name = "description" content = "Creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-12" >
+<meta name = "date" content = "2019-01-14" >
 <title></title>
 <style>
 
@@ -20,8 +20,12 @@
 	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px; position: absolute; top: 0; }
 	*/
 
-	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px;
+	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 28-rem; padding: 0 10px;
 		position: fixed; top: 0; }
+
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
+		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
 
 
 </style>
@@ -33,19 +37,23 @@
 
 		<div id="divTitle" ></div>
 
-		<p>
-			<button id=but onclick=setIt(); accessKey= 'z' title='access key: z '>button button</button>
-		</p>
-
 		<hr>
 
 		<section id=THMsecMenuThemeSelect ></section>
 
 		<hr>
 
-		<div id=divPopUpData ></div>
+	</nav>
+
+
+	<nav id="navPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
 
 	</nav>
+
 
 	<div id="divContents" ></div>
 
@@ -61,6 +69,7 @@ THM.cssBasic = "../../js-tootoo13/style.css";
 
 init();
 
+
 function init() {
 
 	divTitle.innerHTML = getTitle();
@@ -68,6 +77,10 @@ function init() {
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
 	THM.init();
+
+	detTheme = document.body.querySelector( 'details' );
+
+	detTheme.open = true;
 
 	divContents.innerHTML =
 		`
@@ -78,6 +91,7 @@ function init() {
 				${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
 			</p>
 		`;
+
 }
 
 
@@ -91,13 +105,6 @@ MNU.setPopupShowHide = function( id, text ) {
 	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? text : '';
 
 };
-
-
-function setIt() {
-
-	divContents.innerHTML += `<p>${ ( performance.now() ) } - Howdy! </p>`;
-
-}
 
 
 
@@ -115,7 +122,7 @@ function getTitle() {
 		</h2>
 
 		<p>
-			${ document.head.querySelector( "[ name=description ]" ).content }
+			${ THM.description }
 		</p>
 	`;
 

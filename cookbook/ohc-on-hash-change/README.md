@@ -16,7 +16,7 @@ _<small>TooToo On Hash Change (OHC)</small>_
 ## Full Screen: [TooToo On Hash Change (OHC) Test]( https://pushme-pullyou.github.io/tootoo13/cookbook/ohc-on-hash-change/ohc-on-hash-change.html )
 
 
-## Concept
+## Concept / Issue or problem to solve
 
 ### Mission
 
@@ -118,9 +118,17 @@ OHC.setBreadcrumbs
 * Interesting code but still too complicated
 
 
+### ohc-on-hash-change.html - Features
+
+* Basic HTML to call and display the template menu
+* Includes basic code to toggle display of current status HTML content
+
+
+
 ## To Do / Wish List
 
 * 2019-01-14 ~ Theo ~ Simple routine that calls for repository contents just once
+	* 2019-01-04 ~ Theo ~ make GitHub API request only once and triage the JSON thereafter
 * 2019-01-06 ~ Theo ~ toggle 'active' class on menu items
 
 

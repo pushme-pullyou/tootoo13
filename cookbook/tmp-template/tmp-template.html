@@ -9,16 +9,19 @@
 <title></title>
 <style>
 
-	body { font: 12pt monospace; margin: 0 auto; max-width: 800px; }
+	body { font: 12pt monospace; height: 100%; margin: 0 auto; max-width: 800px; }
 	a { color: crimson; text-decoration: none; }
 	a:hover, a:focus, a:active { background-color: yellow; color: #aaa; text-decoration: underline }
 
 	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
 	button:hover { background: #ccc; color: #fff }
 
-	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px;
-		position: fixed; top: 0; }
+	#navMenu { background-color: #eee; max-height: 95%; left: 0; margin: 20px; max-width: 300px;
+		overflow: auto; padding: 0 10px; position: fixed; top: 0; }
 
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
+		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
 
 </style>
 </head>
@@ -35,9 +38,17 @@
 
 		<hr>
 
-		<div id=divPopUpData ></div>
+	</nav>
+	
+
+	<nav id="navPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
 
 	</nav>
+
 
 	<div id="divContents" ></div>
 
@@ -58,6 +69,10 @@ function init() {
 
 	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
+	detTemplate = document.body.querySelector( 'details' );
+
+	detTemplate.open = true;
+
 	divContents.innerHTML =
 		`
 			<p>
@@ -67,13 +82,16 @@ function init() {
 				${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
 			</p>
 		`;
+
 }
 
 
 
 const MNU = {}; // for testing
 
+
 MNU.setPopupShowHide = function( id, text ) {
+	//console.log( 'id', id );
 
 	id.classList.toggle( "active" );
 
@@ -99,7 +117,7 @@ function getTitle() {
 		</h2>
 
 		<p>
-			${ document.head.querySelector( "[ name=description ]" ).content }
+			${ TMP.description }
 		</p>
 	`;
 

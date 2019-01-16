@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.4", "date": "2019-01-14" };
+const OHC = { "release": "R13.5", "date": "2019-01-15" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -24,24 +24,27 @@ OHC.regexHtml = /\.(htm?l)$/i;
 
 OHC.contentsCss = `box-sizing: border-box; border: 1px solid #888; height: ${ window.innerHeight - 4 }px; margin: 0; padding:0; width:100%;`;
 
+OHC.description =
+	`
+		Create menus using location hash and GitHub API to
+		select, load and display files hosted on GitHub branches or GitHub pages
+	`;
 
 OHC.currentStatus =
 	`
-		<h3>OHC ${ OHC.release} status ${ OHC.date }</h3>
+		<h3>TooToo On Hash Change (OHC) ${ OHC.release} ~ ${ OHC.date }</h3>
 
-		<p>TooToo On Hash Change (OHC)</p>
 		<p>
-			This script obtains lists files and folders in a repo uses the GitHub API.
-			Once the names have been read, the script display the items in the menu
+			${ OHC.description }
 		</p>
 
 		<p>
 			Concept
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Obtains lists files and folders in a repository uses the GitHub Developer API</li>
+				<li>Opens and displays contents of file</li>
+				<li>Creates and update the HTML for a tree menu and breadcrumbs</li>
+				<li>Provides a simple API for all of the above</li>
 				<!-- <li></li> -->
 			</ul>
 		</p>
@@ -53,6 +56,7 @@ OHC.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-15 ~ Update OHC.description content and related code</li>
 				<li>2019-01-14 ~ Add text here and there / fix broken links</li>
 				<li>2019-01-13 ~ Add link to source code and more status content</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>

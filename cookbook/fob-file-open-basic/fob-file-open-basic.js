@@ -2,21 +2,28 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.3", "date": "2019-01-14" };
+const FOB = { "release": "R13.4", "date": "2019-01-15" };
+
+FOB.description =
+	`
+		TooToo File Open Basic (FOB) provides HTML and JavaScript to
+		select, open and display local files using the file dialog box, drag and drop or URL.
+	`;
 
 FOB.currentStatus =
 	`
-		<h3>FOB ${ FOB.release} status ${ FOB.date }</h3>
-
-		<p>File Open Basic (FOB)</p>
+		<h3>TooToo File Open Basic (FOB) ${ FOB.release} - ${ FOB.date }</h3>
 
 		<p>
-		Concept
+			${ FOB.description }
+		</p>
+		<p>
+			Concept
 			<ul>
 				<li>Creates the HTML for the user interface</li>
-				<li>Open local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
+				<li>Opens local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
+				<li>Converts Markdown to HTML</li>
 				<li>Provides default current status text template</li>
-				<li>Includes basic code to toggle display of current status</li>
 				<li></li>
 				<!-- <li></li> -->
 			</ul>
@@ -29,6 +36,8 @@ FOB.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-15 ~ Add FOB.description variable and text</li>
+				<li>2019-01-15 ~ Add display FOB.description in pop-up and in test file</li>
 				<li>2019-01-14 ~ Add text here and there</li>
 				<li>2019-01-13 ~ Add link to status</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>

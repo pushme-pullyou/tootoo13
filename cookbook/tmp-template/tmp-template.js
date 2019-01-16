@@ -4,13 +4,17 @@
 
 
 
-const TMP = { "release": "R13.2", "date": "2019-01-13" };
+const TMP = { "release": "R13.3", "date": "2019-01-15" };
 
-TMP.description = document.head.querySelector( "[ name=description ]" ).content;
+TMP.description =
+	`
+		TooToo Template (TMP) provides HTML and JavaScript 'boilerplate' to create a typical TooToo menu.
+
+	`;
 
 TMP.currentStatus =
 	`
-		<h3> TooToo Template ${ TMP.release} ~ ${ TMP.date }</h3>
+		<h3> TooToo Template (TMP) ${ TMP.release} ~ ${ TMP.date }</h3>
 
 		<p>
 			${ TMP.description }
@@ -18,10 +22,9 @@ TMP.currentStatus =
 		<p>
 		Concept
 			<ul>
-				<li>Provides default description text template</li>
 				<li>Provides default current status text template</li>
-				<li>Includes basic code to toggle display of current status</li>
-				<li>Provides sample content to help with examining CSS effects</li>
+				<li>Provides default description text template</li>
+				<li>Includes JavaScript code to generate an HTML menu</li>
 				<!-- <li></li> -->
 			</ul>
 		</p>
@@ -33,6 +36,9 @@ TMP.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-15 ~ Add text content to JavaScript and read me</li>
+				<li>2019-01-15 ~ Add TMP.description variable and text</li>
+				<li>2019-01-15 ~ Add display TMP.description in pop-up and in test file</li>
 				<li>2019-01-13 ~ Add link to source code</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
 				<!-- <li></li> -->

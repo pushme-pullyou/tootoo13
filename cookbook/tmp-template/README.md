@@ -1,7 +1,7 @@
 
 <span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/tootoo13/#cookbook/tmp-template/README.md "View file as a web page." ) </span>
 
-<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/pushme-pullyou.github.io/blob/master/xxxxx/README.md"
+<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/tootoo13/blob/master/cookbook/tmp-template/README.md"
 value="You are now in a GitHub web page view - Click this button to view this read me file as source code" ></div>
 
 <br>
@@ -11,21 +11,35 @@ value="You are now in a GitHub web page view - Click this button to view this re
 <!--
 <iframe src=https://pushme-pullyou.github.io/xxxxx/xxxxx.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 _<small>TooToo Template</small>_
-
-## Full Screen: [TooToo Template]( https://pushme-pullyou.github.io/xxxxx/xxxxx.html )
 -->
 
+## Full Screen: [TooToo Template]( https://pushme-pullyou.github.io/tootoo13/cookbook/tmp-template/ )
 
-## Concept
 
-* Provides default description text template
-* Provides default current status text template
-* Includes basic code to toggle display of current status
-* Provides sample content to help with examining CSS effects
+## Concept / Issue or problem to solve
 
-### Functions
+
+### Mission
+
+Provide
+* a default description text template
+* a default current status text template
+* code to generate a typical HTML menu
+
+
+### Vision
+
+* You can create new modules in minutes
+
+
+### tmp-template.js - Features
+
+TMP.description
+
+* One line description of this module
 
 TMP.currentStatus
+
 * Informative content to be displayed in a pop-up help context
 * Description of the goal or concept of the function
 * List of features
@@ -33,10 +47,16 @@ TMP.currentStatus
 * Change log
 
 TMP.getMenuTemplate
+
 * Menu user interface template HTML content
-* Embedded on a ```<details>``` element
+* Embeds content in a ```<details>``` element
 * Includes a number of frequently used HTML elements to help with gauging and test CSS appearance
 
+
+### tmp-template.html - features
+
+* Basic HTML to call and display the template menu
+* Includes basic code to toggle display of current status HTML content
 
 
 ## To Do / Wish List

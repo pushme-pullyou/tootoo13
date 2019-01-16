@@ -10,43 +10,45 @@ value='You are now in a GitHub web page view - Click this button to view this re
 
 <!--
 <iframe src=https://pushme-pullyou.github.io/tootoo-templates/hamburger-theme-cms/r2/tootoo-cms.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
--->
 
 ## Full Screen: [TooToo13]( https://pushme-pullyou.github.io/tootoo13/ )
 
+-->
 
 
 ## Concept
 
-_Very simple JavaScript files to help you explore and build new tools on GitHub. Code names are a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl._
+_TooToo is a collection of very simple, plain-vanilla JavaScript scripts and test files to help you manage content on both GitHub branches and GitHub pages._
 
-TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with:
+_The collection title is a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl. See also, heh-heh, [pushMe-pullYou]( https://pushme-pullyou.github.io )._
 
-* Sliding menu for mobile operation
-* CSS theme selection
-* Markdown to HTML via Showdown
-* Folder and file names access via the GitHub API
-* URL, File dialog, drag and drop file reading capability
-* Access to frequently used pages
+Current set of modules
+
+* **[File Open Basic (FOB)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/fob-file-open-basic/README.md )** provides HTML and JavaScript to select, open and display local files using the file dialog box, drag and drop or URL
+* **Menu (MNU)** generates standard HTML TooToo header and footer menu panel code and content and code that works on computers, tablets and phones
+* **On Hash Change (OHC)** creates custom tree menus using location hash and GitHub API to select, load and display files hosted on given GitHub branches or GitHub pages
+* **TooToo Theme Select (THM)** creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
+* **TooToo Template (TMP)** provides HTML and JavaScript 'boilerplate' to create a typical TooToo menus
+
 
 
 ## To Do / Wish list
 
-## To Do
-
-* 2019-01-04 ~ Theo ~ make GitHub API request only once and triage the JSON thereafter
-* 2019-01-03 ~ Theo ~ popup toggle closes previous opens current with single click
-* 2019-01-02 ~ Issues with phone/tablet CSS
-* 2019-01-01 ~ Footer links needs homogenizing with tootoo/spider
-* 2018-07-24 ~ Theo ~ Move away from tables for building menu items
+See read me files in each module folder for to do items
 
 
 
 ## Change Log
 
+
+### 2019-01-15 ~ Theo
+
+* Update read me text
+
+
 ### 2019-01-13 ~ Theo
 
-* edits in most most modules
+* Edits in most most modules
 * Read me files have more content
 * Prototype users starting to appear
 

@@ -19,13 +19,23 @@ _<small>TooToo File Open Basic Test</small>_
 ## Concept
 
 ### Mission
+
+fob-file-open-basic.js
+
 * Creates the HTML for the user interface
-* Open local files given:
+* Opens local files given:
 	* URL
 	* FileReader() object
 	* XMLHttpRequest() object
 * Parses the file if necessary
+* Converts Markdown to HTML
 * Displays and renders results in a target ```<div>```
+
+fob-file-open-basic.html
+
+* Includes basic code to toggle display of current status
+* Includes button that opens local files with a URL
+
 
 This is a generic function. forks have been used to open XML, RAD and other file types
 
@@ -35,6 +45,10 @@ This is a generic function. forks have been used to open XML, RAD and other file
 
 
 ### fob-file-open-basic.js - Features of the Functions
+
+FOB.description
+
+* One line description
 
 FOB.currentStatus
 

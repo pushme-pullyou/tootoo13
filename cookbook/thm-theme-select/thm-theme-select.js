@@ -2,13 +2,19 @@
 // jshint esversion: 6
 /* globals navMenu, divW3Schools, divBootswatch, THMcssCurrent, THMcssW3schools, THMcssBootswatch */
 
-const THM = { "release": "R13.4", "date": "2019-01-09" };
+const THM = { "release": "R13.5", "date": "2019-01-15" };
+
+THM.description =
+	`
+		TooToo Theme Select (THM) creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
+	`;
+
 
 THM.currentStatus =
 	`
-		<h3>THM ${ THM.release} status ${ THM.date }</h3>
+		<h3>TooToo Theme Select (THM) ${ THM.release} -  ${ THM.date }</h3>
 
-		<p>Select Stylesheet Theme</p>
+		<p>${ THM.description }</p>
 
 		<p>This edition of the script provides significantly greater functionality over previous releases. Much testing needed</p>
 
@@ -26,12 +32,16 @@ THM.currentStatus =
 		<p>
 			Objective: make it easy for you to adapt the style of this viewer to the needs specific to your organization.
 		</p>
-
-		<p><a href="https://pushme-pullyou.github.io/#tootoo-templates/cookbook/select-stylesheet-theme/README.md" target="_blank">Read Me</a></p>
-
+		<p>
+			<a href="https://pushme-pullyou.github.io/#tootoo-templates/cookbook/select-stylesheet-theme/README.md" target="_blank">
+				TooToo Theme Select Read Me
+			</a>
+		</p>
 		<p>
 			Change log
 			<ul>
+				<li>2019-01-15 ~ Update THM.description text and related code</li>
+				<li>2019-01-14 ~ Add text content and fix links</li>
 				<li>2018-12-31 First commit here</li>
 				<li>Forked from Jaanga Cookbook R1</li>
 				<li>Add save/read stylesheet url to localStorage</li>

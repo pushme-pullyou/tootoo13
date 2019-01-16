@@ -3,7 +3,7 @@
 <head>
 <meta charset = "utf-8" >
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
-<meta name = "description" content = " On Hash Change test file and JavaScript" >
+<meta name = "description" content = "On Hash Change test file and JavaScript" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
 <meta name = "date" content = "2019-01-06" >
 <title>ohc-on-hash-change</title>
@@ -24,6 +24,9 @@
 
 	#divContents { height: 100%; left: 0; margin: 0 auto; max-width: 60rem; padding: 1rem; right: 0; }
 
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
+		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
 
 </style>
 </head>
@@ -63,14 +66,19 @@
 			<button id=but onclick=location.hash="https://raw.githubusercontent.com/ladybug-tools/spider/master/gbxml-sample-files/golden-co-open-studio-seb.xml"; accessKey= 'z' title='access key: z ' >golden-co-open-studio-seb.xml</button>
 		</p>
 
-		<div id=divPopUpData ></div>
+	</nav>
 
+
+	<nav id="navPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
 
 	</nav>
 
+
 	<div id="divContents" ></div>
-
-
 
 
 <script>
@@ -89,6 +97,7 @@ OHC.urlSourceCode = "https://github.com/jaanga/jaanga.github.io";
 */
 
 const MNU = {}; // for testing
+
 MNU.setPopupShowHide = function( id, text ) {
 
 	id.classList.toggle( "active" );
@@ -138,7 +147,7 @@ function getTitle() {
 		</h2>
 
 		<p>
-			${ document.head.querySelector( "[ name=description ]" ).content }
+			${ OHC.description }
 		</p>
 	`;
 

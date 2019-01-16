@@ -8,9 +8,10 @@ value="You are now in a GitHub web page view - Click this button to view this re
 
 # [MNU Menu Test Read Me]( #cookbook/mnu-menu/README.md )
 
-
+<!--
 <iframe src=https://pushme-pullyou.github.io/tootoo13/cookbook/mnu-menu/mnu-menu.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 _<small>MNU Menu Test</small>_
+-->
 
 ## Full Screen: [MNU Menu Test]( https://pushme-pullyou.github.io/tootoo13/cookbook/mnu-menu/mnu-menu.html )
 
@@ -73,7 +74,10 @@ Style.css
 ## To Do / Wish List
 
 * 2019-01-10 ~ Theo ~ Better updates when switching between portrait and landscape mode
-
+* 2019-01-03 ~ Theo ~ popup toggle closes previous opens current with single click
+* 2019-01-02 ~ Issues with phone/tablet CSS
+* 2019-01-01 ~ Footer links needs homogenizing with tootoo/spider
+* 2018-07-24 ~ Theo ~ Move away from tables for building menu items
 
 ## Issues
 
@@ -92,6 +96,8 @@ Style.css
 
 
 ## Change Log
+
+
 
 ### 2019-01-11 ~ Theo
 
