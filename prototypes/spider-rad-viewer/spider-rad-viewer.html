@@ -5,9 +5,9 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-12" >
+<meta name = "date" content = "2019-01-17" >
 <meta name = "release" content = "13.2.2" >
-<title>spider-rad-viewer</title>
+<title>Spider RAD Viewer</title>
 <link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/style.css">
 </head>
 <body>
@@ -20,13 +20,13 @@
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/tmp-template.js" ></script>
 <script>
 
-//Copyright 2019 pushMe-pullYou authors. MIT License
+//Copyright 2019 Ladybug Tools authors. MIT License
 
 MNU.currentStatusCore =
 	`
 		<h3>
-			TooToo
-			R${ document.head.querySelector( '[ name=release ]' ).content }
+			Spider RAD Viewer
+			<!-- R${ document.head.querySelector( '[ name=release ]' ).content } -->
 			~
 			${ document.head.querySelector( '[ name=date ]' ).content }
 		</h3>
@@ -34,17 +34,19 @@ MNU.currentStatusCore =
 		<p>
 			Change log
 			<ul>
-				<li>Fork to new repo</li>
+				<li>2019-01-17 ~ Update to lates TooToo</li>
 				<li>2019-01-09 ~ R13 beginning to look OK.</li>
 			</ul>
 		</p>
+
+		<p>This web page is built with:</p>
 
 		${ MNU.descriptionTooToo }
 	`;
 
 MNU.description =
 	`
-		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
+	View all the files on Ladybug Tools / Spider RAD Viewer with this basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop fule reading capability, access to frequently used pages and more.
 	`;
 
 
@@ -138,7 +140,7 @@ OHC.urlGitHubPage = `https://www.ladybug.tools/${ OHC.repo }/`;
 	</div>
 
 
-	<nav id="divPopUp" >
+	<nav id="navPopUp" >
 
 		<div id="divPopUpData" ></div>
 
@@ -170,7 +172,7 @@ function init() {
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
-	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
+	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
