@@ -27,11 +27,13 @@ _<small>TooToo ThemeSelect</small>_
 	* Style sheet from [W3Schools]( https://www.w3schools.com/w3css/w3css_color_themes.asp )
 	* Style sheet from [Bootswatch]( https://bootswatch.com/ ) a supplier of free themes for Bootstrap
 * Switch themes at any time
-* Current them choice is saved between sessions .
+* Current them choice is saved between sessions in local storage
 
 ### Vision
 
 Objective: make it easy for you to adapt the style of this viewer to the needs specific to your organization
+
+
 
 ### Code Features
 
@@ -44,14 +46,23 @@ Objective: make it easy for you to adapt the style of this viewer to the needs s
 
 ## Issues
 
+* 2019-01-17 ~ Currently selected Bootstrap theme not updated properly
+
 
 ## Things you can do using this script
 
-* Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
+### Using the Script
+
 * Click the Octocat icon to view or edit the source code on GitHub
 * Click on title to reload
 * Press Control-U/Command-Option-U to view the source code
 * Press Control-Shift-J/Command-Option-J to see if the JavaScript console reports any errors
+
+### Enhancing the script
+
+* Try adding a new menu theme
+* Translate into another language
+
 
 
 ## Links of Interest
@@ -59,6 +70,13 @@ Objective: make it easy for you to adapt the style of this viewer to the needs s
 
 
 ## thm-theme-select Change Log
+
+### 2019-01-17 ~ Theo
+
+* Set to use cookbook style sheet
+* Reset font-size
+* Fix some background issues
+
 
 ### 2019-01-14 ~ Theo
 

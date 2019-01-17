@@ -5,30 +5,15 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "Creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-14" >
+<meta name = "date" content = "2019-01-17" >
 <title></title>
-<style>
 
-	body { font: 12pt monospace; margin: 0 auto; max-width: 800px; }
-	a { color: crimson; text-decoration: none; }
-	a:hover, a:focus, a:active { background-color: yellow; color: #aaa; text-decoration: underline }
+<!--
 
-	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
-	button:hover { background: #ccc; color: #fff }
+	<link rel="stylesheet" href="style.css">
 
-	/*
-	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px; position: absolute; top: 0; }
-	*/
+-->
 
-	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 28-rem; padding: 0 10px;
-		position: fixed; top: 0; }
-
-	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
-		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
-		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
-
-
-</style>
 </head>
 <body>
 <script src="thm-theme-select.js" ></script>
@@ -46,6 +31,12 @@
 	</nav>
 
 
+	<div>
+
+		<button id="butHamburger" onclick=MNU.toggleNavLeft(); title="click here to hide this menu"> slide &#9776; </button>
+
+	</div>
+
 	<nav id="navPopUp" >
 
 		<div id="divPopUpData" ></div>
@@ -55,7 +46,11 @@
 	</nav>
 
 
-	<div id="divContents" ></div>
+	<div id="divContainer" >
+
+		<div id="divContents" ></div>
+
+	</div>
 
 
 <script>
@@ -64,8 +59,8 @@ const urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/co
 const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
 
 
-THM.cssBasic = "../../js-tootoo13/style.css";
-
+//THM.cssBasic = "../../js-tootoo13/style.css";
+THM.cssBasic = "style.css";
 
 init();
 
@@ -98,6 +93,7 @@ function init() {
 
 const MNU = {}; // for testing
 
+
 MNU.setPopupShowHide = function( id, text ) {
 
 	id.classList.toggle( "active" );
@@ -105,6 +101,33 @@ MNU.setPopupShowHide = function( id, text ) {
 	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? text : '';
 
 };
+
+
+
+MNU.toggleNavLeft = function() {
+
+	width = getComputedStyle(document.documentElement).getPropertyValue( '--mnu-width' ).trim();
+
+	//console.log( 'width', width );
+	//console.log( 'navMenu.style.width', navMenu.style.width );
+
+	if ( navMenu.style.width === "0px" ) { // invisible
+
+		navMenu.style.width = width;
+		navMenu.style.padding = '1rem';
+		butHamburger.style.left = 'var( --mnu-width )';
+		divContainer.style.marginLeft = width;
+
+	} else {
+
+		navMenu.style.width = "0px";
+		navMenu.style.padding = '0';
+		butHamburger.style.left = '-3rem';
+		divContainer.style.marginLeft = "0px";
+
+	}
+
+}
 
 
 

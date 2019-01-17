@@ -70,7 +70,6 @@ TMP.getMenuTemplate
 
 ### Using the Script
 
-* Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
 * Click the Octocat icon to view or edit the source code on GitHub
 * Click on title to reload
 * Press Control-U/Command-Option-U to view the source code

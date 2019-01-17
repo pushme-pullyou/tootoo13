@@ -170,6 +170,9 @@ THM.loadCssBasic = function() {
 	localStorage.setItem( THM.themeUrlStorage, THM.cssBasic );
 	THMcssCurrent.value = THM.cssBasic;
 
+	navMenu.style.backgroundColor =  "#eee";
+	navPopUp.style.backgroundColor =  "#eee";
+
 };
 
 
@@ -298,7 +301,7 @@ THM.toggleTagsClassListBootswatch = function( action = 'add' ) {
 	document.body.querySelectorAll( 'nav' )
 		.forEach( item => {
 			item.classList[ action ]( "jumbotron" );
-			item.style.backgroundColor = '';
+			//item.style.backgroundColor = '';
 		} );
 
 
