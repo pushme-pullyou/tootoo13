@@ -98,6 +98,10 @@ Style.css
 ## Change Log
 
 
+### 2019-01-17 ~ Theo
+
+mnu-menu.js
+* Add link to source code in TooToo description
 
 ### 2019-01-11 ~ Theo
 

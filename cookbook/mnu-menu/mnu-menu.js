@@ -3,7 +3,8 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.6", "date": "2019-01-15" };
+const MNU = { "release": "R13.7", "date": "2019-01-17" };
+
 
 MNU.description =
 	`
@@ -55,9 +56,15 @@ MNU.description =
 
 ////////// boilerplate for downstream users
 
+MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
+MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
+MNU.urlSourceCodeUrl = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
+
+
 MNU.descriptionTooToo =
 	`
 		<h3>
+			<a href="https://github.com/pushme-pullyou/tootoo13" target="_blank">${ MNU.urlSourceCodeIcon }</a>
 			<a href="https://pushme-pullyou.github.io#tootoo13/README.md" target="_blank">
 				TooToo13 Read Me
 			</a>
@@ -104,10 +111,6 @@ MNU.repoUrl = "";
 MNU.appText = "appText";
 MNU.appTitle = "appTitle";
 MNU.appUrl = "";
-
-MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
-MNU.urlSourceCodeUrl = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo13/cookbook/mnu-menu";
 
 MNU.footerUrl = "#";
 MNU.footerTarget = ""; //"target=_blank";
