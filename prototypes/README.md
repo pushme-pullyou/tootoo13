@@ -20,10 +20,12 @@ _<small>Prototypes</small>_
 
 * Test files for for forks of TooToo
 
-[ pushme-pullyou]( prototypes/pushme-pullyou/index.html )
+[template]( prototypes/0-template/index.html )
+[pushme-pullyou]( prototypes/pushme-pullyou/index.html )
 [spider-gbxml-tools]( prototypes/spider-gbxml-tools/index.html )
-[ spider-rad-viewer]( prototypes/spider-rad-viewer/index.html )
-[ theo-armour]( prototypes/theo-armour/index.html )
+[Spider RAD Viewer Home]( prototypes/spider-rad-viewer/index.html )
+[theo-armour]( prototypes/theo-armour/index.html )
+
 
 ## To Do / Wish List
 
@@ -33,11 +35,17 @@ _<small>Prototypes</small>_
 
 ## Things you can do using this script
 
+### Using the Script
 * Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
 * Click the Octocat icon to view or edit the source code on GitHub
 * Click on title to reload
 * Press Control-U/Command-Option-U to view the source code
 * Press Control-Shift-J/Command-Option-J to see if the JavaScript console reports any errors
+
+### Enhancing the Script
+
+* Try building your own GitHub content management system
+
 
 
 ## Links of Interest

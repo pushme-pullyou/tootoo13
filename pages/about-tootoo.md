@@ -13,7 +13,7 @@ value='You are now in a GitHub web page view - Click this button to view this re
 
 _TooToo is a collection of very simple, plain-vanilla JavaScript scripts and test files to help you manage content on both GitHub branches and GitHub pages._
 
-Scripts that list, open and display files in a menu are known as [Content Management Systems (CMS)]( https://en.wikipedia.org/wiki/Content_management_system ).
+Scripts that list, open and display files in a menu are known as a [Content Management System (CMS)]( https://en.wikipedia.org/wiki/Content_management_system ).
 
 The objectives of a CMS include:
 

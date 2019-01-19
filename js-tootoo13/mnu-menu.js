@@ -150,7 +150,7 @@ MNU.getNavHeader = function() {
 			<a href=${ MNU.urlSourceCodeUrl } ${ MNU.footerTarget } title="Source code on GitHub" >
 			${ MNU.urlSourceCodeIcon }
 			</a>
-			<a href="" title="Click to reload this page" >${ document.title }</a>
+			<a href="" title="Click to reload this page" >${ document.title } R${ document.head.querySelector( '[ name=release ]' ).content }</a>
 
 			<a id=mnuCore class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuCore,MNU.currentStatusCore);"
 				title="Current status: core module" >&nbsp; ? &nbsp;
