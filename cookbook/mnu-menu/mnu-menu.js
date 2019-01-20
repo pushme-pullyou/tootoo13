@@ -58,7 +58,7 @@ MNU.description =
 
 MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
 MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
-MNU.urlSourceCodeUrl = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
+MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
 
 
 MNU.descriptionTooToo =
@@ -147,21 +147,21 @@ MNU.getNavHeader = function() {
 		${ MNU.appUrl ? '&raquo;' : '' }
 		</h3>
 		<h2>
-			<a href=${ MNU.urlSourceCodeUrl } ${ MNU.footerTarget } title="Source code on GitHub" >
+			<a href=${ MNU.urlSourceCode } ${ MNU.footerTarget } title="Source code on GitHub" >
 			${ MNU.urlSourceCodeIcon }
 			</a>
-			<a href="" title="Click to reload this page" >${ document.title }</a>
+			<a href="" title="Click to reload this page" >${ document.title } R${ document.head.querySelector( '[ name=release ]' ).content }</a>
 
 			<a id=mnuCore class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuCore,MNU.currentStatusCore);"
 				title="Current status: core module" >&nbsp; ? &nbsp;
 			</a>
 		</h3>
 
-		<div>
+		<p>
 			${ MNU.description } <a id=mnuHead class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuHead,MNU.currentStatusMenu);"
 				title="Current status" >&nbsp; ? &nbsp;
 			</a>
-		</div>
+		</p>
 	`;
 
 	return htm;
@@ -180,7 +180,10 @@ MNU.getNavFooter = function() {
 				<a id=mnuFoot class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuFoot,MNU.currentStatusMenu);" >&nbsp; ? &nbsp;</a>
 			</summary>
 
+			<!--
 			<div style=margin-top:1rem; title='What is this stuff?' ><a href=${ MNU.footerUrl }pages/coding-style.md ${ MNU.footerTarget } >Coding style</a></div>
+			-->
+			<div title='many thanks!' ><a href=${ MNU.footerUrl }pages/about-tootoo.md ${ MNU.footerTarget } >About TooToo</a></div>
 			<div title='many thanks!' ><a href=${ MNU.footerUrl }pages/credits.md ${ MNU.footerTarget } >Credits</a></div>
 			<div><a href=${ MNU.footerUrl }pages/code-of-conduct.md ${ MNU.footerTarget } >Code of conduct</a></div>
 			<div><a href=${ MNU.footerUrl }pages/contributing.md ${ MNU.footerTarget } >Contributing via GitHub</a></div>

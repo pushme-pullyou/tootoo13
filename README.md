@@ -31,9 +31,6 @@ Current set of modules
 * **[TooToo Theme Select (THM)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/thm-theme-select/README.md )** creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
 * **[TooToo Template (TMP)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/tmp-template/README.md )** provides HTML and JavaScript 'boilerplate' to create a typical TooToo menus
 
-## Prototypes
-
-<div id=SFMdivPrototypes ></div>
 
 ## To Do / Wish list
 
@@ -45,6 +42,9 @@ See read me files in each module folder for to do items
 
 ## Change Log
 
+### 2019-01-17 ~ Theo
+
+* Add prototypes.md
 
 ### 2019-01-15 ~ Theo
 
@@ -77,7 +77,7 @@ ohc-on-hash-change
 TooToo13
 
 Cookbook
-* Add hsh-on-hash-change
+* Add on-hash-change
 
 Progress
 * 2019-01-01 ~ HTML iframes and textareas have incorrect heights
