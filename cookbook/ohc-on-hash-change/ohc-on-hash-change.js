@@ -281,7 +281,7 @@ OHC.getFoldersFromContents = function( items ) {
 			// why does this not work? item.path.split( "/" ).pop()
 			htm +=
 			`
-				<div style=margin-bottom:8px; >
+				<div style=margin-bottom:8px;padding:0; >
 					<a href=JavaScript:OHC.setMenuGitHubPathFileNames("${ item.path.slice( len ) }"); >
 						&#x1f4c1; ${ item.name }
 					</a>
