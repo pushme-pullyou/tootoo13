@@ -12,7 +12,6 @@ value='You are now in a GitHub web page view - Click this button to view this re
 <iframe src=https://pushme-pullyou.github.io/tootoo-templates/hamburger-theme-cms/r2/tootoo-cms.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 
 ## Full Screen: [TooToo13]( https://pushme-pullyou.github.io/tootoo13/ )
-
 -->
 
 
@@ -20,7 +19,7 @@ value='You are now in a GitHub web page view - Click this button to view this re
 
 _TooToo is a collection of very simple, plain-vanilla JavaScript scripts and test files to help you manage content on both GitHub branches and GitHub pages._
 
-_The collection title is a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl. See also, heh-heh, [pushMe-pullYou]( https://pushme-pullyou.github.io )._
+_The collection title is a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl. See also, heh-heh, [pushMe-pullYou]( https://pushme-pullyou.github.io ). Do you git it?_
 
 Current set of modules
 
@@ -31,6 +30,7 @@ Current set of modules
 * **[TooToo Theme Select (THM)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/thm-theme-select/README.md )** creates HTML menus and provides JavaScript code to add, select and load themes based on industry-standard CSS stylesheets
 * **[TooToo Template (TMP)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/tmp-template/README.md )** provides HTML and JavaScript 'boilerplate' to create a typical TooToo menus
 
+Much more in [About TooToo]( #pages/about-tootoo.md )
 
 ## To Do / Wish list
 
@@ -41,6 +41,10 @@ See read me files in each module folder for to do items
 
 
 ## Change Log
+
+### 2019-01-19 ~ Theo
+
+* Minor style, content and link fixes
 
 ### 2019-01-17 ~ Theo
 

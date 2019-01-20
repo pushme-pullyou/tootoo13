@@ -5,8 +5,8 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-17" >
-<meta name = "release" content = "13.2.2" >
+<meta name = "date" content = "2019-01-19" >
+<meta name = "release" content = "2.0" >
 <title>Spider RAD Viewer Home</title>
 <link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/style.css">
 </head>
@@ -25,8 +25,7 @@
 MNU.currentStatusCore =
 	`
 		<h3>
-			Spider RAD Viewer Home
-			<!-- R${ document.head.querySelector( '[ name=release ]' ).content } -->
+			Spider RAD Viewer HomebR${ document.head.querySelector( '[ name=release ]' ).content }
 			~
 			${ document.head.querySelector( '[ name=date ]' ).content }
 		</h3>
@@ -34,7 +33,7 @@ MNU.currentStatusCore =
 		<p>
 			Change log
 			<ul>
-				<li>2019-01-17 ~ Update to lates TooToo</li>
+				<li>2019-01-19 ~ Update to latest TooToo13</li>
 				<li>2019-01-09 ~ R13 beginning to look OK.</li>
 			</ul>
 		</p>
@@ -55,7 +54,7 @@ const uriDefaultFile = '#README.md';
 THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13/style.css";
 
 // For main menu header
-MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo-templates/hamburger-css";
+MNU.urlSourceCode = "https://github.com/ladybug-tools/spider-rad-viewer";
 
 MNU.homeText = ""; // "pushMe-pullYou";
 MNU.homeTitle = ""; "Very simple JavaScript files to help you explore and build new tools on GitHub.";
@@ -69,8 +68,8 @@ MNU.appText = "";// "CMS";
 MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
 MNU.appUrl = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
 
-MNU.urlSourceCodeImage="https://status.github.com/images/invertocat.png";
-MNU.urlSourceCodeIcon=`<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
+MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
+MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
 
 MNU.footerUrl = "#https://www.ladybug.tools/spider/";
 MNU.footerTarget = ""; //"target=_blank";
