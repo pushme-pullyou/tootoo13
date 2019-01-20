@@ -23,8 +23,9 @@ _<small>Prototypes</small>_
 [template]( prototypes/0-template/index.html )
 [pushme-pullyou]( prototypes/pushme-pullyou/index.html )
 [spider-gbxml-tools]( prototypes/spider-gbxml-tools/index.html )
+[Spider gbXML Viewer]( prototypes/spider-gbxml-viewer/index.html )
 [Spider RAD Viewer Home]( prototypes/spider-rad-viewer/index.html )
-[theo-armour]( prototypes/theo-armour/index.html )
+[Theo Armour]( prototypes/theo-armour/index.html )
 
 
 ## To Do / Wish List

@@ -11,6 +11,9 @@ Current build: <a href="https://pushme-pullyou.github.io" target="_blank">pushme
 Develop build: <a href="../../prototypes/spider-gbxml-tools/index.html" target="_blank">spider-gbxml-tools</a>
 Current build: <a href="https://ladybug-tools.github.io/spider-gbxml-tools" target="_blank">spider-gbxml-tools</a>
 
+Develop build: <a href="../../prototypes/spider-gbxml-viewer/index.html" target="_blank">spider-gbxml-viewer</a>
+Current build: <a href="https://ladybug-tools.github.io/spider-gbxml-viewer" target="_blank">spider-gbxml-viewer</a>
+
 Develop build: <a href="../../prototypes/spider-rad-viewer/index.html" target="_blank">spider-rad-viewer</a>
 Current build: <a href="https://ladybug-tools.github.io.spider-rad-viewer" target="_blank">spider-rad-viewer</a>
 
