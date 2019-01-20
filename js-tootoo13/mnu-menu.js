@@ -157,11 +157,11 @@ MNU.getNavHeader = function() {
 			</a>
 		</h3>
 
-		<div>
+		<p>
 			${ MNU.description } <a id=mnuHead class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuHead,MNU.currentStatusMenu);"
 				title="Current status" >&nbsp; ? &nbsp;
 			</a>
-		</div>
+		</p>
 	`;
 
 	return htm;
