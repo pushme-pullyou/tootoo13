@@ -58,7 +58,7 @@ MNU.description =
 
 MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
 MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
-MNU.urlSourceCodeUrl = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
+MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
 
 
 MNU.descriptionTooToo =
@@ -147,7 +147,7 @@ MNU.getNavHeader = function() {
 		${ MNU.appUrl ? '&raquo;' : '' }
 		</h3>
 		<h2>
-			<a href=${ MNU.urlSourceCodeUrl } ${ MNU.footerTarget } title="Source code on GitHub" >
+			<a href=${ MNU.urlSourceCode } ${ MNU.footerTarget } title="Source code on GitHub" >
 			${ MNU.urlSourceCodeIcon }
 			</a>
 			<a href="" title="Click to reload this page" >${ document.title } R${ document.head.querySelector( '[ name=release ]' ).content }</a>

@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.5", "date": "2019-01-15" };
+const OHC = { "release": "R13.6", "date": "2019-01-19" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -251,7 +251,17 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	const htmFiles = OHC.getFilesFromContents( items );
 
-	OHCdivMenuItems.innerHTML = htmFolders + htmFiles;
+	const htmHelp =
+	`
+		<p>Click any <a href=${ OHC.urlSourceCode } >${ OHC.iconInfo }</a> icon to view source code on GitHub.
+
+		<p>Click any &#x2750; icon to go full screen & obtain a link to the individual file.</p>
+
+		<p>Tooltips provide file size.</p>
+	`;
+
+
+	OHCdivMenuItems.innerHTML = htmFolders + htmFiles + htmHelp;
 
 };
 
