@@ -25,7 +25,9 @@ _<small>ZZZZZ</small>_
 ## Issues
 
 
-## Things you can do using this script
+## Things you can do u
+
+Using the Script
 
 * Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
 * Click the Octocat icon to view or edit the source code on GitHub
@@ -33,6 +35,10 @@ _<small>ZZZZZ</small>_
 * Press Control-U/Command-Option-U to view the source code
 * Press Control-Shift-J/Command-Option-J to see if the JavaScript console reports any errors
 
+Enhancing the Script
+
+* Try adding a new menu module
+* Translate into another language
 
 ## Links of Interest
 
