@@ -194,6 +194,7 @@ MNU.getNavFooter = function() {
 			<div>! <a href="javascript:( function(){ var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()" title="Mr.doob's Stats.js appear in top left corner" >Show frames/second statistics</a></div>
 			<div>&raquo; <a href="https://api.github.com/rate_limit" title='If files and folder stop appearing, it is likely due to too many API calls' target=_blank >View GitHub API rate limits</a></div>
 
+			<div><button onclick=MNU.rateLimits(); >View GitHub API rate limits</button>
 			<hr>
 
 		</details>
@@ -204,7 +205,25 @@ MNU.getNavFooter = function() {
 };
 
 
+MNU.rateLimits = function() {
 
+	url = "https://api.github.com/rate_limit";
+
+	xhr = new XMLHttpRequest();
+
+	xhr.open( 'GET', url, true );
+	xhr.onerror = function( xhr ) { console.log( 'error:', xhr  ); };
+	//xhr.onprogress = function( xhr ) { console.log(  'bytes loaded: ' + xhr.loaded.toLocaleString() ) }; /// or something
+	xhr.onload = callback;
+	xhr.send( null );
+
+	function callback( xhr ) {
+
+		divPopUpData.innerText = `${ ( new Date() ) } \n \n ${ xhr.target.response }`;
+
+	}
+
+}
 //////////
 
 MNU.setPopupShowHide = function( id, text ) {
@@ -275,6 +294,7 @@ MNU.onTouchMove = function(event) {
 	MNU.yDown = null;
 
 };
+
 
 
 MNU.toggleNavLeft = function() {

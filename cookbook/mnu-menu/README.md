@@ -97,6 +97,11 @@ Style.css
 
 ## Change Log
 
+### 2019-01-22 ~ Theo
+
+mnu-menu.js
+* Update show results in pop-up with button click
+
 
 ### 2019-01-17 ~ Theo
 

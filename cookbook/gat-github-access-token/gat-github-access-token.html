@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang = "en" >
+<head>
+<meta charset = "utf-8" >
+<meta name = "viewport" content= "width=device-width, initial-scale=1" >
+<meta name = "description" content = "Gets GitHub API Access Token / overcomes the sixty requests per hour rate limit" >
+<meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
+<meta name = "date" content = "2019-01-21" >
+<title></title>
+<style>
+
+body { font: 12pt monospace; height: 100%; margin: 0 auto; max-width: 800px; }
+	a { color: crimson; text-decoration: none; }
+	a:hover, a:focus, a:active { background-color: yellow; color: #aaa; text-decoration: underline }
+
+	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
+	button:hover { background: #ccc; color: #fff }
+
+	#navMenu { background-color: #eee; max-height: 95%; left: 0; margin: 20px; width: 20rem;
+		overflow: auto; padding: 0 10px; position: fixed; resize: both; top: 0; }
+
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
+		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
+</style>
+</head>
+<body>
+<script src = "gat-github-access-token.js" ></script>
+<script>
+
+
+</script>
+
+	<nav id="navMenu" >
+
+		<div id="divTitle" ></div>
+
+		<p>
+			<button id=but onclick=testIt(); accessKey= 'z' title='access key: z '>test it</button>
+		</p>
+
+		<div id=GATdivGitHubAccessToken ></div>
+
+	</nav>
+
+
+	<nav id="navPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
+
+	</nav>
+
+
+	<div id="divContents" ></div>
+
+
+<script>
+
+
+const urlSourceCode = "https://github.com/zzzzz/xxxxx.html";
+const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
+
+init();
+
+function init() {
+
+	divTitle.innerHTML = getTitle();
+
+	GATdivGitHubAccessToken.innerHTML = GAT.getMenuGitHubAccessToken();
+
+	divContents.innerHTML += `${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>`;
+
+}
+
+
+
+function testIt() {
+
+	const gat = GAT.accessToken ? `?access_token=${ GAT.accessToken }` : "";
+
+	const url = 'https://api.github.com/repos/pushme-pullyou/tootoo13/contents/' + gat;
+
+	const xhr = new XMLHttpRequest();
+
+	xhr.open( 'GET', url, true );
+	xhr.onerror = function( xhr ) { console.log( 'error:', xhr  ); };
+	//xhr.onprogress = function( xhr ) { console.log(  'bytes loaded: ' + xhr.loaded.toLocaleString() ) }; /// or something
+	xhr.onload = callback;
+	xhr.send( null );
+
+	function callback( xhr ) {
+
+		if ( xhr.target.response.includes( 'API rate limit exceeded' ) ) {
+
+			json = JSON.parse( xhr.target.response )
+			divPopUpData.innerHTML =
+			`
+				<p>
+					${ json.message }
+				</p>
+				<p>
+					${ json.documentation_url.link( json.documentation_url ) }
+				</p>
+			`;
+		} else {
+
+			divContents.innerHTML = `${ ( new Date() ) } <p>${ ( xhr.target.response ) } </p>`;
+
+		}
+
+
+	}
+
+}
+
+
+
+
+
+
+const MNU = {}; // for testing
+
+
+MNU.setPopupShowHide = function( id, text ) {
+	//console.log( 'id', id );
+
+	id.classList.toggle( "active" );
+
+	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? text : '';
+
+};
+
+
+
+function getTitle() {
+
+	document.title = document.title ? document.title : location.href.split( '/' ).pop().slice( 0, - 5 ).replace( /-/g, ' ' );
+
+	const htm =
+	`
+		<h2>
+			<a href=${ urlSourceCode } target=_top title="Source code on GitHub" >
+				<img src=${ urlSourceCodeIcon } height=18 >
+			</a>
+			<a href="" title="Click to reload this page" >${ document.title }</a>
+		</h2>
+
+		<p>
+			${ document.head.querySelector( "[ name=description ]" ).content }
+		</p>
+	`;
+
+	return htm;
+
+}
+
+</script>
+</body>
+</html>

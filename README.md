@@ -36,8 +36,13 @@ Much more in [About TooToo]( #pages/about-tootoo.md )
 
 See read me files in each module folder for to do items
 
+* 2019-01-22 ~ Theo ~ Add new GAT code
 * 2019-01-15 ~ Theo ~ file save to file & save save to ZIP module
 * 2019-01-15 ~ Theo ~ file open ZIP, select and display contents module
+
+## Issues
+
+* 2019-01-22 ~ Theo ~ Menu background color not updating with style changes
 
 
 ## Change Log
