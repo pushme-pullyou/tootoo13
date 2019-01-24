@@ -3,7 +3,7 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.7", "date": "2019-01-17" };
+const MNU = { "release": "R13.8", "date": "2019-01-23" };
 
 
 MNU.description =
@@ -32,10 +32,12 @@ MNU.description =
 
 		<p>This module is ready for light testing.</p>
 
-		<p><a href="https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo13/cookbook/mnu-menu/" target="_blank" >TooToo Menu Read Me</a></p>
+		<p><a href="https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/mnu-menu/README.md" target="_blank" >TooToo Menu Read Me</a></p>
 
-		<p>
-			Change log
+		<details>
+
+			<summary>Change log</summary>
+
 			<ul>
 				<li>2019-01-15 ~ Add MNU.description text content and code</li>
 				<li>2019-01-14 ~ Update text content</li>
@@ -50,7 +52,8 @@ MNU.description =
 				<li>2018-12-22 ~ Update subtext</li>
 				<!-- <li></li> -->
 			</ul>
-		</p>
+			
+		</details>
 	`;
 
 
@@ -180,9 +183,6 @@ MNU.getNavFooter = function() {
 				<a id=mnuFoot class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuFoot,MNU.currentStatusMenu);" >&nbsp; ? &nbsp;</a>
 			</summary>
 
-			<!--
-			<div style=margin-top:1rem; title='What is this stuff?' ><a href=${ MNU.footerUrl }pages/coding-style.md ${ MNU.footerTarget } >Coding style</a></div>
-			-->
 			<div title='many thanks!' ><a href=${ MNU.footerUrl }pages/about-tootoo.md ${ MNU.footerTarget } >About TooToo</a></div>
 			<div title='many thanks!' ><a href=${ MNU.footerUrl }pages/credits.md ${ MNU.footerTarget } >Credits</a></div>
 			<div><a href=${ MNU.footerUrl }pages/code-of-conduct.md ${ MNU.footerTarget } >Code of conduct</a></div>
@@ -190,10 +190,9 @@ MNU.getNavFooter = function() {
 			<div><a href=${ MNU.footerUrl }pages/license.md ${ MNU.footerTarget } >MIT License</a></div>
 			<div><a href=${ MNU.footerUrl }pages/markdown-help.md ${ MNU.footerTarget } >Markdown help</a></div>
 			<div><a href=${ MNU.footerUrl }pages/themes.md ${ MNU.footerTarget } >Themes help</a></div>
-			<div>&raquo; <a title='Need help' href=${ MNU.footerIssues } target=_blank >GitHub Issues</a></div>
-			<div>! <a href="javascript:( function(){ var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()" title="Mr.doob's Stats.js appear in top left corner" >Show frames/second statistics</a></div>
-			<div>&raquo; <a href="https://api.github.com/rate_limit" title='If files and folder stop appearing, it is likely due to too many API calls' target=_blank >View GitHub API rate limits</a></div>
-
+			<div>&raquo; <a title='Need help' href=${ MNU.footerIssues } target=_blank >${ MNU.repoTitle } GitHub Issues</a></div>
+			<div><button onclick=MNU.showFps() >Show frames/second statistics</button></div>
+			<div><button onclick=MNU.rateLimits(); >View GitHub API rate limits</button>
 			<hr>
 
 		</details>
@@ -204,7 +203,59 @@ MNU.getNavFooter = function() {
 };
 
 
+MNU.showFps = function(){
 
+	script = document.body.appendChild( document.createElement('script') );
+
+	script.onload = function() {
+
+		stats = new Stats();
+
+		document.body.appendChild( stats.dom );
+
+		loop();
+
+	}
+
+	script.src='https://rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+
+	function loop(){
+
+		stats.update();
+		requestAnimationFrame( loop );
+
+	}
+
+};
+
+
+MNU.rateLimits = function() {
+
+	const url = "https://api.github.com/rate_limit";
+
+	const xhr = new XMLHttpRequest();
+	xhr.open( 'GET', url, true );
+	xhr.onload = callback;
+	xhr.send( null );
+
+	function callback( xhr ) {
+
+		divPopUpData.innerHTML =
+		`
+			<h3>GitHub rate limits status</h3>
+
+			<p>
+				Some TooToo scripts use the GitHub Developer API which has rate limits.
+			</p>
+
+			<p>See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.</p>
+
+			<pre> ${ xhr.target.response } </pre>
+		`;
+
+	}
+
+}
 //////////
 
 MNU.setPopupShowHide = function( id, text ) {
@@ -275,6 +326,7 @@ MNU.onTouchMove = function(event) {
 	MNU.yDown = null;
 
 };
+
 
 
 MNU.toggleNavLeft = function() {
