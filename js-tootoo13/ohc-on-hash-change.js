@@ -74,15 +74,22 @@ OHC.currentStatusAccessToken =
 		<p>This script uses the GitHub API to obtain the names of folders and files displayed in this menu.</p>
 
 		<p>
-			In rare circumstances usage may push the requests over the sixty requests per hour limit,
+			In rare circumstances your usage may push the requests over the sixty requests per hour limit,
 			no list of files will appear and this script will display an error message.
-			After an or so so, the rates limit is automatically reset and menus will dis[lay as expected.
+			After an or so so, the rates limit is automatically reset and menus will again display as expected.
 		</p>
 
 		<p>
 			If you are testing or building new menus or whatever,
-			you may obtain at no charge an access token from GitHub and enter the token into the text box.
-			This will raise the limit to 5,000 requests per hour. See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.
+			you may obtain access tokens from GitHub at no charge and enter the token into the text box.
+			This will raise your limit to 5,000 requests per hour.
+		</p>
+		<p>
+			See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.
+		</p>
+		<p>
+			<button onclick=OHC.requestFile("https://api.github.com/rate_limit",OHC.callbackRateLimits); title='If files and folder stop appearing, it is likely due to too many API calls' >
+				View GitHub API rate limits</button>
 		</p>
 	`;
 
@@ -195,6 +202,20 @@ OHC.requestFile = function( url, callback ) {
 
 ////////// same as FOB
 
+
+OHC.callbackRateLimits = function( xhr ) {
+
+	divPopUpData.innerHTML=
+		`
+		<h3>Current GitHub rate limits</h3>
+
+		<p>See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.</p>
+
+		<pre> ${ xhr.target.response } </pre>
+
+		`;
+
+}
 
 OHC.callbackMarkdown = function( xhr ) {
 
