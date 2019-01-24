@@ -97,6 +97,14 @@ Style.css
 
 ## Change Log
 
+### 2019-01-23 ~ Theo
+
+mnu-menu.js
+
+* Start FPS with button
+* Show GH rate limits with button
+* Update content
+
 ### 2019-01-22 ~ Theo
 
 mnu-menu.js
