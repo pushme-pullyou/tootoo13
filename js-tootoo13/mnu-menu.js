@@ -52,7 +52,7 @@ MNU.description =
 				<li>2018-12-22 ~ Update subtext</li>
 				<!-- <li></li> -->
 			</ul>
-			
+
 		</details>
 	`;
 
@@ -190,7 +190,7 @@ MNU.getNavFooter = function() {
 			<div><a href=${ MNU.footerUrl }pages/license.md ${ MNU.footerTarget } >MIT License</a></div>
 			<div><a href=${ MNU.footerUrl }pages/markdown-help.md ${ MNU.footerTarget } >Markdown help</a></div>
 			<div><a href=${ MNU.footerUrl }pages/themes.md ${ MNU.footerTarget } >Themes help</a></div>
-			<div>&raquo; <a title='Need help' href=${ MNU.footerIssues } target=_blank >${ MNU.repoTitle } GitHub Issues</a></div>
+			<div>&raquo; <a title='Need help' href=${ MNU.footerIssues } target=_blank >${ MNU.repoText } GitHub Issues</a></div>
 			<div><button onclick=MNU.showFps() >Show frames/second statistics</button></div>
 			<div><button onclick=MNU.rateLimits(); >View GitHub API rate limits</button>
 			<hr>

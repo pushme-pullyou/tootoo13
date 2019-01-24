@@ -168,9 +168,9 @@ To help you
 
 ### Namespace, Variable Names and File Namespace
 
-	* Menu and column headers have tooltips that indicate namespace and script name.
-	* Example: the Select menu has `SEL` as a namespace and `sel-select-r1.js` as a file
-	* Every script is in its own folder with its own HTML testing file
+* Menu and column headers have tooltips that indicate namespace and script name.
+* Example: the Select menu has `SEL` as a namespace and `sel-select-r1.js` as a file
+* Every script is in its own folder with its own HTML testing file
 
 
 ### Written for GitHub Users and Coders

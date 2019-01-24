@@ -36,7 +36,7 @@ Much more in [About TooToo]( #pages/about-tootoo.md )
 
 See read me files in each module folder for to do items
 
-* 2019-01-22 ~ Theo ~ Add new GAT code
+
 * 2019-01-15 ~ Theo ~ file save to file & save save to ZIP module
 * 2019-01-15 ~ Theo ~ file open ZIP, select and display contents module
 
@@ -44,8 +44,18 @@ See read me files in each module folder for to do items
 
 * 2019-01-22 ~ Theo ~ Menu background color not updating with style changes
 
+<details>
 
-## Change Log
+
+<summary>Change Log</summary>
+
+### 2019-01-23 ~ Theo
+
+* Add details to change log
+
+Started
+
+* 2019-01-22 ~ Theo ~ Add new GAT code
 
 ### 2019-01-19 ~ Theo
 
@@ -58,7 +68,6 @@ See read me files in each module folder for to do items
 ### 2019-01-15 ~ Theo
 
 * Update read me text
-
 
 ### 2019-01-13 ~ Theo
 
@@ -143,6 +152,8 @@ TooToo CMS
 
 * First commit
 * Many fixes and adds
+
+</details>
 
 ***
 
