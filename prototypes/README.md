@@ -21,10 +21,12 @@ _<small>Prototypes</small>_
 * Test files for for forks of TooToo
 
 [template]( prototypes/0-template/index.html )
+[template threejs]( prototypes/0-template-threejs/index.html )
 [pushme-pullyou]( prototypes/pushme-pullyou/index.html )
 [spider-gbxml-tools]( prototypes/spider-gbxml-tools/index.html )
 [Spider gbXML Viewer]( prototypes/spider-gbxml-viewer/index.html )
-[Spider RAD Viewer Home]( prototypes/spider-rad-viewer/index.html )
+[Spider RAD Viewer]( prototypes/spider-rad-viewer/index.html )
+[Spider RAD Viewer Home]( prototypes/spider-rad-viewer-home/index.html )
 [Theo Armour]( prototypes/theo-armour/index.html )
 
 
@@ -54,6 +56,12 @@ _<small>Prototypes</small>_
 
 
 ## Change Log
+
+### 2019-01-25 ~ Theo
+
+Prototypes
+* Add template Three.js
+* Fix Style for gbxml viewer
 
 ### 2019-01-12 ~
 

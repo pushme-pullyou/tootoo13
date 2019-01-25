@@ -42,6 +42,7 @@ See read me files in each module folder for to do items
 
 ## Issues
 
+2019-01-24 ~ Theo ~ Footer buttons need closers
 
 <details>
 
