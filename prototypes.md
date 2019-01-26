@@ -12,6 +12,9 @@ The following are GitHub projects currently built on TooToo:
 Develop build: <a href="prototypes/0-template/index.html" target="_blank">template</a>
 Current build: <a href="https://pushme-pullyou.github.io/tootoo13/prototypes/0-template/" target="_blank">template</a>
 
+Develop build: <a href="prototypes/0-template-threejs/index.html" target="_blank">template threejs</a>
+Current build: <a href="https://pushme-pullyou.github.io/tootoo13/prototypes/0-template-threejs/" target="_blank">template threejs</a>
+
 Develop build: <a href="prototypes/pushme-pullyou/index.html" target="_blank">pushme-pullyou</a>
 Current build: <a href="https://pushme-pullyou.github.io" target="_blank">pushme-pullyou</a>
 
