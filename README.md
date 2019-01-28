@@ -21,7 +21,7 @@ _TooToo is a collection of very simple, plain-vanilla JavaScript scripts and tes
 
 _The collection title is a play on the [Dr Dolittle]( https://en.wikipedia.org/wiki/Doctor_Dolittle ) naming style. Too-Too is the name of the good doctor's talking pet owl. See also, heh-heh, [pushMe-pullYou]( https://pushme-pullyou.github.io ). Do you git it?_
 
-Current set of modules
+Current set of modules:
 
 * **[File Open Basic (FOB)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/fob-file-open-basic/README.md )** provides HTML and JavaScript to select, open and display local files using the file dialog box, drag and drop or URL
 * **[Menu (MNU)]( https://pushme-pullyou.github.io/tootoo13/tootoo13.html#cookbook/mnu-menu/README.md )** generates standard HTML TooToo header and footer menu panel code and content and code that works on computers, tablets and phones
@@ -37,16 +37,21 @@ Much more in [About TooToo]( #pages/about-tootoo.md )
 See read me files in each module folder for to do items
 
 * 2019-01-23 ~ Theo ~ Add carousel / Add script gallery
-* 2019-01-15 ~ Theo ~ file save to file & save save to ZIP module
+* 2019-01-15 ~ Theo ~ file save to file & save to ZIP module
 * 2019-01-15 ~ Theo ~ file open ZIP, select and display contents module
+
 
 ## Issues
 
-2019-01-24 ~ Theo ~ Footer buttons need closers
+* 2019-01-28 ~ Theo ~ Add ability to store styles for idividual instances - not just single localStorage var
+* 2019-01-24 ~ Theo ~ Footer buttons need closers
+
+
+
 
 <details>
 
-<summary>Change Log</summary>
+<summary style="font-size: 1.5rem;" >Change Log</summary>
 
 ### 2019-01-23 ~ Theo
 
@@ -161,3 +166,4 @@ TooToo CMS
 ***
 
 # <center title="hello!" ><a href=javascript:window.scrollTo(0,0); style=text-decoration:none; > ❦ </a></center>
+

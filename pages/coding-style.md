@@ -49,7 +49,7 @@ Instead of a huge file of opaque CSS rules that are mostly never invoked, there'
 -->
 
 
-### Cookbook Format
+## Cookbook Format
 
 Otherwise known as 'Cut and Paste' coding
 
@@ -64,7 +64,7 @@ The code herein is:
 	* Any script can be 'digested' in less than an hour
 
 
-##@ Client-side not Server-side
+## Client-side not Server-side
 
 * Scripts must access a GPU
 	* 'Cause no GPU then no 3D'
