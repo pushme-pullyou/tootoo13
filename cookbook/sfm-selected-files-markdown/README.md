@@ -61,6 +61,8 @@ SFM.getMenuSelectedFilesMarkdown
 
 ## To Do / Wish List
 
+* 2019-01-28 ~ Theo ~ Update content via algorithm
+
 
 ## Issues
 
