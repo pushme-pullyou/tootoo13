@@ -45,23 +45,34 @@
 
 			<section id="FOBsecFileOpenBasic" ></section>
 
+			<section id="FOBsecFileEditSave" ></section>
+
 		</details>
 
 		<p>
-			<button id=but onclick=FOB.requestFile(this.innerHTML); accessKey= 'z' title='access key: z ' >README.md</button>
+			<button id=but onclick=FOB.requestFile(this.innerHTML); >README.md</button>
 		</p>
 
 		<p>
-			<button id=but onclick=FOB.requestFile(this.innerHTML); accessKey= 'z' title='access key: z ' >../../README.md</button>
+			<button id=but onclick=FOB.requestFile(this.innerHTML); >../../README.md</button>
 		</p>
 
 		<p>
-			<button id=but onclick=FOB.requestFile(this.innerHTML); accessKey= 'z' title='access key: z ' >../../favicon.ico</button>
+			<button id=but onclick=FOB.requestFile(this.innerHTML); >../../favicon.ico</button>
 		</p>
 
 		<p>
-			<button id=but onclick=FOB.requestFile(this.innerHTML); accessKey= 'z' title='access key: z ' >../../index.html</button>
+			<button id=but onclick=FOB.requestFile(this.innerHTML); >../../index.html</button>
 		</p>
+
+		<p>
+			<input type=checkbox onclick=setEditable(this) >contentEditable
+		</p>
+
+		<p>
+			<button onclick=saveFile(divContents) >saveFile </button>
+		</p>
+
 
 	</nav>
 
@@ -92,6 +103,8 @@ function init() {
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents );
 
+	FOBsecFileEditSave.innerHTML = FOB.getMenuEditSaveBasic( divContents );
+
 	divContents.innerHTML =
 		`
 			<p>
@@ -101,6 +114,47 @@ function init() {
 				${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
 			</p>
 		`;
+
+
+
+}
+
+
+function setEditable( checkbox ) {
+
+		var n = document.getElementById( "divContents" );
+
+		//n.contentEditable = true;
+
+		divContents.contentEditable = checkbox.checked
+
+		/* save */
+		var s = function(){ localStorage.setItem( "FOBdivContents", n.innerHTML ); }
+
+		/* retrieve (only on page load) */
+		if ( window.localStorage ){ n.innerHTML = localStorage.getItem( "FOBdivContents" ); }
+
+		/* autosave onchange and every 500ms and when you close the window */
+		n.onchange = s();
+
+		setInterval( s, 500 );
+
+		window.onunload = s();
+
+}
+
+
+
+function saveFile( target ) {
+
+	let blob = new Blob( [ target.innerHTML ] );
+	let a = document.body.appendChild( document.createElement( 'a' ) );
+	a.href = window.URL.createObjectURL( blob );
+	a.download = 'hello-world.txt';
+	a.click();
+	//		delete a;
+	a = null;
+
 }
 
 

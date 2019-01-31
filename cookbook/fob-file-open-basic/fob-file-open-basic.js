@@ -132,9 +132,9 @@ FOB.openFile = function( files ) {
 
 			FOB.target.innerHTML = `<img src=${ FOB.reader.result } >`;
 
-		//} else if ( FOB.regexHtml.test( url ) ) { // html mucks things up
+		} else if ( FOB.regexHtml.test( file.name ) ) { // html mucks things up
 
-			//FOB.target.innerHTML = `<iframe srcdoc="${ FOB.reader.result }" style=${ FOB.contentsCss } ></iframe>`;
+			FOB.target.innerHTML = `<iframe srcdoc="${ FOB.reader.result }" style=${ FOB.contentsCss } ></iframe>`;
 
 		} else {
 
@@ -226,3 +226,68 @@ FOB.callbackOtherToTextarea = function( text ){
 	FOB.target.innerHTML = `<textarea style="${ FOB.contentsCss }" >${ text }</textarea>`;
 
 };
+
+
+
+//////////
+
+
+FOB.getMenuEditSaveBasic = function( target = divContents ) {  // called from main HTML file
+
+	const htm =
+	`
+		<details id=FOBdetEditSave open >
+
+			<summary>Edit and save file
+				<a id=filSum class=helpItem href="JavaScript:MNU.setPopupShowHide(filSum,FOB.currentStatus);" >&nbsp; ? &nbsp;</a>
+			</summary>
+
+			<p>
+				<input type=checkbox onclick=FOB.setEditable(this) >contentEditable </button>
+			</p>
+
+			<p><button onclick=FOB.saveFile(divContents); >save file</button></p>
+
+			<hr>
+
+		</details>
+	`;
+
+	return htm;
+}
+
+
+FOB.setEditable = function( checkbox ) {
+
+	var n = document.getElementById( "divContents" );
+
+	//n.contentEditable = true;
+
+	divContents.contentEditable = checkbox.checked
+
+	/* save */
+	var s = function(){ localStorage.setItem( "FOBdivContents", n.innerHTML ); }
+
+	/* retrieve (only on page load) */
+	if ( window.localStorage ){ n.innerHTML = localStorage.getItem( "FOBdivContents" ); }
+
+	/* autosave onchange and every 500ms and when you close the window */
+	n.onchange = s();
+
+	setInterval( s, 500 );
+
+	window.onunload = s();
+
+}
+
+FOB.saveFile = function( target ) {
+
+	let blob = new Blob( [ target.innerHTML ] );
+	let a = document.body.appendChild( document.createElement( 'a' ) );
+	a.href = window.URL.createObjectURL( blob );
+	a.download = 'hello-world.html';
+	a.click();
+	//		delete a;
+	a = null;
+
+}

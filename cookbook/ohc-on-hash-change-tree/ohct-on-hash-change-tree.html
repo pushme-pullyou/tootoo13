@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang = "en" >
+<head>
+<meta charset = "utf-8" >
+<meta name = "viewport" content= "width=device-width, initial-scale=1" >
+<meta name = "description" content = "On Hash Change test file and JavaScript" >
+<meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
+<meta name = "date" content = "2019-01-31" >
+<title>ohc-on-hash-change-tree</title>
+<style>
+/* Copyright 2019 pushMe pullYou authors. MIT License */
+
+	body, html { font: 12pt monospace; height: 100%; margin: 0 auto; max-width: 800px; }
+	a { color: crimson; text-decoration: none; }
+	a:hover, a:focus { background-color: yellow; color: #aaa; text-decoration: underline }
+
+	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
+	button:hover { background: #ccc; color: #fff }
+
+	input { width: 100%; }
+
+	.divMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
+
+	#navMenu { background-color: #eee; height: 95%; left: 0; margin: 20px; max-width: 300px; overflow: auto; padding: 0 10px; position: absolute; top: 0; }
+
+	#divContents { height: 100%; left: 0; margin: 0 auto; max-width: 60rem; padding: 1rem; right: 0; }
+
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95;  overflow: auto;padding: 0 5px 10px 5px; resize: both;
+		right: 1rem; position: fixed; top: 1rem; z-index: 10; };
+
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
+<script src="ohct-on-hash-change-tree.js" ></script>
+
+	<nav id="navMenu" >
+
+		<div id="divTitle" ></div>
+
+		<details open >
+
+			<summary class=divMenuTitle >File Menu</summary>
+
+			<section id="OHCTsecMenuRepoFilesFolders" ></section>
+
+			<div id=FOBdivFileOpenBasic ></div>
+
+			<hr>
+
+		</details>
+
+		<p>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >README.md</button>
+		</p>
+
+		<p>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../favicon.ico</button>
+		</p>
+
+		<p>
+			<button id=but onclick=location.hash=this.innerHTML; accessKey= 'z' title='access key: z ' >../../index.html</button>
+		</p>
+
+		<p>
+			<button id=but onclick=location.hash="https://raw.githubusercontent.com/ladybug-tools/spider/master/gbxml-sample-files/golden-co-open-studio-seb.xml"; accessKey= 'z' title='access key: z ' >golden-co-open-studio-seb.xml</button>
+		</p>
+
+	</nav>
+
+
+	<nav id="navPopUp" >
+
+		<div id="divPopUpData" ></div>
+
+		<div id="divMessage" ></div>
+
+	</nav>
+
+
+	<div id="divContents" ></div>
+
+
+<script>
+
+
+// for parsing // for testing
+OHCT.uriDefaultFile = "README.md";
+
+OHCT.user = 'nasa';
+OHCT.repo = 'NASA-3D-Resources';
+OHCT.pathRepo = '';
+OHCT.branch = '/master/';
+
+OHCT.urlGitHubPage = "https://pushme-pullyou.github.io/tootoo13/cookbook/ohc-on-hash-change/";
+OHCT.urlSourceCode = "https://github.com/jaanga/jaanga.github.io";
+
+
+const MNU = {}; // for testing
+
+MNU.setPopupShowHide = function( id, text ) {
+
+	id.classList.toggle( "active" );
+
+	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? text : '';
+
+};
+
+
+
+init();
+
+
+
+function init() {
+
+	divTitle.innerHTML = getTitle();
+
+	OHCTsecMenuRepoFilesFolders.innerHTML = OHCT.getMenuRepoFilesFolders( "OHCTdivMenuItems" );
+
+	//divContents.innerHTML += `${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>`;
+
+	OHCT.onHashChange();
+
+}
+
+
+
+function getTitle() {
+
+	document.title = document.title ? document.title : location.href.split( '/' ).pop().slice( 0, - 5 ).replace( /-/g, ' ' );
+	//console.log( 'document.title', document.title );
+
+	const htm =
+	`
+		<h2>
+			<a href=${ OHCT.urlSourceCode } target=_top title="Source code on GitHub" >
+				${ OHCT.iconInfo }
+			</a>
+			<a href="" title="Click to reload this page" >${ document.title }</a>
+		</h2>
+
+		<p>
+			${ OHCT.description }
+		</p>
+	`;
+
+	return htm;
+
+}
+
+</script>
+</body>
+</html>
