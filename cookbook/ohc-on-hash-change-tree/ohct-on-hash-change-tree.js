@@ -184,6 +184,8 @@ OHCT.onHashChange = function() {
 
 		console.log( 'ulc', ulc );
 
+		loadSTLFileByURL( url );
+
 	} else {
 
 		OHCT.requestFile( url, OHCT.callbackOtherToTextarea );
@@ -191,6 +193,63 @@ OHCT.onHashChange = function() {
 	}
 
 };
+
+
+
+function loadSTLFileByURL( fileName ) {
+
+	//fileName = "https://cdn.jsdelivr.net/gh/nasa/NASA-3D-Resources@master/3D%20Printing/Voyager%20(2017)/Stand.stl"
+	console.log( 'fileName', fileName );
+
+	let loader = new THREE.STLLoader();
+	loader.crossOrigin = 'anonymous';
+	loader.load( fileName, function ( geometry ) {
+
+		addMesh( geometry );
+
+		//contents.innerHTML = 'File name: ' + fileName.split('/').pop() + '<br>' + '';
+
+	} );
+
+}
+
+
+function addMesh( geometry ) {
+
+	//console.log( 'geometry', geometry );
+
+	//			geometry.applyMatrix( new THREE.Matrix4().makeRotationX( -0.5 * Math.PI ) );
+	geometry.center();
+	geometry.computeFaceNormals();
+	geometry.computeVertexNormals();
+
+	let material = new THREE.MeshNormalMaterial();
+
+	THR.scene.remove( mesh );
+	mesh = new THREE.Mesh( geometry, material );
+	THR.scene.add( mesh );
+
+	zoomExtents( mesh );
+
+}
+
+
+
+function zoomExtents( mesh ) {
+
+	mesh.geometry.computeBoundingSphere();
+
+	let bs = mesh.geometry.boundingSphere;
+
+	THR.controls.target = bs.center;
+
+	THR.camera.position.set( bs.center.x + bs.radius, bs.center.y + bs.radius, bs.center.z + bs.radius );
+	THR.camera.far = 3 * camera.position.length();
+	THR.camera.updateProjectionMatrix();
+
+	THRU.axisHelper.scale.set( bs.radius, bs.radius, bs.radius );
+
+}
 
 
 
@@ -291,10 +350,11 @@ OHCT.callbackGitHubPathFileNames = function( xhr ) {
 
 			if ( line.indexOf( '3D Models' ) > - 1 ) {
 
-				textModels += '<p><a href="#https://rawgit.com/nasa/NASA-3D-Resources/master/3D Models/' + fname + '" >' +
+				textModels += '<p><a href="#https://cdn.jsdelivr.net/gh/nasa/NASA-3D-Resources@master/3D Models' + fname + '" >' +
 				fname + '</a></p>';
 				mods++;
 
+				// https://cdn.jsdelivr.net/gh/nasa/NASA-3D-Resources@master/3D%20Models/Apollo%2011%20-%20Landing%20Site/Apollo_11.stl
 			} else
 
 				textPrinting += '<p><a href="#https://rawgit.com/nasa/NASA-3D-Resources/master/3D Printing/' + fname + '" >' +

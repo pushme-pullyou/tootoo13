@@ -14,6 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r100/build/three.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r100/examples/js/controls/OrbitControls.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r100/examples/js/loaders/STLLoader.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
 
 <!--
@@ -24,35 +25,18 @@
 
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/mnu-menu.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/thm-theme-select.js" ></script>
+<script src="../../../cookbook/ohc-on-hash-change-tree/ohct-on-hash-change-tree.js" ></script>
 
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/thr-threejs.js" ></script>
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/thru-threejs-utilities.js"></script>
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/pop-up-text-parser.js" ></script>
 
-<!-- File menu -->
+<!-- File menu
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/gal-sample-files-gallery-gbxml.js" ></script>
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/fil-file-open-xml-zip.js" ></script>
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/gbx-gbxml-text-parser.js" ></script>
 <script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/gbxu-gbxml-utilities.js" ></script>
-
-<!-- Edit menu -->
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/iscor-issues-core.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/isfic-issues-file-check.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/ismet-issues-metadata.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/issti-issues-surface-type-invalid.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/isduc-issues-duplicate-coordinates.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/isasi-issues-adjacent-space-invalid.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/isase-issues-adjacent-space-extra.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/isasd-issues-adjacent-space-duplicate.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/iscod-issues-cad-object-id.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/istmp-issues-template.js" ></script>
-
-<!-- View menu -->
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/vwsrf-view-surface-types.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/repl-view-by-level.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/set-settings.js" ></script>
-<script src="https://ladybug-tools.github.io/spider-gbxml-tools/spider-gbxml-viewer/r15/js-gbxml/cut-section-cut.js"></script>
-
+-->
 <script>
 
 //Copyright 2019 pushMe-pullYou authors. MIT License
@@ -85,7 +69,10 @@ MNU.description =
 
 
 //const uriDefaultFile = '#README.md';
-const urlDefaultFile='https://www.ladybug.tools/spider/gbxml-sample-files/bristol-clifton-downs-fixed.xml';
+//const urlDefaultFile='https://www.ladybug.tools/spider/gbxml-sample-files/bristol-clifton-downs-fixed.xml';
+OHCT.uriDefaultFile="https://rawgit.com/nasa/NASA-3D-Resources/master/3D%20Models/Cassini%20(A)/cassini.stl";
+
+
 
 THM.cssBasic = "style.css";
 
@@ -112,19 +99,17 @@ MNU.footerUrl = "#../../";
 MNU.footerTarget = ""; //"target=_blank";
 MNU.footerIssues = "https://github.com/pushme-pullyou/tootoo13/issues";
 
-/*
-// for parsing
-OHC.user = 'nasa';
-OHC.repo = 'spider-gbxml-tools';
-OHC.pathRepo = '';
-OHC.branch = '/master/';
+// for parsing // for testing
+//OHCT.uriDefaultFile = "README.md";
 
-// When running in dev folder
-// = location.href.includes( OHC.repo ) ? '../' : 'https://' + OHC.repo + "/";
-OHC.urlGitHubPage = `https://${ OHC.repo }/`;
-// When running in build repo
-//OHC.urlGitHubPage = "";
-*/
+OHCT.user = 'nasa';
+OHCT.repo = 'NASA-3D-Resources';
+OHCT.pathRepo = '';
+OHCT.branch = '/master/';
+
+OHCT.urlGitHubPage = "https://pushme-pullyou.github.io/tootoo13/cookbook/ohc-on-hash-change/";
+OHCT.urlSourceCode = "https://github.com/jaanga/jaanga.github.io";
+
 
 </script>
 
@@ -141,20 +126,10 @@ OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 
 				<summary class=divMenuTitle >File Menu</summary>
 
+				<section id="OHCTsecMenuRepoFilesFolders" ></section>
+
 				<section id=NASAsecStlFilesGallery ></section>
 
-				<section id=FILdivFileOpen ></section>
-
-				<section id=FILdivFileSave ></section>
-
-				<section id=FILdivCurrentStatus ></section>
-
-
-				<section id="OHCsecMenuRepoFilesFolders" ></section>
-
-				<section id=FOBsecFileOpenBasic ></section>
-
-				<section id=FILdivFileSave ></section>
 
 			</details>
 
@@ -205,6 +180,7 @@ OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 <script>
 
 
+let mesh;
 
 init();
 
@@ -225,21 +201,9 @@ function init() {
 	//mesh = THRU.getGeometry();
 	//THR.scene.add( mesh );
 
-	NASAsecStlFilesGallery.innerHTML= NASAgetMenuStlFilesGallery();
-
-	//FILdivFileOpen.innerHTML=FIL.getMenuFileOpen();
-
-	//GBXdivStatsGbx.innerHTML=GBX.getDivMenuGbx();
-
-	FILdivFileSave.innerHTML=FIL.getMenuFileSave();
-
-	//OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
-
-	//FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
+	OHCTsecMenuRepoFilesFolders.innerHTML = OHCT.getMenuRepoFilesFolders( "OHCTdivMenuItems" );
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
-
-	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
@@ -258,10 +222,10 @@ function init() {
 
 	THM.init();
 
-	//OHC.onHashChange();
+	OHCT.onHashChange();
 
-	mesh = THRU.getGeometry();
-	THR.scene.add( mesh );
+	//mesh = THRU.getGeometry();
+	//THR.scene.add( mesh );
 
 
 	document.removeEventListener( 'touchstart', MNU.onTouchStart, false );
