@@ -28,7 +28,7 @@ summary { cursor: pointer; font-weight: bold; }
 
 .attributeTitle { font-style: italic; }
 .attributeValue { color: blue; }
-.detSubMenu { /* background-color: yellow; */ padding: 0 1rem; }
+.detSubMenu { /* background-color: yellow; */ padding: 0 0 0 0.5rem; }
 .divMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
 .dragDropArea { border: 1px dashed gray; margin: 0.5rem  0; padding: 0 0.5rem; }
 .helpItem { float: right; clear: both; }
