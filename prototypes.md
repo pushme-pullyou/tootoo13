@@ -1,9 +1,8 @@
 
-<details>
+<details class=detSubMenu >
 
 <summary >Prototypes</summary>
 
-</div>
 
 _This text is written in Markdown format and converted to HTML at load time and inserted here._
 
@@ -32,17 +31,4 @@ Current build: <a href="https://ladybug-tools.github.io/spider-rad-viewer/rad-vi
 
 Develop build: <a href="prototypes/theo-armour/index.html" target="_blank">theo-armour</a>
 Current build: <a href="https://theo-armour.github.io" target="_blank">theo-armour</a>
-
-</div>
-
 </details>
-
-<!--
-
-
-Develop build: <a href="prototypes//index.html" target="_blank"></a>
-Current build: <a href="https://.github.io" target="_blank"></a>
-
-
--->
-

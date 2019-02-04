@@ -18,7 +18,7 @@ blockquote, pre { background-color: #eee; padding: 10px; }
 button, input[ type=button ] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
 button:hover, input[ type=button ]:hover{ background: #ccc; color: #888 }
 
-div { padding: 0 1rem; }
+bbdiv { padding: 0 1rem; }
 
 input[ type = range ] { -webkit-appearance: none; -moz-appearance: none; background-color: #ddd; width: 90%; }
 input[ type = range ]::-moz-range-thumb { background-color: #888; border-radius: 0; width: 10px; }
@@ -28,8 +28,9 @@ summary { cursor: pointer; font-weight: bold; }
 
 .attributeTitle { font-style: italic; }
 .attributeValue { color: blue; }
+.detSubMenu { /* background-color: yellow; */ padding: 0 1rem; }
 .divMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
-.dragDropArea { border: 1px dashed gray; box-sizing: border-box; margin: 10px; padding: 0 10px; }
+.dragDropArea { border: 1px dashed gray; margin: 0.5rem  0; padding: 0 0.5rem; }
 .helpItem { float: right; clear: both; }
 .highlight {background-color: lightgreen }
 
@@ -38,8 +39,8 @@ summary { cursor: pointer; font-weight: bold; }
 
 /* #divContents { margin: 0 auto; max-width: 600px; } */
 
-#navMenu { /* background-color: #eee; background: rgba( 250, 250, 250, 0.8 ); */ border: 1px solid #888;
-	left: 0; margin: 0; max-height: 100%; overflow: auto;
+#navMenu { /* background-color: #eee; background: rgba( 250, 250, 250, 0.8 ); */
+	border: 1px solid #888; left: 0; margin: 0; max-height: 100%; overflow: auto;
 	position: fixed; resize: both; top: 0; transition: left 0.5s; width: var( --mnu-width ); z-index: 10; }
 
 #navMenu button, #navMenu input[type=button] { background-color: #ddd; border: 2px solid white; color: white; cursor: pointer;

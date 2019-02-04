@@ -95,7 +95,7 @@ THM.getMenuThemeSelect = function() {
 
 	const htm =
 	`
-		<details >
+		<details class=detSubMenu >
 
 			<summary>Select Theme
 				<a id=thmSum class=helpItem href="JavaScript:MNU.setPopupShowHide(thmSum,THM.currentStatus);" >&nbsp; ? &nbsp;</a>

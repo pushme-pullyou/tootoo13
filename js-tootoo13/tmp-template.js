@@ -53,7 +53,7 @@ TMP.getMenuTemplate = function() {
 
 	const htm =
 	`
-		<details >
+		<details class=detSubMenu >
 
 			<summary>TooToo Template
 				<a id=tmpSum class=helpItem href="JavaScript:MNU.setPopupShowHide(tmpSum,TMP.currentStatus);" >&nbsp; ? &nbsp;</a>

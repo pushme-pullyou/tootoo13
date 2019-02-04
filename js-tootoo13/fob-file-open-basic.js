@@ -64,7 +64,7 @@ FOB.getMenuFileOpenBasic = function( target = divContents ) {  // called from ma
 
 	const htm =
 	`
-		<details id=FOBdetFileOpen open >
+		<details id=FOBdetFileOpen class=detSubMenu open >
 
 			<summary>Open file
 				<a id=filSum class=helpItem href="JavaScript:MNU.setPopupShowHide(filSum,FOB.currentStatus);" >&nbsp; ? &nbsp;</a>

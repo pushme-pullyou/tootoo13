@@ -4,7 +4,7 @@
 
 */
 
-const OHCT = { "release": "R13.0", "date": "2019-01-31" };
+const OHCT = { "release": "R13.1", "date": "2019-02-02" };
 
 
 OHCT.uriDefaultFile = "README.md";
@@ -57,6 +57,7 @@ OHCT.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-02-02 ~ Add load file after details toggle</li>
 				<li>2019-01-15 ~ Update OHCT.description content and related code</li>
 				<li>2019-01-14 ~ Add text here and there / fix broken links</li>
 				<li>2019-01-13 ~ Add link to source code and more status content</li>
@@ -100,22 +101,15 @@ OHCT.getMenuRepoFilesFolders = function() {
 
 	OHCT.divContents = divContents;
 	OHCT.urlGitHubSource = "https://github.com/" + OHCT.user + "/" + OHCT.repo;
-	//OHCT.urlGitHubApiContents = 'https://api.github.com/repos/' + OHCT.user + "/" + OHCT.repo + '/contents/' + OHCT.pathRepo;
-	//OHCT.urlGitHubApiContents = "https://api.github.com/repos/" + OHCT.user + "/" + OHCT.repo + "git/trees/master?recursive=1";
-
 	OHCT.urlGitHubApiContents = "https://api.github.com/repos/" + OHCT.user + "/" + OHCT.repo + "/git/trees/master?recursive=1";
 
 	OHCT.accessToken = localStorage.getItem( 'githubAccessToken' ) || '';
-
-	// https://api.github.com/repos/nasa/NASA-3D-Resources/git/trees/master?recursive=1
-
-	OHCT.setMenuGitHubPathFileNames();
 
 	window.addEventListener ( 'hashchange', OHCT.onHashChange, false );
 
 	const htm =
 	`
-		<details open >
+		<details ontoggle=OHCT.onToggle() >
 
 			<summary>All files and folders
 				<a id=ohcSum class=helpItem href="JavaScript:MNU.setPopupShowHide(ohcSum,OHCT.currentStatus);" >&nbsp; ? &nbsp;</a>
@@ -145,6 +139,14 @@ OHCT.getMenuRepoFilesFolders = function() {
 	`;
 
 	return htm;
+
+};
+
+
+
+OHCT.onToggle = function() {
+
+	OHCT.setMenuGitHubPathFileNames();
 
 };
 
@@ -207,7 +209,7 @@ function loadSTLFileByURL( fileName ) {
 
 		addMesh( geometry );
 
-		//contents.innerHTML = 'File name: ' + fileName.split('/').pop() + '<br>' + '';
+		log.innerHTML = 'File name: ' + fileName.split('/').pop() + '<br>' + '';
 
 	} );
 

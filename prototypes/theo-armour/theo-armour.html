@@ -13,10 +13,11 @@
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
 
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/mnu-menu.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/fob-file-open-basic.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/thm-theme-select.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/mnu-menu.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/ohc-on-hash-change.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/sfm-selected-files-markdown.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/thm-theme-select.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13/tmp-template.js" ></script>
 <script>
 
@@ -34,7 +35,7 @@ MNU.currentStatusCore =
 			Change log
 			<ul>
 				<li>Fork to new repo</li>
-				<li>2019-01-09 ~ R13 beginning to look OK.</li>
+				<li>2019-01-09 ~ R10 beginning to look OK.</li>
 			</ul>
 		</p>
 
@@ -54,7 +55,7 @@ THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13/style.css"
 // For main menu header
 MNU.urlSourceCode = "https://github.com/theo-armour/theo-armour.github.io";
 
-MNU.homeText = ""; "pushMe-pullYou";
+MNU.homeText = ""; //"pushMe-pullYou";
 MNU.homeTitle = ""; //"Very simple JavaScript files to help you explore and build new tools on GitHub.";
 MNU.homeUrl = ""; //"https://pushme-pullyou.github.io";
 
@@ -100,6 +101,8 @@ OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 
 				<summary class=divMenuTitle >File Menu</summary>
 
+				<section id=SFMsecPrototypes ></section>
+
 				<section id="OHCsecMenuRepoFilesFolders" ></section>
 
 				<section id=FOBsecFileOpenBasic ></section>
@@ -137,7 +140,7 @@ OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 	</div>
 
 
-	<nav id="divPopUp" >
+	<nav id="navPopUp" >
 
 		<div id="divPopUpData" ></div>
 
@@ -162,6 +165,8 @@ init();
 function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
+
+	SFM.getMarkdownFileContents( "highlights.md", SFMsecPrototypes );
 
 	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 

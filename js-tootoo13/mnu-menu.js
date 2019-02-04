@@ -177,7 +177,7 @@ MNU.getNavFooter = function() {
 
 	const htm  =
 	`
-		<details id=MNUdetFooter >
+		<details id=MNUdetFooter class=detSubMenu >
 
 			<summary>Footer / Help
 				<a id=mnuFoot class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuFoot,MNU.currentStatusMenu);" >&nbsp; ? &nbsp;</a>
