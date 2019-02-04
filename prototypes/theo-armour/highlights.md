@@ -1,12 +1,11 @@
 
 <details class=detSubMenu open>
 
-<summary>highlights</summary>
+<summary>Highlights</summary>
 
-<span>
 
 [about theo]( #https://theo-armour.github.io/page/about.md )
 
+[contact]( #https://theo-armour.github.io/page/contact.md )
 
-</span>
 </details>

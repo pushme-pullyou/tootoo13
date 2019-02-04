@@ -166,6 +166,7 @@ MNU.getNavHeader = function() {
 				title="Current status" >&nbsp; ? &nbsp;
 			</a>
 		</p>
+		
 	</div>
 	`;
 
