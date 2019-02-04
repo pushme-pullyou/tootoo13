@@ -135,6 +135,7 @@ MNU.getNavHeader = function() {
 
 	const htm  =
 	`
+	<div class=detSubMenu >
 		<h3>
 		<a href="${ MNU.homeUrl }" title="${ MNU.homeTitle }" target="_top">
 		${ MNU.homeText }
@@ -165,6 +166,7 @@ MNU.getNavHeader = function() {
 				title="Current status" >&nbsp; ? &nbsp;
 			</a>
 		</p>
+	</div>
 	`;
 
 	return htm;
