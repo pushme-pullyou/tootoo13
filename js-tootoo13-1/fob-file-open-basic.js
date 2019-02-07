@@ -2,7 +2,7 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.5", "date": "2019-02-07" };
+const FOB = { "release": "R13.5", "date": "2016-02-07" };
 
 FOB.description =
 	`
@@ -24,6 +24,8 @@ FOB.currentStatus =
 				<li>Opens local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
 				<li>Converts Markdown to HTML</li>
 				<li>Provides default current status text template</li>
+				<li></li>
+				<!-- <li></li> -->
 			</ul>
 		</p>
 		<p>
@@ -34,7 +36,7 @@ FOB.currentStatus =
 		<p>
 			Change log
 			<ul>
-				<li>2019-02-07 ~ Simplify: remove content editable / save file - will re-add elsewhere</li>
+				<li>2019-02-07 ~ Simplify: remove contentEditable / save file</li>
 				<li>2019-01-15 ~ Add FOB.description variable and text</li>
 				<li>2019-01-15 ~ Add display FOB.description in pop-up and in test file</li>
 				<li>2019-01-14 ~ Add text here and there</li>
@@ -64,7 +66,7 @@ FOB.getMenuFileOpenBasic = function( target = divContents ) {  // called from ma
 
 	const htm =
 	`
-		<details id=FOBdetFileOpen open >
+		<details id=FOBdetFileOpen class=detSubMenu open >
 
 			<summary>Open file
 				<a id=filSum class=helpItem href="JavaScript:MNU.setPopupShowHide(filSum,FOB.currentStatus);" >&nbsp; ? &nbsp;</a>

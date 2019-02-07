@@ -5,10 +5,10 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "TooToo menu testing page and script" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-23" >
-<meta name = "release" content = "2.2" >
+<meta name = "date" content = "2019-02-07" >
+<meta name = "release" content = "13.1.0" >
 <title>MNU Menu Test</title>
-<link rel="stylesheet" href="../../js-tootoo13/style.css">
+<link rel="stylesheet" href="../../js-tootoo13-1/style.css">
 </head>
 <body>
 <script src=mnu-menu.js ></script>
@@ -24,25 +24,28 @@
 
 		<hr>
 
-		<div>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</div>
+		<div class=navSubMenu >lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</div>
 
 		<hr>
 
-		<details id=detMenuHelp open >
+		<!--
+		<details open >
 
-			<summary class=divMenuTitle >Help Menu </summary>
+			<summary class=sumMenuTitle >Help Menu </summary>
 
 			<section id=THMsecMenuThemeSelect ></section>
 
-			<section id=TMPsecMenuTemplate ></section>
 
-			<footer>
-
-				<section id = "MNUdivFooter" ></section>
-
-			</footer>
-
+				<section id=TMPsecMenuTemplate ></section>
 		</details>
+		-->
+
+		<footer class=navSubMenu >
+
+			<section id = "MNUdivFooter" ></section>
+
+		</footer>
+
 
 		<h1 onclick=navMenu.scrollTop=0; style=cursor:pointer;text-align:center; title='go to top of menu' > ❦ </h1>
 
@@ -82,11 +85,7 @@ init();
 
 function init() {
 
-	//divTitle.innerHTML = getTitle();
-
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
-
-	divContents.innerHTML += `${ ( new Date ) }<p>lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>`;
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
@@ -95,8 +94,6 @@ function init() {
 	MNUdetFooter.open = true;
 
 	window.addEventListener ( 'hashchange', onHashChange, false );
-
-	//divContents.addEventListener ( 'click', function(){ divPopUpData.innerHTML = ""; }, true );
 
 	divContents.innerHTML =
 		`

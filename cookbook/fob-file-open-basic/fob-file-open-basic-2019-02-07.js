@@ -2,7 +2,7 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.5", "date": "2019-02-07" };
+const FOB = { "release": "R13.4", "date": "2019-01-15" };
 
 FOB.description =
 	`
@@ -24,6 +24,8 @@ FOB.currentStatus =
 				<li>Opens local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
 				<li>Converts Markdown to HTML</li>
 				<li>Provides default current status text template</li>
+				<li></li>
+				<!-- <li></li> -->
 			</ul>
 		</p>
 		<p>
@@ -34,14 +36,12 @@ FOB.currentStatus =
 		<p>
 			Change log
 			<ul>
-				<li>2019-02-07 ~ Simplify: remove content editable / save file - will re-add elsewhere</li>
 				<li>2019-01-15 ~ Add FOB.description variable and text</li>
 				<li>2019-01-15 ~ Add display FOB.description in pop-up and in test file</li>
 				<li>2019-01-14 ~ Add text here and there</li>
 				<li>2019-01-13 ~ Add link to status</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
-				<!-- <li></li>
-				-->
+				<!-- <li></li> -->
 			</ul>
 		</p>
 	`;
@@ -226,3 +226,68 @@ FOB.callbackOtherToTextarea = function( text ){
 	FOB.target.innerHTML = `<textarea style="${ FOB.contentsCss }" >${ text }</textarea>`;
 
 };
+
+
+
+//////////
+
+
+FOB.getMenuEditSaveBasic = function( target = divContents ) {  // called from main HTML file
+
+	const htm =
+	`
+		<details id=FOBdetEditSave open >
+
+			<summary>Edit and save file
+				<a id=filSum class=helpItem href="JavaScript:MNU.setPopupShowHide(filSum,FOB.currentStatus);" >&nbsp; ? &nbsp;</a>
+			</summary>
+
+			<p>
+				<input type=checkbox onclick=FOB.setEditable(this) >contentEditable </button>
+			</p>
+
+			<p><button onclick=FOB.saveFile(divContents); >save file</button></p>
+
+			<hr>
+
+		</details>
+	`;
+
+	return htm;
+}
+
+
+FOB.setEditable = function( checkbox ) {
+
+	var n = document.getElementById( "divContents" );
+
+	//n.contentEditable = true;
+
+	divContents.contentEditable = checkbox.checked
+
+	/* save */
+	var s = function(){ localStorage.setItem( "FOBdivContents", n.innerHTML ); }
+
+	/* retrieve (only on page load) */
+	if ( window.localStorage ){ n.innerHTML = localStorage.getItem( "FOBdivContents" ); }
+
+	/* autosave onchange and every 500ms and when you close the window */
+	n.onchange = s();
+
+	setInterval( s, 500 );
+
+	window.onunload = s();
+
+}
+
+FOB.saveFile = function( target ) {
+
+	let blob = new Blob( [ target.innerHTML ] );
+	let a = document.body.appendChild( document.createElement( 'a' ) );
+	a.href = window.URL.createObjectURL( blob );
+	a.download = 'hello-world.html';
+	a.click();
+	//		delete a;
+	a = null;
+
+}

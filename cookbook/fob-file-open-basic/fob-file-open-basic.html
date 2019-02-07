@@ -5,7 +5,7 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "Open files with FileReader() or XMLHttpRequest()" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-03" >
+<meta name = "date" content = "2019-02-07" >
 <title></title>
 <style>
 
@@ -16,17 +16,16 @@
 	button, input[type=button] { background-color: #ddd; border: none; color: #322; cursor: pointer; padding: 3px 5px; }
 	button:hover { background: #ccc; color: #fff }
 
-	.divMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
+	.sumMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
 
 	.dragDropArea { border: 1px dashed gray; box-sizing: border-box; margin: 10px; padding: 0 10px; }
-
 
 	#navMenu { background-color: #eee; left: 0; margin: 20px; max-width: 300px; padding: 0 10px;
 		position: fixed; top: 0; }
 
-	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-width: 25%; padding: 0 5px 10px 5px;
-	max-height: 95%; overflow: auto; resize: both;
-	opacity: 0.95; right: 1rem; position: fixed; top: 1rem; z-index: 10; };
+	#navPopUp { background-color: #eee; border-radius: 8px; display: block; max-height: 95%; max-width: 25%;
+		opacity: 0.95; overflow: auto; padding: 0 5px 10px 5px; position: fixed;
+		resize: both; right: 1rem; top: 1rem; z-index: 10; };
 
 
 </style>
@@ -39,13 +38,11 @@
 
 		<div id="divTitle" ></div>
 
-		<details open >
+		<details class=navSubMenu open >
 
-			<summary class=divMenuTitle >File Menu</summary>
+			<summary class=sumMenuTitle >File Menu</summary>
 
 			<section id="FOBsecFileOpenBasic" ></section>
-
-			<section id="FOBsecFileEditSave" ></section>
 
 		</details>
 
@@ -64,15 +61,6 @@
 		<p>
 			<button id=but onclick=FOB.requestFile(this.innerHTML); >../../index.html</button>
 		</p>
-
-		<p>
-			<input type=checkbox onclick=setEditable(this) >contentEditable
-		</p>
-
-		<p>
-			<button onclick=saveFile(divContents) >saveFile </button>
-		</p>
-
 
 	</nav>
 
@@ -103,8 +91,6 @@ function init() {
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents );
 
-	FOBsecFileEditSave.innerHTML = FOB.getMenuEditSaveBasic( divContents );
-
 	divContents.innerHTML =
 		`
 			<p>
@@ -119,43 +105,6 @@ function init() {
 
 }
 
-
-function setEditable( checkbox ) {
-
-		var n = document.getElementById( "divContents" );
-
-		//n.contentEditable = true;
-
-		divContents.contentEditable = checkbox.checked
-
-		/* save */
-		var s = function(){ localStorage.setItem( "FOBdivContents", n.innerHTML ); }
-
-		/* retrieve (only on page load) */
-		if ( window.localStorage ){ n.innerHTML = localStorage.getItem( "FOBdivContents" ); }
-
-		/* autosave onchange and every 500ms and when you close the window */
-		n.onchange = s();
-
-		setInterval( s, 500 );
-
-		window.onunload = s();
-
-}
-
-
-
-function saveFile( target ) {
-
-	let blob = new Blob( [ target.innerHTML ] );
-	let a = document.body.appendChild( document.createElement( 'a' ) );
-	a.href = window.URL.createObjectURL( blob );
-	a.download = 'hello-world.txt';
-	a.click();
-	//		delete a;
-	a = null;
-
-}
 
 
 const MNU = {};
