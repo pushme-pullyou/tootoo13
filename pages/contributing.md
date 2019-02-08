@@ -94,10 +94,17 @@ _This section is under current development. Fingers crossed a few hundred more w
 
 This section is about:
 
+* Testing new releases
 * Bug reporting
 * Wish list requests
 * Writing and editing documentation
 * Providing announcements of updates and user support in online forums
+
+
+### Testing new releases
+
+Before a release can move from a 'development' release to a 'stable' release. In our kind of work this usually requires a visual inspection. Visual inspections are very hard to automate and thus require patient humans to click all the buttons on a number of test files and document issues thy come across.
+
 
 ### Bug Reporting
 
