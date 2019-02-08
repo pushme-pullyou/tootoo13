@@ -1,6 +1,6 @@
 # Contributing
 
-
+XXXXX xxxxxx
 
 This file is a work-in-progress. It will be based on
 
@@ -13,7 +13,7 @@ This file is a work-in-progress. It will be based on
 
 ***
 
-Thank you for considering contributing to Parallel Constitution. We look forward to your participation. We hope that sharing your experiences will benefit others who read and use our efforts.
+Thank you for considering contributing to our effort. We look forward to your participation. We hope that sharing your experiences will benefit others who read and use our code.
 
 We've put together the following guidelines to help you figure out where you can best be helpful.
 
@@ -27,21 +27,19 @@ After you have registered you can go to your [GitHub settings]( https://github.c
 
 You may now start contributing to our project with a few small but very helpful efforts.
 
-In the top right hand corner of this page: github-top-right-screen-capture.png
-
-You will see the 'Watch' and 'Star' buttons
+In the top right hand corner of this page, you will see the 'Watch' and 'Star' buttons
 
 ![github-top-right-screen-capture.png]( https://cdn.glitch.com/8f4ee7c6-c279-4f9f-8598-a145f33d2ea6%2Fgithub-top-right-screen-capture.png?1499556746028 =600x100 )
 _note the [freeCodeCamp]( https://freecodecamp.com/ ) 'Watch' and 'Star' buttons at top right_
 
-Please click both of these buttons for [XXXXX on GitHub]( https://github.com/xxxxx/xxxxx.github.io ). 
+Please click both of these buttons for [XXXXX on GitHub]( https://github.com/xxxxxx/xxxxxx.github.io ).
 
 Clicking 'Star' makes you feel good - and it lets the world know there is interest in our project. Clicking 'Watch' means you receive an email when there is an issue. Any time you start getting too many messages, you may click this button again to update your preferences.
 
 
 ## Joining the Team
 
-The next thing you can do is to request becoming a member of the organization. If you personally know a member then you might send them a request for an invitation. Anther way is to create an [issue on XXXXX]( https://github.com/xxxxx/xxxxx.github.io/issues ).
+The next thing you can do is to request becoming a member of the organization. If you personally know a member then you might send them a request for an invitation. Anther way is to create an [issue on XXXXX]( https://github.com/xxxxxx/xxxxx.github.io/issues ).
 
 For further details see GitHub's [Managing membership in your organization]( https://help.github.com/articles/managing-membership-in-your-organization/ )
 
@@ -51,7 +49,7 @@ For further details see GitHub's [Managing membership in your organization]( htt
 
 Another very nice thing you may do is set your membership to 'public'.
 
-Got to [XXXXX People]( https://github.com/orgs/xxxxx/people )
+Got to [XXXXX People]( https://github.com/orgs/xxxxxx/people )
 
 ![github-people-screen-capture.png]( https://cdn.glitch.com/8f4ee7c6-c279-4f9f-8598-a145f33d2ea6%2Fgithub-people-screen-capture.png?1499556745948 =600x100 )
 _Member options for GitHub organizations_
@@ -84,7 +82,7 @@ Now that you are set up as a user and a member, let us explore the ways you may 
 
 All code and examples in Ladybug Tools / Spider are written using Mr.doob's Code Style. Of course you are free to use whatever style you prefer for your own work, but if you are adding code to the library or examples then you must follow this guide.
 
-You can find details here: [Mr.doob's Code Style™]( https://github.com/mrdoob/three.js/wiki/Mr.doob%27s-Code-Style%E2%84%A2)
+You can find details here: [Mr.doob's Code Style]( https://github.com/mrdoob/three.js/wiki/Mr.doob%27s-Code-Style%E2%84%A2)
 You can find examples here: [three.js / examples]( https://threejs.org/examples/ )
 
 General guidelines include:
