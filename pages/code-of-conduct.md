@@ -1,6 +1,6 @@
 # Contributor Covenant Code of Conduct
 
-[contact us at Ladybug Tools/Spider]( https://github.com/pushme-pullyou/pushme-pullyou.github.io/issues ). 
+[contact us at XXXXX]( https://github.com/pushme-pullyou/pushme-pullyou.github.io/issues ).
 
 ## Our Pledge
 
