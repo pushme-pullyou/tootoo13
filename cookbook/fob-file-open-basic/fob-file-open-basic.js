@@ -24,6 +24,8 @@ FOB.currentStatus =
 				<li>Opens local files with JavaScript FileReader() or XMLHttpRequest() objects</li>
 				<li>Converts Markdown to HTML</li>
 				<li>Provides default current status text template</li>
+				<li></li>
+				<!-- <li></li> -->
 			</ul>
 		</p>
 		<p>
@@ -64,7 +66,7 @@ FOB.getMenuFileOpenBasic = function( target = divContents ) {  // called from ma
 
 	const htm =
 	`
-		<details id=FOBdetFileOpen open >
+		<details id=FOBdetFileOpen class=detSubMenu open >
 
 			<summary>Open file
 				<a id=filSum class=helpItem href="JavaScript:MNU.setPopupShowHide(filSum,FOB.currentStatus);" >&nbsp; ? &nbsp;</a>

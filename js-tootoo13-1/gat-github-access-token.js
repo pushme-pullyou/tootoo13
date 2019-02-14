@@ -21,7 +21,7 @@ GAT.currentStatusAccessToken =
 		This will raise your limit to 5,000 requests per hour.
 	</p>
 	<p>
-	See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank" >developer.github.com/v3</a>
+		See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.
 	</p>
 	<p>
 		<button onclick=GAT.getRateLimits(divPopUpData); title='If files and folder stop appearing, it is likely due to too many API calls' >

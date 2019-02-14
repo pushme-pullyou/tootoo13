@@ -106,7 +106,7 @@ OHC.getMenuRepoFilesFolders = function() {
 
 	const htm =
 	`
-		<details open >
+		<details class=detSubMenu open >
 
 			<summary>All files and folders
 				<a id=ohcSum class=helpItem href="JavaScript:MNU.setPopupShowHide(ohcSum,OHC.currentStatus);" >&nbsp; ? &nbsp;</a>

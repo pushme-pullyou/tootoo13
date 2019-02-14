@@ -2,7 +2,7 @@
 // jshint esversion: 6
 /* globals navMenu, showdown, divContents, FOBsecFileOpenBasic */
 
-const FOB = { "release": "R13.5", "date": "2016-02-07" };
+const FOB = { "release": "R13.5", "date": "2019-02-07" };
 
 FOB.description =
 	`
@@ -36,7 +36,7 @@ FOB.currentStatus =
 		<p>
 			Change log
 			<ul>
-				<li>2019-02-07 ~ Simplify: remove contentEditable / save file</li>
+				<li>2019-02-07 ~ Simplify: remove content editable / save file - will re-add elsewhere</li>
 				<li>2019-01-15 ~ Add FOB.description variable and text</li>
 				<li>2019-01-15 ~ Add display FOB.description in pop-up and in test file</li>
 				<li>2019-01-14 ~ Add text here and there</li>

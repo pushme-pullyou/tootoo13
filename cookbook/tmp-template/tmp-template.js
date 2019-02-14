@@ -4,12 +4,11 @@
 
 
 
-const TMP = { "release": "R13.3", "date": "2019-01-15" };
+const TMP = { "release": "R13.1.0", "date": "2019-02-12" };
 
 TMP.description =
 	`
 		TooToo Template (TMP) provides HTML and JavaScript 'boilerplate' to create a typical TooToo menu.
-
 	`;
 
 TMP.currentStatus =
@@ -19,8 +18,9 @@ TMP.currentStatus =
 		<p>
 			${ TMP.description }
 		</p>
+
 		<p>
-		Concept
+			Concept
 			<ul>
 				<li>Provides default current status text template</li>
 				<li>Provides default description text template</li>
@@ -28,23 +28,29 @@ TMP.currentStatus =
 				<!-- <li></li> -->
 			</ul>
 		</p>
+
 		<p>
 			<a href="https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/tmp-template/" target="_blank" >
 				TooToo Template Read Me
 			</a>
 		</p>
-		<p>
-			Change log
+
+		<details>
+
+			<summary>Change log</summary>
+
 			<ul>
+				<li>2019-02-12 ~ Minor fixes</li>
 				<li>2019-01-15 ~ Add text content to JavaScript and read me</li>
 				<li>2019-01-15 ~ Add TMP.description variable and text</li>
 				<li>2019-01-15 ~ Add display TMP.description in pop-up and in test file</li>
 				<li>2019-01-13 ~ Add link to source code</li>
 				<li>2019-01-12 ~ Add cookbook HTML test script and read me file</li>
-				<!-- <li></li> -->
+				<!-- <li></li>
+				-->
 			</ul>
-		</p>
 
+			</details>
 	`;
 
 

@@ -1,5 +1,5 @@
-/* Copyright 2019 Ladybug Tools authors. MIT License */
-/* 2019-02-07 ~ 13.3 */
+/* Copyright 2019 pushMe-pullYou authors. MIT License */
+/* 2019-02-12 ~ 13.1.1 */
 
 * {box-sizing: border-box; }
 
@@ -32,19 +32,13 @@ summary { cursor: pointer; font-weight: bold; }
 .navSubMenu { /* background-color: yellow; */ padding: 0 0.5rem; }
 .sumMenuTitle { background-color: #ccc; color: #888; margin: 10px 0; text-align: center; }
 
-/*
-#divContainer { height: 100%; margin: 0 0 0 var( --mnu-width ); transition: margin-left .5s; position: relative; }
-#divContents { height: 100%; left: 0; margin: 0 auto; max-width: 60rem; padding: 1rem; right: 0; }
+#divContainer { height: calc( 100vh ); margin: 0 0 0 var( --mnu-width ); transition: margin-left .5s; position: relative; }
+#divContents { height: calc( 100vh ); margin: 0 auto; max-width: 50rem; padding: 1rem; }
 
- #divContents { margin: 0 auto; max-width: 600px; } */
-
-
-
+/* for three.js
 #divContainer { height: 100%; margin: 0; padding: 0; position: relative; }
-
-#divContents { border: 0px solid #444; margin: 0; height: calc( 100vh );
-	margin: 0; max-width: calc( 100vw ); overflow: hidden; padding: 0; width: 100%; }
-
+#divContents { border: 0px solid #444; height: calc( 100vh ); margin: 0; max-width: calc( 100vw ); overflow: hidden; padding: 0; width: 100%; }
+*/
 
 #navMenu { /* background-color: #eee; background: rgba( 250, 250, 250, 0.8 ); */
 	border: 1px solid #888; left: 0; margin: 0; max-height: 100%; overflow: auto;
@@ -89,4 +83,3 @@ summary { cursor: pointer; font-weight: bold; }
 	#divContents { margin: 0; padding: 0 1rem; }
 
   }
-

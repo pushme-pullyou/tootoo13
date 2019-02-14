@@ -3,7 +3,7 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.1.0", "date": "2019-02-07" };
+const MNU = { "release": "R13.1.1", "date": "2019-02-13" };
 
 
 MNU.description =
@@ -39,6 +39,7 @@ MNU.description =
 			<summary>Change log</summary>
 
 			<ul>
+				<li>2019-02-13 ~ Add rate limits popup closer</li>
 				<li>2019-02-07 ~ R13/1.0 ~ refactor styles / code cleanup</li>
 				<li>2019-01-15 ~ Add MNU.description text content and code</li>
 				<li>2019-01-14 ~ Update text content</li>
@@ -197,7 +198,7 @@ MNU.getNavFooter = function() {
 			<div><a href=${ MNU.footerUrl }pages/themes.md ${ MNU.footerTarget } >Themes help</a></div>
 			<div>&raquo; <a title='Need help' href=${ MNU.footerIssues } target=_blank >${ MNU.repoText } GitHub Issues</a></div>
 			<div><button onclick=MNU.showFps() >Show frames/second statistics</button></div>
-			<div><button onclick=MNU.rateLimits(); >View GitHub API rate limits</button>
+			<div><button id=MNUbutRateLimits onclick=MNU.rateLimits(); >View GitHub API rate limits</button>
 			<hr>
 
 		</details>
@@ -245,7 +246,7 @@ MNU.rateLimits = function() {
 
 	function callback( xhr ) {
 
-		divPopUpData.innerHTML =
+		const text =
 		`
 			<h3>GitHub rate limits status</h3>
 
@@ -257,6 +258,8 @@ MNU.rateLimits = function() {
 
 			<pre> ${ xhr.target.response } </pre>
 		`;
+
+		MNU.setPopupShowHide( MNUbutRateLimits, text );
 
 	}
 

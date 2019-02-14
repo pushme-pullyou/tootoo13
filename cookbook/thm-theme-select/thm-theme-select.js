@@ -38,7 +38,11 @@ THM.currentStatus =
 			</a>
 		</p>
 		<p>
-			Change log
+
+		<details>
+
+			<summary>Change log</summary>
+
 			<ul>
 				<li>2019-01-15 ~ Update THM.description text and related code</li>
 				<li>2019-01-14 ~ Add text content and fix links</li>
@@ -49,15 +53,15 @@ THM.currentStatus =
 				<li>Add ability to load any Bootstrap stylesheet</li>
 				<li>Much refactoring</li>
 			</ul>
-		</p>
 
-`;
+		</details>
+	`;
 
 // THM.description = THM.description || document.head.querySelector( "[ name=description ]" ).content;
 
-THM.themeUrlStorage = 'tootooCookbookThemeUrl';
+THM.themeUrlStorage = 'tootooCookbookThemeUrl'; // set for each instance in HTML file
+THM.cssBasic = "js13/style.css"; // set in HTML file
 
-//THM.cssBasic = "js13/style.css";
 THM.cssW3schools = "https://www.w3schools.com/lib/w3-theme-red.css";
 THM.themeBootswatch = 'https://bootswatch.com/_vendor/bootstrap/dist/css/bootstrap.css';
 
@@ -95,7 +99,7 @@ THM.getMenuThemeSelect = function() {
 
 	const htm =
 	`
-		<details >
+		<details class=detSubMenu >
 
 			<summary>Select Theme
 				<a id=thmSum class=helpItem href="JavaScript:MNU.setPopupShowHide(thmSum,THM.currentStatus);" >&nbsp; ? &nbsp;</a>
