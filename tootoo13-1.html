@@ -105,7 +105,9 @@ OHC.repo = 'tootoo13';
 OHC.pathRepo = '';
 OHC.branch = '/master/';
 
+// When running in dev folder
 //OHC.urlGitHubPage = location.href.includes( OHC.repo ) ? '../' : 'https://' + OHC.repo + "/";
+// When running in build repo
 OHC.urlGitHubPage = "";
 
 </script>
@@ -190,11 +192,11 @@ function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
+	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
+
 	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
-
-	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 

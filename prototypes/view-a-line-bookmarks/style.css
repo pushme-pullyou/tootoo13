@@ -19,7 +19,7 @@ button, input[ type=button ] { background-color: #ddd; border: none; color: #322
 button:hover, input[ type=button ]:hover{ background: #ccc; color: #888 }
 
 input[ type = range ] { -webkit-appearance: none; -moz-appearance: none; background-color: #ddd; width: 90%; }
-input[ type = range ]::-moz-range-thumb { background-color: rgb(228, 225, 225); border-radius: 0; width: 10px; }
+input[ type = range ]::-moz-range-thumb { background-color: #888; border-radius: 0; width: 10px; }
 input[ type = range ]::-webkit-slider-thumb { -webkit-appearance: none; background-color: #888; height: 20px; width: 10px; }
 
 summary { cursor: pointer; font-weight: bold; }
@@ -45,7 +45,7 @@ summary { cursor: pointer; font-weight: bold; }
 	position: fixed; resize: both; top: 0; transition: left 0.5s; width: var( --mnu-width ); z-index: 10; }
 
 #navMenu button, #navMenu input[type=button] { background-color: #ddd; border: 2px solid white; color: white; cursor: pointer;
-	padding: 2px 5px; min-width: 1.5rem; }
+	padding: 2px 5px; min-width: 13.5rem; }
 
 #navMenu button:hover { background: #ccc; color: #888 }
 

@@ -325,7 +325,7 @@ OHC.getFilesFromContents = function( items ) {
 
 	const len = OHC.pathRepo.length;
 
-	const ignoreFiles = [ ".gitattributes", ".gitignore", "404.html" ];
+	const ignoreFiles = [ ".gitattributes", ".gitignore", ".nojekyll", "404.html" ];
 
 	for ( let item of items ) {
 
