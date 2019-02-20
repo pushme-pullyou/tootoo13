@@ -5,8 +5,8 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-02-12" >
-<meta name = "release" content = "13.1.1" >
+<meta name = "date" content = "2019-02-20" >
+<meta name = "release" content = "13.1.2" >
 <title>template</title>
 <link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css">
 </head>
@@ -44,6 +44,7 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
+				<li>2019-02-20 ~ R13.1.1 ~ minor updates </li>
 				<li>2019-02-12 ~ R13.1.1 ~ fix style issues. Update status text. Add localStorage them var. Add closer to rate limits popup.</li>
 				<li>2019-02-07 ~ R13.1.0 ~ refactor styles</li>
 				<li>2019-01-13 ~ edits in most most modules</li>
@@ -71,7 +72,7 @@ MNU.currentStatusCore =
 
 
 
-const uriDefaultFile = '#README.md';
+const uriDefaultFile = 'README.md';
 
 THM.themeUrlStorage = 'templateThemeUrl';
 THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css";
@@ -87,9 +88,9 @@ MNU.repoText = ""; "TooToo13";
 MNU.repoTitle = ""; //"Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
 MNU.repoUrl = ""; // "https://pushme-pullyou.github.io/tootoo13";
 
-MNU.appText = "";// "CMS";
+MNU.appText  = ""; // "CMS";
 MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
-MNU.appUrl = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
+MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
 
 MNU.urlSourceCodeImage="https://status.github.com/images/invertocat.png";
 MNU.urlSourceCodeIcon=`<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
@@ -192,11 +193,11 @@ function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
+	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
+
 	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
-
-	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
