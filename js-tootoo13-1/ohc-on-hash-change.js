@@ -293,7 +293,7 @@ OHC.getFoldersFromContents = function( items ) {
 
 	const len = OHC.pathRepo.length;
 
-	const ignoreFolders = [ "data" ];
+	const ignoreFolders = [ "archive","data" ];
 
 	for ( let item of items ) {
 
