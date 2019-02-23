@@ -293,7 +293,7 @@ OHC.getFoldersFromContents = function( items ) {
 
 	const len = OHC.pathRepo.length;
 
-	const ignoreFolders = [ "archive","data" ];
+	const ignoreFolders = [ "0-templates-readme","archive","data" ];
 
 	for ( let item of items ) {
 
