@@ -1,5 +1,5 @@
 /* Copyright 2019 pushMe-pullYou authors. MIT License */
-/* 2019-02-23 ~ 13.1.2 */
+/* 2019-02-24 ~ 13.1.3 */
 
 * {box-sizing: border-box; }
 
@@ -22,7 +22,7 @@ input[ type = range ] { -webkit-appearance: none; -moz-appearance: none; backgro
 input[ type = range ]::-moz-range-thumb { background-color: rgb(228, 225, 225); border-radius: 0; width: 10px; }
 input[ type = range ]::-webkit-slider-thumb { -webkit-appearance: none; background-color: #888; height: 20px; width: 10px; }
 
-summary { cursor: pointer; font-size:1.3rem; font-weight: bold; }
+summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 
 .attributeTitle { font-style: italic; }
 .attributeValue { color: blue; }
