@@ -5,9 +5,9 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-02-20" >
-<meta name = "release" content = "13.1.2" >
-<title>template</title>
+<meta name = "date" content = "2019-02-26" >
+<meta name = "release" content = "1.0" >
+<title>Spider gbXML Tester</title>
 <link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
 
 MNU.description =
 	`
-		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
+		Run basic check on gbXML files and identify & report errors
 	`;
 
 MNU.currentStatusCore =
@@ -44,13 +44,8 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
-				<li>2019-02-20 ~ R13.1.1 ~ minor updates </li>
-				<li>2019-02-12 ~ R13.1.1 ~ fix style issues. Update status text. Add localStorage them var. Add closer to rate limits popup.</li>
-				<li>2019-02-07 ~ R13.1.0 ~ refactor styles</li>
-				<li>2019-01-13 ~ edits in most most modules</li>
-				<li>2019-01-13 ~ Read me files have more content</li>
-				<li>2019-01-11 ~ Fork to new repo</li>
-				<li>2019-01-09 ~ R13 beginning to look OK.</li>
+				<li>2019-02-26 ~ R1.0 ~ First commit</li>
+
 				<!--
 					<li></li>
 				-->
@@ -74,30 +69,34 @@ MNU.currentStatusCore =
 
 const uriDefaultFile = 'README.md';
 
-THM.themeUrlStorage = 'templateThemeUrl';
+THM.themeUrlStorage = 'spider-gbxml-tester-theme-url';
 THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css";
 
 // For main menu header
-MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo-templates/hamburger-css";
+MNU.urlSourceCode = "";
 
-MNU.homeText = ""; // "pushMe-pullYou";
-MNU.homeTitle = ""; "Very simple JavaScript files to help you explore and build new tools on GitHub.";
-MNU.homeUrl = ""; "https://pushme-pullyou.github.io";
+// For main menu header
+MNU.urlSourceCode = "https://github.com/ladybug-tools/spider-gbxml-tools/tree/master/spider-gbxml-viewer";
 
-MNU.repoText = ""; "TooToo13";
-MNU.repoTitle = ""; //"Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
-MNU.repoUrl = ""; // "https://pushme-pullyou.github.io/tootoo13";
 
-MNU.appText  = ""; // "CMS";
-MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
-MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
+MNU.homeText="<img src='https://ladybug.tools/artwork/icons_bugs/ico/ladybug.ico' height=24 >";
+MNU.homeTitle="Ladybug Tools: free computer applications that support environmental design and education";
+MNU.homeUrl="https://www.ladybug.tools";
+
+MNU.repoText="<img src='https://ladybug.tools/artwork/icons_bugs/ico/spider.ico' height=24 >";
+MNU.repoTitle="Spider: 3D interactive analysis in your browser mostly written around the Three.js JavaScript library";
+MNU.repoUrl="https://www.ladybug.tools/spider/";
+
+MNU.appText= "gbXML Tools";
+MNU.appTitle = "Tools to help you find, load, examine and edit gbXML files - in large numbers and sizes";
+MNU.appUrl = "https://www.ladybug.tools/spider-gbxml-tools/";
 
 MNU.urlSourceCodeImage="https://status.github.com/images/invertocat.png";
 MNU.urlSourceCodeIcon=`<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
 
-MNU.footerUrl    = "#../../";
-MNU.footerTarget = ""; //"target=_blank";
-MNU.footerIssues = "https://github.com/pushme-pullyou/tootoo13/issues";
+MNU.footerUrl = "https://pushme-pullyou.github.io/tootoo13/#";
+MNU.footerTarget = "target=_blank";
+MNU.footerIssues = "https://github.com/ladybug-tools/spider-gbxml-tools/issues";
 
 // for parsing
 OHC.user = 'pushme-pullyou';
@@ -195,19 +194,19 @@ function init() {
 
 	SFM.getMarkdownFileContents("sfrm-selected-files-markdown.md",SFMsecPrototypes);
 
-	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
+	//OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 
 	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
-	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
+	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
 	THM.init();
 
-	OHC.onHashChange();
+	//OHC.onHashChange();
 
 }
 
