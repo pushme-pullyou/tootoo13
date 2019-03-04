@@ -59,8 +59,8 @@ MNU.description =
 
 ////////// boilerplate for downstream users
 
-MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
+MNU.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
+MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
 MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
 
 
@@ -166,7 +166,7 @@ MNU.getNavHeader = function() {
 				title="Current status" >&nbsp; ? &nbsp;
 			</a>
 		</p>
-		
+
 	</div>
 	`;
 

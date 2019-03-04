@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.6", "date": "2019-01-19" };
+const OHC = { "release": "R13.7", "date": "2019-03-04" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -15,8 +15,8 @@ OHC.branch = '/master/';
 OHC.urlGitHubPage = "../../";
 
 OHC.urlSourceCode = `https://github.com/${ OHC.user}/${ OHC.repo }/`;
-OHC.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 >`;
+OHC.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
+OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
 
 OHC.xhr = new XMLHttpRequest(); // declare now to load event listeners in other modules
 OHC.regexImages = /\.(jpe?g|png|gif|webp|ico|svg|bmp)$/i;
@@ -41,6 +41,7 @@ OHC.currentStatus =
 		<p>
 			Concept
 			<ul>
+				<li>2019-03-04 ~ 13.7 ~ new gh mark</li>
 				<li>Obtains lists files and folders in a repository uses the GitHub Developer API</li>
 				<li>Opens and displays contents of file</li>
 				<li>Creates and update the HTML for a tree menu and breadcrumbs</li>
