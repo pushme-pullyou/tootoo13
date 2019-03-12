@@ -1,24 +1,25 @@
 
-<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/tootoo13/#xxxxx/README.md "View file as a web page." ) </span>
+<span style=display:none; >[You are now in a GitHub source code view - click this link to view Read Me file as a web page]( https://pushme-pullyou.github.io/tootoo13/#prototypes/0-template/README.md "View file as a web page." ) </span>
 
-<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/tootoo13/blob/master/xxxxx/README.md"
+<div><input type=button class = "btn btn-secondary btn-sm" onclick=window.location.href="https://github.com/pushme-pullyou/tootoo13/tree/master/prototypes/0-template"
 value="You are now in a GitHub web page view - Click this button to view this read me file as source code" ></div>
 
 <br>
 
-# [Template Read Me]( #xxxxx/README.md )
+# [Template Read Me]( #prototypes/0-template/README.md )
 
 <!--
-<iframe src=https://pushme-pullyou.github.io/tootoo13/xxxxx/xxxxx.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
+<iframe src=https://pushme-pullyou.github.io/tootoo13/prototypes/0-template/prototypes/0-template.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
 _<small>Template</small>_
 
-## Full Screen: [Template]( https://pushme-pullyou.github.io/tootoo13/xxxxx/xxxxx.html )
+## Full Screen: [Template]( https://pushme-pullyou.github.io/tootoo13/prototypes/0-template/prototypes/0-template.html )
 -->
 
 
 ## Concept
 
-TooToo using defaults everywhere
+* TooToo13 using defaults everywhere
+* Use to build other prototypes
 
 
 ## To Do / Wish List
@@ -27,7 +28,7 @@ TooToo using defaults everywhere
 ## Issues
 
 
-## Things you can do using this script 
+## Things you can do using this script
 
 Using the Script
 * Click the three bars( 'hamburger menu icon' ) to slide the menu in and out
@@ -46,6 +47,10 @@ Enhancing the Script
 
 
 ## Change Log
+
+### 2019-03-11 ~ Theo
+
+* Fixing links
 
 ### 2019-01-17
 
