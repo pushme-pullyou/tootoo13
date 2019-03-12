@@ -12,7 +12,6 @@ Current development activity for the gbXML Viewer primarily occurs in a newer re
 The objective is to open and view huge gbXML files very quickly. See also its <a href="https://www.ladybug.tools/spider-gbxml-tools/" target="_blank">Read Me</a> file.
 
 <!--
-
 For further background see <a href="https://www.ladybug.tools/spider" target="_blank">Ladybug Tools / Spider</a>.
 Other scripts of interest include <a href="https://www.ladybug.tools/spider/gbxml-sample-files/" target="_blank">Spider gbXML Viewer Basic</a>.</p>
 
