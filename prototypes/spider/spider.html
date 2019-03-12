@@ -186,9 +186,6 @@ function init() {
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
 
-
-
-
 	SFM.getMarkdownFileContents("selected.md",SFMsecPrototypes);
 
 	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
@@ -201,11 +198,12 @@ function init() {
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
+	titleRelease.style.display = 'none';
+	
 	THM.init();
 
 	OHC.onHashChange();
 
-	titleRelease.style.display = 'none';
 
 }
 
