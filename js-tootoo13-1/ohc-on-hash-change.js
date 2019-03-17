@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.7", "date": "2019-03-04" };
+const OHC = { "release": "R13.8", "date": "2019-03-17" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -56,6 +56,7 @@ OHC.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-03-17 ~ R1.8 ~ ignore .github files</li>
 				<li>2019-03-04 ~ R13.7 ~ new gh mark</li>
 				<li>2019-01-15 ~ Update OHC.description content and related code</li>
 				<li>2019-01-14 ~ Add text here and there / fix broken links</li>
@@ -294,7 +295,7 @@ OHC.getFoldersFromContents = function( items ) {
 
 	const len = OHC.pathRepo.length;
 
-	const ignoreFolders = [ "0-templates-readme","archive","data" ];
+	const ignoreFolders = [ "0-templates-readme","archive","data",".github" ]; // turn into global
 
 	for ( let item of items ) {
 
