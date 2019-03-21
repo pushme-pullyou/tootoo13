@@ -3,7 +3,7 @@
 /* jshint esversion: 6 */
 
 
-const MNU = { "release": "R13.1.1", "date": "2019-02-13" };
+const MNU = { "release": "R13.2", "date": "2019-03-04" };
 
 
 MNU.description =
@@ -39,6 +39,7 @@ MNU.description =
 			<summary>Change log</summary>
 
 			<ul>
+				<li>2019-03-04 ~ 15.0 ~ update github mark</li>
 				<li>2019-02-13 ~ Add rate limits popup closer</li>
 				<li>2019-02-07 ~ R13/1.0 ~ refactor styles / code cleanup</li>
 				<li>2019-01-15 ~ Add MNU.description text content and code</li>
@@ -62,9 +63,9 @@ MNU.description =
 
 ////////// boilerplate for downstream users
 
-MNU.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
-MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/cookbook/mnu-menu";
+MNU.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
+MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
+MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/tree/master/js-tootoo13-1";
 
 
 MNU.descriptionTooToo =
@@ -101,8 +102,6 @@ MNU.currentStatusCore =
 		${ MNU.descriptionTooToo }
 	`;
 
-
-//MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo-templates/hamburger-theme-cms";
 
 
 // For main menu header
@@ -157,7 +156,7 @@ MNU.getNavHeader = function() {
 			<a href=${ MNU.urlSourceCode } ${ MNU.footerTarget } title="Source code on GitHub" >
 			${ MNU.urlSourceCodeIcon }
 			</a>
-			<a href="" title="Click to reload this page" >${ document.title } R${ document.head.querySelector( '[ name=release ]' ).content }</a>
+			<a href="" title="Click to reload this page" >${ document.title } <span id=titleRelease >R${ document.head.querySelector( '[ name=release ]' ).content }</span></a>
 
 			<a id=mnuCore class=helpItem href="JavaScript:MNU.setPopupShowHide(mnuCore,MNU.currentStatusCore);"
 				title="Current status: core module" >&nbsp; ? &nbsp;

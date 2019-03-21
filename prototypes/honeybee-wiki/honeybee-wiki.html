@@ -5,9 +5,9 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-03-17" >
-<meta name = "release" content = "1.0" >
-<title>Opentecture / Mindmapping</title>
+<meta name = "date" content = "2019-03-11" >
+<meta name = "release" content = "1.0.0" >
+<title>Honeybee Wiki</title>
 <link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css">
 </head>
 <body>
@@ -25,14 +25,13 @@
 
 MNU.description =
 	`
-		Mindmapping is a collection of basic plain-vanilla JavaScript scripts for idea management
-		using GitHub pages, 3D and whatever else comes to mind
+		Wiki pages for honeybee legacy
 	`;
 
 MNU.currentStatusCore =
 	`
 		<h3>
-			Opentecture / Mindmapping
+			template
 			R${ document.head.querySelector( '[ name=release ]' ).content }
 			~
 			${ document.head.querySelector( '[ name=date ]' ).content }
@@ -45,8 +44,7 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
-				<li>2019-03-17 ~ First commit</li>
-
+				<li>2019-03-20 ~ R1.0.0 ~ First commit</li>
 			</ul>
 
 		</details>
@@ -67,19 +65,19 @@ MNU.currentStatusCore =
 
 const uriDefaultFile = 'README.md';
 
-THM.themeUrlStorage = 'mindmapping-theme-url';
+THM.themeUrlStorage = 'honeybee-wiki-themeurl';
 THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css";
 
 // For main menu header
-MNU.urlSourceCode = "https://github.com/opentecture/mindmapping";
+MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo-templates/hamburger-css";
 
-MNU.homeText = "Opentecture"; // "pushMe-pullYou";
+MNU.homeText = ""; // "pushMe-pullYou";
 MNU.homeTitle= ""; // "Very simple JavaScript files to help you explore and build new tools on GitHub.";
-MNU.homeUrl  = "https://opentecture.com"; // "https://pushme-pullyou.github.io";
+MNU.homeUrl  = ""; // "https://pushme-pullyou.github.io";
 
-MNU.repoText = "MindMapping"; // "TooToo13";
+MNU.repoText = ""; // "TooToo13";
 MNU.repoTitle= ""; // "Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
-MNU.repoUrl  = "https://opentecture.github.io/mindmapping"; // "https://pushme-pullyou.github.io/tootoo13";
+MNU.repoUrl  = ""; // "https://pushme-pullyou.github.io/tootoo13";
 
 MNU.appText  = ""; // "CMS";
 MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
@@ -90,22 +88,22 @@ MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburg
 
 MNU.footerUrl    = "#../../";
 MNU.footerTarget = ""; //"target=_blank";
-MNU.footerIssues = "https://github.com/opentecture/mindmapping/issues";
+MNU.footerIssues = "https://github.com/pushme-pullyou/tootoo13/issues";
 
 // for parsing
-OHC.user = 'opentecture';
-OHC.repo = 'mindmapping';
+OHC.user = 'pushme-pullyou';
+OHC.repo = 'pushme-pullyou.github.io';
 OHC.pathRepo = '';
 OHC.branch = '/master/';
 
 // When running in dev folder
 // = location.href.includes( OHC.repo ) ? '../' : 'https://' + OHC.repo + "/";
-OHC.urlGitHubPage = `https://${ OHC.user }/${ OHC.repo }/`;
-OHC.urlGitHubPage = "https://opentecture.github.io/mindmapping/"
+OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 // When running in build repo
 //OHC.urlGitHubPage = "";
 
 </script>
+
 
 	<nav id="navMenu" >
 
@@ -117,9 +115,9 @@ OHC.urlGitHubPage = "https://opentecture.github.io/mindmapping/"
 
 		<details class=navSubMenu open >
 
-			<summary class=sumMenuTitle >File Menu</summary>
+			<summary class=sumMenuTitle >R1.0.0</summary>
 
-			<section id=SFMsecPrototypes ></section>
+			<section id=SFMsecLinks ></section>
 
 			<section id="OHCsecMenuRepoFilesFolders" ></section>
 
@@ -186,11 +184,11 @@ function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
-	//SFM.getMarkdownFileContents("sfrm-selected-files-markdown.md",SFMsecPrototypes);
+	SFM.getMarkdownFileContents("sfrm-selected-files-markdown.md",SFMsecLinks);
 
-	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
+	//OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 
-	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
+	//FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 

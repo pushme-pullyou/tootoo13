@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.6", "date": "2019-01-19" };
+const OHC = { "release": "R13.8", "date": "2019-03-17" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -15,8 +15,8 @@ OHC.branch = '/master/';
 OHC.urlGitHubPage = "../../";
 
 OHC.urlSourceCode = `https://github.com/${ OHC.user}/${ OHC.repo }/`;
-OHC.urlSourceCodeImage = "https://status.github.com/images/invertocat.png";
-OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 >`;
+OHC.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
+OHC.iconInfo = `<img src="${ OHC.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
 
 OHC.xhr = new XMLHttpRequest(); // declare now to load event listeners in other modules
 OHC.regexImages = /\.(jpe?g|png|gif|webp|ico|svg|bmp)$/i;
@@ -56,6 +56,8 @@ OHC.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-03-17 ~ R1.8 ~ ignore .github files</li>
+				<li>2019-03-04 ~ R13.7 ~ new gh mark</li>
 				<li>2019-01-15 ~ Update OHC.description content and related code</li>
 				<li>2019-01-14 ~ Add text here and there / fix broken links</li>
 				<li>2019-01-13 ~ Add link to source code and more status content</li>
@@ -115,23 +117,21 @@ OHC.getMenuRepoFilesFolders = function() {
 			<div id = "OHCdivBreadcrumbs" ></div>
 
 			<div id = "OHCdivMenuItems" ></div>
-		<details>
 
-			<summary>GitHub API Access Token
-				<a id=ohcToken class=helpItem href="JavaScript:MNU.setPopupShowHide(ohcToken,OHC.currentStatusAccessToken);" >&nbsp; ? &nbsp;</a>
-			</summary>
+			<details>
 
-			<p>
-				Access token
-				<input value="${ OHC.accessToken }" id=OHCinpGitHubApiKey  onclick=this.select(); onblur=OHC.setGitHubAccessToken(this.value); title="Obtain API Access Token" >
-			</p>
+				<summary>GitHub API Access Token
+					<a id=ohcToken class=helpItem href="JavaScript:MNU.setPopupShowHide(ohcToken,OHC.currentStatusAccessToken);" >&nbsp; ? &nbsp;</a>
+				</summary>
+
+				<p>
+					Access token
+					<input value="${ OHC.accessToken }" id=OHCinpGitHubApiKey  onclick=this.select(); onblur=OHC.setGitHubAccessToken(this.value); title="Obtain API Access Token" >
+				</p>
+
+			</details>
 
 		</details>
-		</details>
-
-
-
-		<hr>
 
 	`;
 
@@ -295,7 +295,7 @@ OHC.getFoldersFromContents = function( items ) {
 
 	const len = OHC.pathRepo.length;
 
-	const ignoreFolders = [ "0-templates-readme","archive","data" ];
+	const ignoreFolders = [ "0-templates-readme","archive","data",".github" ]; // turn into global
 
 	for ( let item of items ) {
 
