@@ -99,7 +99,6 @@ OHC.currentStatusAccessToken =
 
 OHC.getMenuRepoFilesFolders = function() {
 
-	OHC.divContents = divContents;
 	OHC.urlGitHubSource = "https://github.com/" + OHC.user + "/" + OHC.repo;
 	OHC.urlGitHubApiContents = 'https://api.github.com/repos/' + OHC.user + "/" + OHC.repo + '/contents/' + OHC.pathRepo;
 	OHC.accessToken = localStorage.getItem( 'githubAccessToken' ) || '';
@@ -165,7 +164,8 @@ OHC.onHashChange = function() {
 	// note two requests...
 
 	// if new !== old
-	OHC.setMenuGitHubPathFileNames( pathCurrent );
+
+	if ( OHC.urlGitHubApiContents ){ OHC.setMenuGitHubPathFileNames( pathCurrent ); }
 
 	if ( ulc.endsWith( ".md" ) ) {
 

@@ -6,14 +6,7 @@ value="You are now in a GitHub web page view - Click this button to view this re
 
 <br>
 
-# [Template Read Me]( #prototypes/0-template/README.md )
-
-<!--
-<iframe src=https://pushme-pullyou.github.io/tootoo13/prototypes/0-template/prototypes/0-template.html width=100% height=500px >Iframes are not viewable in GitHub source code views</iframe>
-_<small>Template</small>_
-
-## Full Screen: [Template]( https://pushme-pullyou.github.io/tootoo13/prototypes/0-template/prototypes/0-template.html )
--->
+# [Honeybee Wiki / The Spider Remix Read Me]( #prototypes/0-template/README.md )
 
 
 ## Concept
@@ -48,16 +41,13 @@ Enhancing the Script
 
 ## Change Log
 
-### 2019-03-11 ~ Theo
 
-* Fixing links
-
-### 2019-01-17
+### 2019-03-20 ~ Theo
 
 * First commit
 
 
 ***
 
-# <center title="hello!" ><a href=javascript:window.scrollTo(0,0); style=text-decoration:none; > ❦ </a></center>
+# <center title="hello!" ><a href=javascript:window.scrollTo(0,0); style=text-decoration:none; > <img src="https://ladybug.tools/artwork/icons_bugs/ico/honeybee.ico" height=18 > </a></center>
 

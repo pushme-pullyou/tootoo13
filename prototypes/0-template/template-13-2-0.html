@@ -6,21 +6,26 @@
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
 <meta name = "date" content = "2019-03-20" >
-<meta name = "release" content = "1.0.0" >
-<title>Honeybee Wiki</title>
-<link rel="stylesheet" href="style.css" >
+<meta name = "release" content = "13.2.0" >
+<title>template</title>
+<link rel="stylesheet" href="../../js-tootoo13-2/style.css">
+
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
 
 <!--
+
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/fob-file-open-basic.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/mnu-menu.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/ohc-on-hash-change.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/sfm-selected-files-markdown.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/thm-theme-select.js" ></script>
 <script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-2/tmp-template.js" ></script>
+
 -->
+
+
 <script src="../../js-tootoo13-2/fob-file-open-basic.js" ></script>
 <script src="../../js-tootoo13-2/mnu-menu.js" ></script>
 <script src="../../js-tootoo13-2/ohc-on-hash-change.js" ></script>
@@ -30,11 +35,11 @@
 
 <script>
 
-//Copyright 2019 Ladybug Tools authors. MIT License
+//Copyright 2019 pushMe-pullYou authors. MIT License
 
 MNU.description =
 	`
-		Wiki pages for Honeybee legacy - remixed by the Spider team
+		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
 	`;
 
 MNU.currentStatusCore =
@@ -53,7 +58,7 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
-				<li>2019-03-20 ~ R1.0.0 ~ First commit</li>
+				<li>2019-03-20 ~ R13.2.0 ~ first commit</li>
 			</ul>
 
 		</details>
@@ -74,15 +79,15 @@ MNU.currentStatusCore =
 
 const uriDefaultFile = 'README.md';
 
-THM.themeUrlStorage = 'honeybee-wiki-themeurl';
-THM.cssBasic = "style.css";
+THM.themeUrlStorage = 'templateThemeUrl';
+THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-1/style.css";
 
 // For main menu header
 MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/tree/master/tootoo-templates/hamburger-css";
 
-MNU.homeText = "<img src='https://ladybug.tools/artwork/icons_bugs/ico/ladybug.ico' height=24 >";
-MNU.homeTitle="Ladybug Tools: free computer applications that support environmental design and education";
-MNU.homeUrl = "https://www.ladybug.tools";
+MNU.homeText = ""; // "pushMe-pullYou";
+MNU.homeTitle= ""; // "Very simple JavaScript files to help you explore and build new tools on GitHub.";
+MNU.homeUrl  = ""; // "https://pushme-pullyou.github.io";
 
 MNU.repoText = ""; // "TooToo13";
 MNU.repoTitle= ""; // "Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
@@ -97,17 +102,17 @@ MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburg
 
 MNU.footerUrl    = "#../../";
 MNU.footerTarget = ""; //"target=_blank";
-MNU.footerIssues = "https://github.com/ladybug-tools/spider/issues";
+MNU.footerIssues = "https://github.com/pushme-pullyou/tootoo13/issues";
 
-// for GitHub API parsing
-OHC.user = 'ladybug-tools';
-OHC.repo = 'spider';
+// for parsing
+OHC.user = 'pushme-pullyou';
+OHC.repo = 'pushme-pullyou.github.io';
 OHC.pathRepo = '';
 OHC.branch = '/master/';
 
 // When running in dev folder
-// OHC.urlGitHubPage= location.href.includes( OHC.repo ) ? '../' : 'https://' + OHC.repo + "/";
-// OHC.urlGitHubPage = `https://${ OHC.repo }/`;
+// = location.href.includes( OHC.repo ) ? '../' : 'https://' + OHC.repo + "/";
+OHC.urlGitHubPage = `https://${ OHC.repo }/`;
 // When running in build repo
 //OHC.urlGitHubPage = "";
 
@@ -124,9 +129,9 @@ OHC.branch = '/master/';
 
 		<details class=navSubMenu open >
 
-			<summary class=sumMenuTitle >R1.0.0</summary>
+			<summary class=sumMenuTitle >File Menu</summary>
 
-			<section id=SFMsecLinks ></section>
+			<section id=SFMsecPrototypes ></section>
 
 			<section id="OHCsecMenuRepoFilesFolders" ></section>
 
@@ -155,9 +160,7 @@ OHC.branch = '/master/';
 		</footer>
 
 
-		<h1 onclick=navMenu.scrollTop=0; style=cursor:pointer;text-align:center; title="go to top of menu" >
-			<img src="https://ladybug.tools/artwork/icons_bugs/ico/honeybee.ico" height=18 >
-		</h1>
+		<h1 onclick=navMenu.scrollTop=0; style=cursor:pointer;text-align:center; title="go to top of menu" > ❦ </h1>
 
 	</nav>
 
@@ -193,21 +196,19 @@ init();
 
 function init() {
 
-	window.addEventListener ( 'hashchange', OHC.onHashChange, false );
-
 	OHC.divContents = divContents;
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
-	SFM.getMarkdownFileContents("sfrm-selected-files-markdown.md",SFMsecLinks);
+	SFM.getMarkdownFileContents("sfrm-selected-files-markdown.md",SFMsecPrototypes);
 
-	//OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
+	OHCsecMenuRepoFilesFolders.innerHTML = OHC.getMenuRepoFilesFolders();
 
-	//FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
+	FOBsecFileOpenBasic.innerHTML = FOB.getMenuFileOpenBasic( divContents, divPopUpData );
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
-	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
+	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
