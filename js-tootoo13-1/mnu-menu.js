@@ -1,6 +1,7 @@
 // Copyright 2019 pushMe-pullYou authors. MIT License
 /* global THREE * /
 /* jshint esversion: 6 */
+/* jshint loopfunc: true */
 
 
 const MNU = { "release": "R13.2", "date": "2019-03-04" };

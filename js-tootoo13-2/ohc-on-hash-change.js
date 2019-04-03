@@ -4,7 +4,7 @@
 
 */
 
-const OHC = { "release": "R13.8", "date": "2019-03-17" };
+const OHC = { "release": "R13.9", "date": "2019-04-03" };
 
 
 OHC.uriDefaultFile = "README.md";
@@ -56,6 +56,7 @@ OHC.currentStatus =
 		<p>
 			Change log
 			<ul>
+				<li>2019-04-03 ~ F - globalize xhr - for event handling</li>
 				<li>2019-03-17 ~ R1.8 ~ ignore .github files</li>
 				<li>2019-03-04 ~ R13.7 ~ new gh mark</li>
 				<li>2019-01-15 ~ Update OHC.description content and related code</li>
@@ -191,7 +192,7 @@ OHC.onHashChange = function() {
 
 OHC.requestFile = function( url, callback ) {
 
-	const xhr = new XMLHttpRequest();
+	const xhr = OHC.xhr;
 	xhr.crossOrigin = 'anonymous';
 	xhr.open( 'GET', url, true );
 	xhr.onerror = function( xhr ) { console.log( 'error:', xhr  ); };

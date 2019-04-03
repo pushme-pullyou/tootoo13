@@ -209,8 +209,19 @@ function init() {
 
 	OHC.onHashChange();
 
+	//change to custom event with data passing via event details
+	OHC.xhr.addEventListener( 'load', test, false );
+	FOB.reader.addEventListener( 'load', test, false );
+	//document.body.addEventListener( 'onZipFileParse', test, false );
+
 }
 
+
+function test(){
+
+	console.log( '', 6623 );
+
+}
 
 </script>
 </body>
