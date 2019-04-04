@@ -1,9 +1,9 @@
 /* Copyright 2019 pushMe-pullYou authors. MIT License */
-/* 2019-02-24 ~ 13.1.3 */
+/* 2019-02-24 ~ 13.2 */
 
 * {box-sizing: border-box; }
 
-:root { --mnu-width: 25rem; --screen-width: calc( 100vw ); }
+:root { --mnu-width: 20rem; --screen-width: calc( 100vw ); }
 
 /* body, html { font: 11pt monospace; height: 100%; margin: 0; overflow: hidden; } */
 body { font: 12pt monospace; height: 100%; margin: 0; }
