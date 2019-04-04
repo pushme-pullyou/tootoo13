@@ -135,6 +135,8 @@ MNU.getNavHeader = function() {
 	document.addEventListener( 'touchstart', MNU.onTouchStart, false );
 	document.addEventListener( 'touchmove', MNU.onTouchMove, false );
 
+
+
 	const htm  =
 	`
 	<div class=navSubMenu >
@@ -275,12 +277,29 @@ MNU.setPopupShowHide = function( id, text ) {
 
 	id.classList.toggle( "active" );
 
-	const closer = `<div style=text-align:right; ><button onclick=MNU.setPopupShowHide(MNU.statusId,""); >X</button></div>`;
+	if ( id.classList.contains( 'active' ) ) {
 
-	divPopUpData.innerHTML = id.classList.contains( 'active' ) ? closer + text : '';
+		const closer = `<div style=text-align:right; ><button onclick=MNU.setPopupShowHide(MNU.statusId,""); >X</button></div>`;
+
+		divPopUpData.innerHTML = id.classList.contains( 'active' ) ? closer + text : '';
+
+		divContainer.addEventListener( 'click', MNU.onClickContainer, false );
+
+	} else {
+
+		divContainer.removeEventListener( 'click', MNU.onClickContainer, false );
+
+	}
 
 };
 
+
+
+MNU.onClickContainer = function() {
+
+	divPopUpData.innerHTML = "";
+
+};
 
 
 //////////

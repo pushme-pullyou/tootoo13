@@ -192,6 +192,7 @@ OHC.onHashChange = function() {
 
 OHC.requestFile = function( url, callback ) {
 
+	OHC.xhr = new XMLHttpRequest();
 	const xhr = OHC.xhr;
 	xhr.crossOrigin = 'anonymous';
 	xhr.open( 'GET', url, true );

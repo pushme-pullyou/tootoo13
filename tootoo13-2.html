@@ -93,8 +93,8 @@ MNU.appText  = ""; // "CMS";
 MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
 MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
 
-MNU.urlSourceCodeImage="https://status.github.com/images/invertocat.png";
-MNU.urlSourceCodeIcon=`<img src="${ MNU.urlSourceCodeImage }" height=18 >`;
+//MNU.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
+//MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
 
 MNU.footerUrl    = "#";
 MNU.footerTarget = ""; //"target=_blank";
@@ -191,6 +191,8 @@ init();
 
 function init() {
 
+	OHC.divContents = divContents;
+
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
 	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
@@ -209,8 +211,19 @@ function init() {
 
 	OHC.onHashChange();
 
+	//change to custom event with data passing via event details
+	//OHC.xhr.addEventListener( 'load', test, false );
+	//FOB.reader.addEventListener( 'load', test, false );
+	//document.body.addEventListener( 'onZipFileParse', test, false );
+
 }
 
+
+function test(){
+
+	//onsole.log( '', 6623 );
+
+}
 
 </script>
 </body>

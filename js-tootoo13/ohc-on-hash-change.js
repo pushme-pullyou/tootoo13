@@ -242,7 +242,6 @@ OHC.callbackOtherToTextarea = function( xhr ){
 //////////
 
 OHC.setMenuGitHubPathFileNames = function( path = '' ) {
-
 	//console.log( 'path', path );
 
 	const str = OHC.accessToken ? "?access_token=" + OHC.accessToken : "";
