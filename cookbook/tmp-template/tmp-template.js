@@ -1,6 +1,7 @@
 // Copyright 2019 pushMe-pullYou authors. MIT License
 /* global  * /
 /* jshint esversion: 6 */
+/* jshint loopfunc: true */
 
 
 

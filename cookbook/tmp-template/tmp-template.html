@@ -5,11 +5,8 @@
 <meta name = "viewport" content= "width=device-width, initial-scale=1" >
 <meta name = "description" content = "Basic HTML and JavaScript template files for creating new TooToo menu modules" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
-<meta name = "date" content = "2019-01-13" >
+<meta name = "date" content = "2019-04-04" >
 <title></title>
-
-
-
 <style>
 /*
 	body { font: 12pt monospace; height: 100%; margin: 0 auto; max-width: 800px; }
@@ -32,7 +29,7 @@
 */
 
 </style>
-<link rel="stylesheet" href="../../js-tootoo13/style.css">
+<link rel="stylesheet" href="../../js-tootoo13-2/style.css">
 </head>
 <body>
 <script src="tmp-template.js" ></script>
@@ -65,8 +62,11 @@
 	</nav>
 
 
-	<div id="divContents" ></div>
+	<main >
 
+		<div id="divContents" ></div>
+
+	</main>
 
 <script>
 
@@ -118,7 +118,7 @@ MNU.setPopupShowHide = function( id, text ) {
 
 function getTitle() {
 
-	const urlSourceCodeIcon = "https://status.github.com/images/invertocat.png";
+	const urlSourceCodeIcon = "https://pushme-pullyou.github.io/github-mark-64.png";
 
 	document.title = document.title ? document.title : location.href.split( '/' ).pop().slice( 0, - 5 ).replace( /-/g, ' ' );
 
