@@ -266,8 +266,6 @@ OHC.setMenuGitHubPathFileNames = function( path = '' ) {
 
 OHC.callbackGitHubPathFileNames = function( xhr ) {
 
-	//console.log( 'xhr', xhr );
-
 	const response = xhr.target.response;
 	const items = JSON.parse( response );
 	//OHC.menuItems = items;

@@ -69,35 +69,6 @@ OHC.currentStatus =
 	`;
 
 
-
-OHC.currentStatusAccessToken =
-	`
-		<h3>GitHub API Access Token</h3>
-
-		<p>This script uses the GitHub API to obtain the names of folders and files displayed in this menu.</p>
-
-		<p>
-			In rare circumstances your usage may push the requests over the sixty requests per hour limit,
-			no list of files will appear and this script will display an error message.
-			After an or so so, the rates limit is automatically reset and menus will again display as expected.
-		</p>
-
-		<p>
-			If you are testing or building new menus or whatever,
-			you may obtain access tokens from GitHub at no charge and enter the token into the text box.
-			This will raise your limit to 5,000 requests per hour.
-		</p>
-		<p>
-			See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.
-		</p>
-		<p>
-			<button onclick=OHC.requestFile("https://api.github.com/rate_limit",OHC.callbackRateLimits); title='If files and folder stop appearing, it is likely due to too many API calls' >
-				View GitHub API rate limits</button>
-		</p>
-	`;
-
-
-
 OHC.getMenuRepoFilesFolders = function() {
 
 	OHC.urlGitHubSource = "https://github.com/" + OHC.user + "/" + OHC.repo;
@@ -118,19 +89,6 @@ OHC.getMenuRepoFilesFolders = function() {
 
 			<div id = "OHCdivMenuItems" ></div>
 
-			<details>
-
-				<summary>GitHub API Access Token
-					<a id=ohcToken class=helpItem href="JavaScript:MNU.setPopupShowHide(ohcToken,OHC.currentStatusAccessToken);" >&nbsp; ? &nbsp;</a>
-				</summary>
-
-				<p>
-					Access token
-					<input value="${ OHC.accessToken }" id=OHCinpGitHubApiKey  onclick=this.select(); onblur=OHC.setGitHubAccessToken(this.value); title="Obtain API Access Token" >
-				</p>
-
-			</details>
-
 		</details>
 
 	`;
@@ -141,26 +99,18 @@ OHC.getMenuRepoFilesFolders = function() {
 
 
 
-OHC.setGitHubAccessToken = function( accessToken ) {
-
-	console.log( 'accessToken', accessToken );
-
-	localStorage.setItem( "githubAccessToken", accessToken );
-
-	OHC.accessToken = accessToken;
-
-};
-
-
-
 OHC.onHashChange = function() {
 
 	const url = !location.hash ? OHC.uriDefaultFile : location.hash.slice( 1 );
+	OHC.url = url;
 
 	const ulc = url.toLowerCase();
 
 	const crumbs = url.slice( OHC.urlGitHubPage.length );
 	let pathCurrent = crumbs.lastIndexOf( '/' ) > 0 ? crumbs.slice( 0, crumbs.lastIndexOf( '/' ) ) : '';
+	//console.log( 'pathCurrent', pathCurrent );
+
+	aViewSource.href = MNU.urlSourceCode + "blob/master/" + url;
 
 	// note two requests...
 
@@ -201,24 +151,6 @@ OHC.requestFile = function( url, callback ) {
 	//xhr.onprogress = function( xhr ) { console.log(  'bytes loaded: ' + xhr.loaded.toLocaleString() ) }; /// or something
 	xhr.onload = callback;
 	xhr.send( null );
-
-};
-
-
-////////// same as FOB
-
-
-OHC.callbackRateLimits = function( xhr ) {
-
-	divPopUpData.innerHTML=
-		`
-		<h3>Current GitHub rate limits</h3>
-
-		<p>See <a href="https://developer.github.com/v3/#rate-limiting" target="_blank">developer.github.com/v3</a>.</p>
-
-		<pre> ${ xhr.target.response } </pre>
-
-		`;
 
 };
 
@@ -269,7 +201,8 @@ OHC.callbackGitHubPathFileNames = function( xhr ) {
 
 	const response = xhr.target.response;
 	const items = JSON.parse( response );
-	//OHC.menuItems = items;
+	//console.log( 'items ', items );
+	OHC.menuItems = items;
 
 	//if ( items.message !== "Not Found" ) { alert( items.message ); return; }
 	if ( items.message ) { console.log( 'error', items.message ); return; } //breadcrumbs??
@@ -334,6 +267,8 @@ OHC.getFilesFromContents = function( items ) {
 
 	const ignoreFiles = [ ".gitattributes", ".gitignore", ".nojekyll", "404.html" ];
 
+	const name = OHC.url.split( "/" ).pop();
+
 	for ( let item of items ) {
 
 		if ( item.type === "file" && !ignoreFiles.includes( item.name ) ) {
@@ -342,15 +277,17 @@ OHC.getFilesFromContents = function( items ) {
 
 			const str = item.path.endsWith( "html" ) ? `<a href="${ OHC.urlGitHubPage }${ OHC.pathRepo }${ itemPath }" >&#x2750;</a>` : "";
 
+			const stl = item.name === name? "yellow" : "";
+
 			htm += // try grid or flexbox??
 			`
-				<table><tr>
+				<table ><tr>
 					<td>
 						<a href="${ OHC.urlGitHubSource }/blob${ OHC.branch }${ itemPath }" target=_top >
 							${ OHC.iconInfo }
 						</a>
 					</td>
-					<td>
+					<td style=background-color:${ stl }; >
 						<a href=#${ OHC.urlGitHubPage }${ OHC.pathRepo }${ itemPath } title="${ item.size.toLocaleString() } bytes" >
 							${ item.name }
 						</a>
