@@ -9,7 +9,7 @@ const FGA = { "release": "1.0.0", "date": "2019-04-13" };
 
 FGA.description =
 	`
-		template bbb
+		Use GitHub API to obtain a list of files in a GitHub repo. Build menu to access the files
 	`;
 
 FGA.uriDefaultFile = "README.md";
@@ -73,7 +73,7 @@ FGA.getFiles = function() {
 
 	const crumbs = url.slice( FGA.urlGitHubPage.length );
 	let pathCurrent = crumbs.lastIndexOf( '/' ) > 0 ? crumbs.slice( 0, crumbs.lastIndexOf( '/' ) ) : '';
-	console.log( 'pathCurrent', pathCurrent );
+	//console.log( 'pathCurrent', pathCurrent );
 
 	if ( FGA.urlGitHubApiContents ){ FGA.setMenuGitHubPathFileNames( pathCurrent ); }
 
