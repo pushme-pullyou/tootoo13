@@ -8,17 +8,17 @@
 <meta name = "date" content = "2019-04-14" >
 <meta name = "release" content = "13-3-0" >
 <title>TooToo</title>
-<link rel="stylesheet" href="js-tootoo13-3-0/style.css">
+<link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/style.css">
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
-<script src="js-tootoo13-3-0/mnu-menu.js" ></script>
-<script src="js-tootoo13-3-0/sfm-selected-files-markdown.js" ></script>
-<script src="js-tootoo13-3-0/fga-files-github-api/fga-files-github-api.js" ></script>
-<script src="js-tootoo13-3-0/gat-github-access-token.js" ></script>
-<script src="js-tootoo13-3-0/fob-file-open-basic/fob-file-open-basic.js" ></script>
-<script src="js-tootoo13-3-0/thm-theme-select.js" ></script>
-<script src="js-tootoo13-3-0/tmp-template.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/mnu-menu.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/sfm-selected-files-markdown.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/fga-files-github-api/fga-files-github-api.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/gat-github-access-token.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/fob-file-open-basic/fob-file-open-basic.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/thm-theme-select.js" ></script>
+<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/tmp-template.js" ></script>
 
 <script>
 
@@ -45,16 +45,7 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
-				<li>2019-02-24 ~ R13.2.0 ~ </li>
-				<li>2019-02-12 ~ R13.1.1 ~ fix style issues. Update status text. Add localStorage them var. Add closer to rate limits popup.</li>
-				<li>2019-02-07 ~ R13.1.0 ~ refactor styles</li>
-				<li>2019-01-13 ~ edits in most most modules</li>
-				<li>2019-01-13 ~ Read me files have more content</li>
-				<li>2019-01-11 ~ Fork to new repo</li>
-				<li>2019-01-09 ~ R13 beginning to look OK.</li>
-				<!--
-					<li></li>
-				-->
+				<li>2019-04-14 ~ F - R13.0.0 - first commit</li>
 			</ul>
 
 		</details>
@@ -71,13 +62,11 @@ MNU.currentStatusCore =
 	`;
 
 
-
-
-//const uriDefaultFile = 'README.md';
 FOB.urlDefaultFile = 'README.md';
 
-THM.themeUrlStorage = 'tootoo13-3-0ThemeUrl';
-THM.cssBasic = "js-tootoo13-3-0/style.css";
+THM.themeUrlStorage = 'tootoo13-3-0-theme-url';
+THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-3-0/style.css";
+
 
 // For main menu header
 MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/";
@@ -91,8 +80,8 @@ MNU.repoTitle = "Basic html templates with sliding menu, css selection, markdown
 MNU.repoUrl   = "https://pushme-pullyou.github.io/tootoo13";
 
 MNU.appText  = ""; // "CMS";
-MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
-MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
+MNU.appTitle = ""; // "Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
+MNU.appUrl   = ""; // "https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
 
 //MNU.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
 //MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
@@ -108,7 +97,7 @@ FGA.pathRepo = '';
 FGA.branch = '/master/';
 
 // When running in dev folder
-//FGA.urlGitHubPage = location.href.includes( FGA.repo ) ? '../' : 'https://' + FGA.repo + "/";
+// FGA.urlGitHubPage = location.href.includes( FGA.repo ) ? '../' : 'https://' + FGA.repo + "/";
 // When running in build repo
 FGA.urlGitHubPage = "";
 
@@ -157,7 +146,6 @@ FGA.urlGitHubPage = "";
 
 		</footer>
 
-
 		<h1 onclick=navMenu.scrollTop=0; style=cursor:pointer;text-align:center; title="go to top of menu" > ❦ </h1>
 
 	</nav>
@@ -203,7 +191,7 @@ function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
-	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
+	//SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
 
 	FGAsecMenuRepoFilesFolders.innerHTML = FGA.getMenuFilesGithubApi();
 
@@ -213,7 +201,7 @@ function init() {
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
-	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
+	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
@@ -222,18 +210,6 @@ function init() {
 	FGA.getFiles();
 
 	FOB.onHashChange();
-
-	//change to custom event with data passing via event details
-	//FGA.xhr.addEventListener( 'load', test, false );
-	//FOB.reader.addEventListener( 'load', test, false );
-	//document.body.addEventListener( 'onZipFileParse', test, false );
-
-}
-
-
-function test(){
-
-	//onsole.log( '', 6623 );
 
 }
 
