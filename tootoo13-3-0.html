@@ -6,19 +6,19 @@
 <meta name = "description" content = "This menu is a component of a basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more" >
 <meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
 <meta name = "date" content = "2019-04-14" >
-<meta name = "release" content = "13-dev" >
-<title>pushMe-pullYou</title>
-<link rel="stylesheet" href="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/style.css">
+<meta name = "release" content = "13-3-0" >
+<title>TooToo</title>
+<link rel="stylesheet" href="js-tootoo13-3-0/style.css">
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/mnu-menu.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/sfm-selected-files-markdown.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/fga-files-github-api/fga-files-github-api.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/gat-github-access-token.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/fob-file-open-basic/fob-file-open-basic.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/thm-theme-select.js" ></script>
-<script src="https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/tmp-template.js" ></script>
+<script src="js-tootoo13-3-0/mnu-menu.js" ></script>
+<script src="js-tootoo13-3-0/sfm-selected-files-markdown.js" ></script>
+<script src="js-tootoo13-3-0/fga-files-github-api/fga-files-github-api.js" ></script>
+<script src="js-tootoo13-3-0/gat-github-access-token.js" ></script>
+<script src="js-tootoo13-3-0/fob-file-open-basic/fob-file-open-basic.js" ></script>
+<script src="js-tootoo13-3-0/thm-theme-select.js" ></script>
+<script src="js-tootoo13-3-0/tmp-template.js" ></script>
 
 <script>
 
@@ -26,16 +26,13 @@
 
 MNU.description =
 	`
-		Very simple JavaScript files to help you explore and build new tools on <a href="https://github.com" target="_blank">GitHub</a>.
-			<!--
-			Code names are a riff on the <a href="https://en.wikipedia.org/wiki/Doctor_Dolittle" target="_blank">Dr Dolittle</a> naming style
-			-->
+		TooToo is a collection of basic plain-vanilla JavaScript scripts for content management on GitHub pages with sliding menu, CSS theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more
 	`;
 
 MNU.currentStatusCore =
 	`
 		<h3>
-			pushMe-pullYou
+			TooToo
 			R${ document.head.querySelector( '[ name=release ]' ).content }
 			~
 			${ document.head.querySelector( '[ name=date ]' ).content }
@@ -48,8 +45,16 @@ MNU.currentStatusCore =
 			<summary>Change log</summary>
 
 			<ul>
-				<li>2019-01-17 ~ Add many TooToo fixes</li>
-				<li>2019-01-09 ~ Index/html now based on TooToo R13 - beginning to look OK</li>
+				<li>2019-02-24 ~ R13.2.0 ~ </li>
+				<li>2019-02-12 ~ R13.1.1 ~ fix style issues. Update status text. Add localStorage them var. Add closer to rate limits popup.</li>
+				<li>2019-02-07 ~ R13.1.0 ~ refactor styles</li>
+				<li>2019-01-13 ~ edits in most most modules</li>
+				<li>2019-01-13 ~ Read me files have more content</li>
+				<li>2019-01-11 ~ Fork to new repo</li>
+				<li>2019-01-09 ~ R13 beginning to look OK.</li>
+				<!--
+					<li></li>
+				-->
 			</ul>
 
 		</details>
@@ -71,42 +76,41 @@ MNU.currentStatusCore =
 //const uriDefaultFile = 'README.md';
 FOB.urlDefaultFile = 'README.md';
 
-THM.themeUrlStorage = 'tootoo13-devThemeUrl';
-THM.cssBasic = "https://pushme-pullyou.github.io/tootoo13/js-tootoo13-dev/style.css";
+THM.themeUrlStorage = 'tootoo13-3-0ThemeUrl';
+THM.cssBasic = "js-tootoo13-3-0/style.css";
 
 // For main menu header
-MNU.urlSourceCode = "https://github.com/pushme-pullyou/pushme-pullyou.github.io/";
+MNU.urlSourceCode = "https://github.com/pushme-pullyou/tootoo13/";
 
-MNU.homeText = ""; // "pushMe-pullYou";
-MNU.homeTitle = ""; "Very simple JavaScript files to help you explore and build new tools on GitHub.";
-MNU.homeUrl = ""; "https://pushme-pullyou.github.io";
+MNU.homeText  = "pushMe-pullYou";
+MNU.homeTitle = "Very simple JavaScript files to help you explore and build new tools on GitHub.";
+MNU.homeUrl   = "https://pushme-pullyou.github.io";
 
-MNU.repoText = ""; "TooToo13";
-MNU.repoTitle = ""; //"Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
-MNU.repoUrl = ""; // "https://pushme-pullyou.github.io/tootoo13";
+MNU.repoText  = "TooToo13";
+MNU.repoTitle = "Basic html templates with sliding menu, css selection, markdown capability and frequently used pages";
+MNU.repoUrl   = "https://pushme-pullyou.github.io/tootoo13";
 
-MNU.appText = "";// "CMS";
+MNU.appText  = ""; // "CMS";
 MNU.appTitle = ""; //"Basic html content management script with sliding menu, css theme selection, Markdown to HTML, drag and drop file reading capability, access to frequently used pages and more";
-MNU.appUrl = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
+MNU.appUrl   = ""; //"https://pushme-pullyou.github.io/#tootoo-templates/hamburger-theme-cms/README.md";
 
 //MNU.urlSourceCodeImage = "https://pushme-pullyou.github.io/github-mark-64.png";
 //MNU.urlSourceCodeIcon = `<img src="${ MNU.urlSourceCodeImage }" height=18 style=opacity:0.5 >`;
 
-MNU.footerUrl = "#../../";
+MNU.footerUrl    = "#";
 MNU.footerTarget = ""; //"target=_blank";
 MNU.footerIssues = "https://github.com/pushme-pullyou/tootoo13/issues";
 
 // for parsing
 FGA.user = 'pushme-pullyou';
-FGA.repo = 'pushme-pullyou.github.io';
+FGA.repo = 'tootoo13';
 FGA.pathRepo = '';
 FGA.branch = '/master/';
 
 // When running in dev folder
-// = location.href.includes( FGA.repo ) ? '../' : 'https://' + FGA.repo + "/";
-FGA.urlGitHubPage = `https://${ FGA.repo }/`;
+//FGA.urlGitHubPage = location.href.includes( FGA.repo ) ? '../' : 'https://' + FGA.repo + "/";
 // When running in build repo
-//FGA.urlGitHubPage = "";
+FGA.urlGitHubPage = "";
 
 </script>
 
@@ -199,7 +203,7 @@ function init() {
 
 	MNUdivHeader.innerHTML = MNU.getNavHeader();
 
-	SFM.getMarkdownFileContents("../../prototypes.md",SFMsecPrototypes);
+	SFM.getMarkdownFileContents("prototypes.md",SFMsecPrototypes);
 
 	FGAsecMenuRepoFilesFolders.innerHTML = FGA.getMenuFilesGithubApi();
 
@@ -209,7 +213,7 @@ function init() {
 
 	THMsecMenuThemeSelect.innerHTML = THM.getMenuThemeSelect();
 
-	//TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
+	TMPsecMenuTemplate.innerHTML = TMP.getMenuTemplate();
 
 	MNUdivFooter.innerHTML = MNU.getNavFooter(); // not essential
 
@@ -219,8 +223,19 @@ function init() {
 
 	FOB.onHashChange();
 
+	//change to custom event with data passing via event details
+	//FGA.xhr.addEventListener( 'load', test, false );
+	//FOB.reader.addEventListener( 'load', test, false );
+	//document.body.addEventListener( 'onZipFileParse', test, false );
+
 }
 
+
+function test(){
+
+	//onsole.log( '', 6623 );
+
+}
 
 </script>
 </body>
