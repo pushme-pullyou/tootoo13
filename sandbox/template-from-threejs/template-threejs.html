@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>three.js / examples</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" >
+<style>
+
+* { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {background-color: #ffffff; color: #555; font-family: 'inconsolata'; font-size: 15px; height: 100%;
+	line-height: 18px; margin: 0px; overflow: hidden; }
+
+h1 { margin-top: 30px; margin-bottom: 40px; margin-left: 20px; font-size: 25px; font-weight: normal; }
+
+h2 { font-size: 20px; font-weight: normal; }
+
+a { color: #2194CE; text-decoration: none; }
+
+button, input[ type=button ] { background-color: #ddd; border: 1px solid #ccc; border-radius: 2px;
+	color: #322; cursor: pointer; outline: none; padding: 3px 5px; }
+
+button:hover, input[ type=button ]:hover{ background: #ccc;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.3); color: #f00 }
+
+#navPanel { background: #fafafa; height: 100%; left: 0px; overflow: auto; position: fixed; width: 310px; }
+
+#navPanel #secContent, footer { padding: 0px 20px 20px 20px; }
+
+#navPanel #secContent a { color: #2194CE; text-decoration: none; cursor: pointer; }
+
+#navPanel #secContent a:hover { text-decoration: underline; }
+
+#navPanel #secContent a:active, #navPanel #secContent a:focus { color: #ff0000; }
+
+#navPopup { background-color: #eee; border: 1px solid #aaa;  border-radius: 8px;
+	opacity: 0.95;  overflow: auto; padding: 0 1rem 1rem 1rem; z-index: 100;
+	left: 50%; margin-right: -50%; position: absolute; top: 40%; transform: translate(-50%, -50%);
+	box-shadow: 10px 10px 25px rgba(0,0,0,0.3), 6px 6px 6px rgba(0,0,0,0.5); }
+
+
+#viewSrcButton { position: fixed; bottom: 20px; right: 20px; padding: 8px; color: #fff;
+	background-color: #555; opacity: 0.7; }
+
+#viewSrcButton:hover { cursor: pointer; opacity: 1; }
+
+#divContents { position: absolute; border: 0px; left: 310px; width: calc(100% - 310px); height: 100%;
+	margin: 0; overflow: hidden; }
+
+
+/* mobile */
+
+#expandButton { display: none; height: 32px; position: absolute; right: 20px; top: 12px; width: 32px; }
+
+@media all and ( max-width: 640px ) {
+
+	h1 { margin-top: 20px; margin-bottom: 20px; }
+
+	#navPanel { border-bottom: 1px solid #dedede; height: 480px; left: 0; overflow: hidden;
+		position: absolute; right: 0; top: 0; width: 100%; z-index: 100; }
+
+	#secContent { position: absolute; left: 0; top: 90px; right: 0; bottom: 0; font-size: 17px;
+	line-height: 22px; overflow: auto; }
+
+	#divContents { position: absolute; left: 0; top: 56px; width: 100%; height: calc(100% - 56px); }
+
+	#expandButton { display: block; }
+
+	#navPanel.collapsed { height: 56px; }
+
+}
+
+</style>
+</head>
+<body>
+<script src = "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r103/build/three.min.js" ></script>
+<script src = "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r103/examples/js/controls/TrackballControls.js" ></script>
+
+	<nav id="navPanel">
+
+		<header>
+
+			<h1><a href="">three.js</a> template</h1>
+
+			<button id="expandButton" onclick=navPanel.classList.toggle('collapsed'); >☰</button>
+
+		</header>
+
+		<section id="secContent" >
+
+			<div  >
+
+				<button id=butId onclick="setPopupShowHide(butId,`test test`);" >???</button>
+
+				<p>
+					<a href="" >lorem ipsum</a>, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+				</p>
+
+				<p>
+					lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur</div>
+				</p>
+
+			</div>
+
+		</section>
+
+
+		<footer>
+
+			<hr>
+
+			<h1 onclick=navPanel.scrollTop=0; style=cursor:pointer;text-align:center; title="go to top of menu" > ❦ </h1>
+
+		</footer>
+
+
+	</nav>
+
+	<nav>
+
+		<button id=viewSrcButton target = '_blank'; style=display:none; >view source</button>
+
+	</nav>
+
+	<nav id="navPopup" hidden >
+
+		<div id="divPopupData" ></div>
+
+		<div id="divMessage" ></div>
+
+	</nav>
+
+	<main>
+
+		<div id=divContents ></div>
+
+	</main>
+
+<script>
+
+let popupId;
+
+let sceneRotation = 1;
+let renderer, camera, controls, scene;
+
+init();
+animate();
+
+
+function init() {
+
+
+	if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) { /* I hate having to add this */
+
+		divContents.style.width = getComputedStyle( divContents ).width;
+		divContents.style.height = getComputedStyle( divContents ).height;
+		divContents.setAttribute( 'scrolling', 'no' );
+
+	}
+
+	//divTitle.innerHTML = getTitle();
+
+	renderer = new THREE.WebGLRenderer( { alpha: 1, antialias: true } );
+	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setSize( divContents.clientWidth, divContents.clientHeight );
+	divContents.appendChild( renderer.domElement );
+
+	camera = new THREE.PerspectiveCamera( 40, divContents.clientWidth /divContents.clientHeight, 1, 1000 );
+	camera.position.set( - 100, - 100, 100 );
+	camera.up.set( 0, 0, 1 );
+
+	controls = new THREE.TrackballControls( camera, renderer.domElement );
+	controls.rotateSpeed = 5;
+
+	//controls.staticMoving = true;
+	//controls.dynamicDampingFactor = 0.3;
+
+	scene = new THREE.Scene();
+
+	window.addEventListener( 'resize', onWindowResize, false );
+	window.addEventListener( 'orientationchange', onWindowResize, false );
+
+	window.addEventListener( 'keyup', onWindowFirstInteraction, false );
+	renderer.domElement.addEventListener( 'click', onWindowFirstInteraction, false );
+	renderer.domElement.addEventListener( 'touchstart', onWindowFirstInteraction, false );
+
+	const axesHelper = new THREE.AxesHelper( 100 );
+	scene.add( axesHelper );
+
+	const geometry = new THREE.BoxGeometry( 50, 50, 50 );
+	const material = new THREE.MeshNormalMaterial();
+	const mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+
+}
+
+
+function setPopupShowHide( id, text ) {
+	//console.log( 'id', id );
+
+	popupId = id;
+
+	popupId.classList.toggle( "active" );
+
+	if ( popupId.classList.contains( 'active' ) ) {
+
+		const closer = `<div style=text-align:right; ><button onclick=setPopupShowHide(popupId,""); >×</button></div>`;
+
+		navPopup.hidden = false;
+		divPopupData.innerHTML = popupId.classList.contains( 'active' ) ? closer + text : '';
+
+		divContents.addEventListener( 'click', onClickContainer, false );
+		divContents.addEventListener( 'touchstart', onClickContainer, false );
+
+
+	} else {
+
+		onClickContainer();
+
+	}
+
+}
+
+
+
+function onClickContainer() {
+
+	navPopup.hidden = true;
+	popupId.classList.remove( "active" );
+	divPopupData.innerHTML = "";
+	divContents.removeEventListener( 'click', onClickContainer, false );
+	divContents.removeEventListener( 'touchstart', onClickContainer, false );
+}
+
+
+
+function onWindowResize() {
+	//console.log( 'onWindowResize  window.innerWidth', window.innerWidth );
+
+	camera.aspect = divContents.innerWidth / divContents.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( divContents.innerWidth, divContents.innerHeight );
+
+	controls.handleResize();
+
+}
+
+
+
+function onWindowFirstInteraction() {
+
+	event.preventDefault();
+
+	sceneRotation = 0;
+
+	window.removeEventListener( 'keyup', onWindowFirstInteraction );
+	renderer.domElement.removeEventListener("click", onWindowFirstInteraction );
+	renderer.domElement.removeEventListener("touchstart", onWindowFirstInteraction );
+
+}
+
+
+
+function animate() {
+
+	requestAnimationFrame( animate );
+	renderer.render( scene, camera );
+	controls.update();
+	scene.rotation.z += sceneRotation / 1000;
+
+}
+
+</script>
+</body>
+</html>
