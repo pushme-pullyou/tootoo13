@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>three.js / examples</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name = "description" content = "Basic TooToo HTML template" >
+<meta name = "keywords" content = "JavaScript,GitHub,FOSS" >
+<meta name = "date" content = "2019-04-20" >
+<title>three.js template</title>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" >
 <style>
 
 * { box-sizing: border-box; }
+
+:root { --mnu-width: 20rem; --screen-width: calc( 100vw ); }
 
 html { height: 100%; }
 
 body {background-color: #ffffff; color: #555; font-family: 'inconsolata'; font-size: 15px; height: 100%;
 	line-height: 18px; margin: 0px; overflow: hidden; }
 
-h1 { margin-top: 30px; margin-bottom: 40px; margin-left: 20px; font-size: 25px; font-weight: normal; }
+h1 { margin-top: 30px; margin-bottom: 5px; font-size: 25px; font-weight: normal; }
 
 h2 { font-size: 20px; font-weight: normal; }
 
 a { color: #2194CE; text-decoration: none; }
 
+blockquote, pre { background-color: #eee; padding: 10px; }
+
 button, input[ type=button ] { background-color: #ddd; border: 1px solid #ccc; border-radius: 2px;
 	color: #322; cursor: pointer; outline: none; padding: 3px 5px; }
+
+input[ type = range ] { -webkit-appearance: none; -moz-appearance: none; background-color: #ddd; width: 90%; }
+input[ type = range ]::-moz-range-thumb { background-color: rgb(228, 225, 225); border-radius: 0; width: 10px; }
+input[ type = range ]::-webkit-slider-thumb { -webkit-appearance: none; background-color: #888; height: 20px; width: 10px; }
+
+summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 
 button:hover, input[ type=button ]:hover{ background: #ccc;
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.3); color: #f00 }
 
 #navPanel { background: #fafafa; height: 100%; left: 0px; overflow: auto; position: fixed; width: 310px; }
 
-#navPanel #secContent, footer { padding: 0px 20px 20px 20px; }
+#navPanel header, #navPanel section, #navPanel footer { padding: 0px 8px 20px 20px; }
 
 #navPanel #secContent a { color: #2194CE; text-decoration: none; cursor: pointer; }
 
@@ -36,16 +49,17 @@ button:hover, input[ type=button ]:hover{ background: #ccc;
 
 #navPanel #secContent a:active, #navPanel #secContent a:focus { color: #ff0000; }
 
-#navPopup { background-color: #eee; border: 1px solid #aaa;  border-radius: 8px;
+#navPopup { background-color: #eee; border: 1px solid #aaa;  border-radius: 8px; max-height: 90%;
 	opacity: 0.95;  overflow: auto; padding: 0 1rem 1rem 1rem; z-index: 100;
-	left: 50%; margin-right: -50%; position: absolute; top: 40%; transform: translate(-50%, -50%);
+	left: 50%; margin-right: -50%; position: absolute; top: 40%; transform: translate(-50%, -40%);
 	box-shadow: 10px 10px 25px rgba(0,0,0,0.3), 6px 6px 6px rgba(0,0,0,0.5); }
 
 
-#viewSrcButton { position: fixed; bottom: 20px; right: 20px; padding: 8px; color: #fff;
+#butViewSource { position: fixed; bottom: 20px; right: 20px; padding: 8px; color: #fff;
 	background-color: #555; opacity: 0.7; }
 
-#viewSrcButton:hover { cursor: pointer; opacity: 1; }
+#butViewSource:hover { cursor: pointer; opacity: 1; }
+
 
 #divContents { position: absolute; border: 0px; left: 310px; width: calc(100% - 310px); height: 100%;
 	margin: 0; overflow: hidden; }
@@ -76,34 +90,110 @@ button:hover, input[ type=button ]:hover{ background: #ccc;
 </style>
 </head>
 <body>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
 <script src = "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r103/build/three.min.js" ></script>
 <script src = "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r103/examples/js/controls/TrackballControls.js" ></script>
 
-	<nav id="navPanel">
+
+<nav id="navPanel">
 
 		<header>
 
-			<h1><a href="">three.js</a> template</h1>
+			<h1>
+				<a href=""https://github.com/zzzzz/xxxxx.html";" title="Source on GitHub" >
+					<img src="https://pushme-pullyou.github.io/github-mark-64.png" style=height:1rem;opacity:0.8; ></a>
+				<a href="" title="Click to reload this page" >
+					<script> document.write( document.title ); </script>
+				</a>
+				<button id=butId onclick="setPopupShowHide(butId,'README.md');" style=float:right; >?</button>
+			</h1>
+
+			<section><i>
+				<script> document.write( document.head.querySelector( "[ name=description ]" ).content ); </script>
+			</i></section>
 
 			<button id="expandButton" onclick=navPanel.classList.toggle('collapsed'); >☰</button>
 
 		</header>
 
+
 		<section id="secContent" >
 
-			<div  >
+			<details>
 
-				<button id=butId onclick="setPopupShowHide(butId,`test test`);" >???</button>
-
-				<p>
-					<a href="" >lorem ipsum</a>, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
-				</p>
+				<summary>Test 1
+					<button id=butTest1 onclick="setPopupShowHide(butTest1,'Hello, World!');" style=float:right; >?</button>
+				</summary>
 
 				<p>
 					lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur</div>
 				</p>
 
-			</div>
+				<p>
+					<a href="" >lorem ipsum</a>, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+				</p>
+
+			</details>
+
+
+			<details>
+
+				<summary>Test 2</summary>
+
+				<p><a href="" >breadcrumb</a> &raquo; </p>
+
+				<h2><a href="" >Title H2</a></h2>
+
+				<div id=divRowButtonsStyle ></div>
+
+				<p><i>111 222 <mark>333 444</mark> 555</i></p>
+
+				<div>
+					text in a div aaa bbb ccc ddd eee fff
+				</div>
+
+				<p>
+					<label><b>Last Name</b></label>
+					<input type="text" style=width:100px; >
+				</p>
+
+				<p>
+					<output id=outId >50</output ><br>
+					<input type=range oninput=outId.value=this.value >
+				</p>
+
+				<p><button >button 1</button></p>
+
+				<p><button >button 2</button></p>
+
+				<select size=3 >
+					<option value="" disabled selected>Choose your option</option>
+					<option value="1">Option 1</option>
+					<option value="2">Option 2</option>
+					<option value="3">Option 3</option>
+				</select>
+
+				<blockquote>
+
+					Blockquote<br>Conceptualizing random endpoints in a access matrix provides reach extensions enterprise wide. Respective divisions historically insignificant, upscale trend lines in a management inventory analysis survivability format.
+
+				</blockquote>
+
+				<p>
+					<code>lorem</code> ipsum, <a href="https://example.com" target="_blank">quia dolor sit</a>, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+				</p>
+
+			</details>
+
+
+			<details>
+
+				<summary>Markdown Help</summary>
+
+				<div id=divMarkdown></div>
+
+			</details>
+
 
 		</section>
 
@@ -121,7 +211,7 @@ button:hover, input[ type=button ]:hover{ background: #ccc;
 
 	<nav>
 
-		<button id=viewSrcButton target = '_blank'; style=display:none; >view source</button>
+		<button id="butViewSource" target=_blank; hidden >view source</button>
 
 	</nav>
 
@@ -139,9 +229,30 @@ button:hover, input[ type=button ]:hover{ background: #ccc;
 
 	</main>
 
+
+
+	<template id=tmpInfo >
+
+		<h3 id=hTitle ></h3>
+
+		<p></p>
+
+		<details>
+
+			<summary>Change log</summary>
+
+			<ul>
+				<li>2019-04-20 ~ R0.0.0 ~ F - First commit</li>
+			</ul>
+
+		</details>
+
+	</template>
+
 <script>
 
 let popupId;
+
 
 let sceneRotation = 1;
 let renderer, camera, controls, scene;
@@ -195,6 +306,7 @@ function init() {
 	const mesh = new THREE.Mesh( geometry, material );
 	scene.add( mesh );
 
+	requestFile( "markdown-help.md", divMarkdown )
 }
 
 
@@ -207,14 +319,19 @@ function setPopupShowHide( id, text ) {
 
 	if ( popupId.classList.contains( 'active' ) ) {
 
-		const closer = `<div style=text-align:right; ><button onclick=setPopupShowHide(popupId,""); >×</button></div>`;
-
 		navPopup.hidden = false;
+
+		if ( text === "README.md" ) {
+
+			requestFile( text, divPopupData );
+
+		}
+
+		const closer = `<div style=text-align:right; ><button onclick=setPopupShowHide(popupId,""); >×</button></div>`;
 		divPopupData.innerHTML = popupId.classList.contains( 'active' ) ? closer + text : '';
 
 		divContents.addEventListener( 'click', onClickContainer, false );
 		divContents.addEventListener( 'touchstart', onClickContainer, false );
-
 
 	} else {
 
@@ -233,6 +350,7 @@ function onClickContainer() {
 	divPopupData.innerHTML = "";
 	divContents.removeEventListener( 'click', onClickContainer, false );
 	divContents.removeEventListener( 'touchstart', onClickContainer, false );
+
 }
 
 
@@ -264,6 +382,34 @@ function onWindowFirstInteraction() {
 }
 
 
+
+function requestFile( url, target ) {
+
+	const xhr = new XMLHttpRequest();
+	xhr.open( 'GET', url, true );
+	xhr.onerror = ( xhr ) => console.log( 'error:', xhr  );
+	xhr.onprogress = ( xhr ) => console.log( 'loaded', xhr.loaded );
+	xhr.onload = ( xhr ) => callbackMarkdown( xhr.target.response, target );
+	xhr.send( null );
+
+};
+
+
+
+function callbackMarkdown( markdown, target ) {
+
+	console.log( '', markdown );
+
+	showdown.setFlavor('github');
+	const converter = new showdown.Converter();
+	const html = converter.makeHtml( markdown );
+
+	target.innerHTML = html;
+	//console.log( '', html );
+
+	window.scrollTo( 0, 0 );
+
+};
 
 function animate() {
 

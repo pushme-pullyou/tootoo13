@@ -84,6 +84,8 @@ TMP.getMenuTemplate = function() {
 					<input type="text" style=width:100px; >
 				</p>
 
+				<p><input type=range> </p>
+				
 				<p><button >button 1</button></p>
 
 				<p><button >button 2</button></p>

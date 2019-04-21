@@ -204,6 +204,8 @@ FOB.reloadFile = function() {
 
 };
 
+
+
 FOB.onDrop = function( event ) {
 
 	console.log( '', event );
@@ -237,7 +239,7 @@ FOB.onProgress = function( size = 0, note = '' ) {
 		<div style="padding: 1rem 0;" >
 			<div style=padding:0; >File name:</div>
 			<div style=color:blue;padding:0; >${ FOB.name }</div>
-			<div  style=padding:0; >bytes loaded: ${ size.toLocaleString() }</div>
+			<div style=padding:0; >bytes loaded: ${ size.toLocaleString() }</div>
 			<div style=padding:0; >time to load: ${ timeToLoad }ms</div>
 			${ note }
 		</div>
