@@ -63,7 +63,7 @@ summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 
 #navPopup { background-color: #eee; border: 1px solid #aaa;  border-radius: 8px; max-height: 90%;
 	opacity: 0.95;  overflow: auto; padding: 0 1rem 1rem 1rem; z-index: 100;
-	left: 50%; margin-right: -50%; position: absolute; top: 40%; transform: translate(-50%, -40%);
+	left: 50%; margin-right: -50%; position: absolute; top: 40%; transform: translate(-50%, -40% );
 	box-shadow: 10px 10px 25px rgba(0,0,0,0.3), 6px 6px 6px rgba(0,0,0,0.5); }
 
 
@@ -84,7 +84,7 @@ summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 
 	#expandButton { display: block; }
 
-	#secContent, footer { position: absolute; left: 0; top: 90px; right: 0; bottom: 0; font-size: 17px;
+	#secContent { position: absolute; left: 0; top: 90px; right: 0; bottom: 0; font-size: 17px;
 	line-height: 22px; overflow: auto; }
 
 	main { height: calc(100% - 56px); padding: 0 1rem; position: absolute; left: 0; top: 56px; width: 100%;  }
@@ -97,7 +97,7 @@ summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" ></script>
 
 
-<nav id="navPanel">
+	<nav id="navPanel">
 
 		<header>
 
@@ -236,6 +236,7 @@ summary { cursor: pointer; font-size:1rem; font-weight: bold; }
 
 <script>
 
+
 let popupId;
 
 init();
@@ -255,6 +256,7 @@ function init() {
 
 	butViewSource.style.display = "block";
 	butViewSource.href = "https://github.com/pushme-pullyou-tootoo13/tree/master/sandbox/template-html/template-html.html"
+
 }
 
 
