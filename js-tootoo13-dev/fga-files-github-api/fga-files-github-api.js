@@ -30,8 +30,6 @@ FGA.regexHtml = /\.(htm?l)$/i;
 FGA.contentsCss = `box-sizing: border-box; border: 1px solid #888; height: ${ window.innerHeight - 4 }px; margin: 0; padding:0; width:100%;`;
 
 
-
-
 FGA.getMenuFilesGithubApi = function() {
 
 	FGA.urlGitHubSource = "https://github.com/" + FGA.user + "/" + FGA.repo;
@@ -73,6 +71,7 @@ FGA.getFiles = function() {
 
 	const crumbs = url.slice( FGA.urlGitHubPage.length );
 	let pathCurrent = crumbs.lastIndexOf( '/' ) > 0 ? crumbs.slice( 0, crumbs.lastIndexOf( '/' ) ) : '';
+
 	//console.log( 'pathCurrent', pathCurrent );
 
 	if ( FGA.urlGitHubApiContents ){ FGA.setMenuGitHubPathFileNames( pathCurrent ); }
@@ -117,9 +116,9 @@ FGA.callbackGitHubPathFileNames = function( xhr ) {
 	const response = xhr.target.response;
 	const items = JSON.parse( response );
 	//console.log( 'items ', items );
+	
 	FGA.menuItems = items;
 
-	//if ( items.message !== "Not Found" ) { alert( items.message ); return; }
 	if ( items.message ) { console.log( 'error', items.message ); return; } //breadcrumbs??
 
 	const htmFolders = FGA.getFoldersFromContents( items );
